@@ -1,0 +1,9 @@
+*
+*/**
+!dist/dark.json
+!dist/light.json
+!graphics/logo.png
+!CHANGELOG.md
+!LICENSE.txt
+!README.md
+!package.json

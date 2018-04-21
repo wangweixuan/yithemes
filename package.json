@@ -1,0 +1,61 @@
+{
+  "name": "yithemes",
+  "version": "0.1.0",
+  "description": "Atom One Dark & One Light themes ported for VS Code.",
+  "keywords": [
+    "vscode",
+    "extension",
+    "theme",
+    "onedark"
+  ],
+  "license": "ISC",
+  "author": "Wang Weixuan <wangweixvan@gmail.com>",
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangweixuan/yithemes.git"
+  },
+  "homepage": "https://github.com/wangweixuan/yithemes#readme",
+  "bugs": {
+    "url": "https://github.com/wangweixuan/yithemes/issues"
+  },
+  "private": true,
+  "scripts": {
+    "prepare": "tsc -p src && node dist/src",
+    "pretest": "tsc -p src && node dist/src",
+    "test": "code --extensionDevelopmentPath=$PWD"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/tinycolor2": "latest",
+    "tinycolor2": "latest",
+    "typescript": "latest"
+  },
+  "displayName": "Yi Dark & Yi Light Themes",
+  "publisher": "wangweixuan",
+  "engines": {
+    "vscode": "^1.21.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Yi Dark",
+        "uiTheme": "vs-dark",
+        "path": "dist/dark.json"
+      },
+      {
+        "label": "Yi Light",
+        "uiTheme": "vs",
+        "path": "dist/light.json"
+      }
+    ]
+  },
+  "icon": "graphics/logo.png",
+  "galleryBanner": {
+    "color": "#282C34",
+    "theme": "dark"
+  }
+}
