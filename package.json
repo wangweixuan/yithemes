@@ -1,12 +1,12 @@
 {
   "name": "yithemes",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Atom One Dark & One Light themes ported for VS Code.",
   "keywords": [
-    "vscode",
-    "extension",
     "theme",
-    "onedark"
+    "onedark",
+    "one-dark",
+    "one dark"
   ],
   "license": "ISC",
   "author": "Wang Weixuan <wangweixvan@gmail.com>",
