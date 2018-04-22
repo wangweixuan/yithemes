@@ -1,7 +1,7 @@
 import * as tc from 'tinycolor2'
 
 // https://github.com/atom/one-light-syntax/blob/master/styles/colors.less
-export const syntaxHue = 220
+export const syntaxHue = 230
 export const syntaxSaturation = 0.01
 export const syntaxBrightness = 0.98
 
@@ -20,7 +20,7 @@ export const hue62 = tc({ h: 41, s: 0.99, l: 0.38 })
 
 export const syntaxFg = mono1
 export const syntaxBg = tc({ h: syntaxHue, s: syntaxSaturation, l: syntaxBrightness })
-export const syntaxGutter = syntaxFg.clone().darken(36)
+export const syntaxGutter = syntaxBg.clone().darken(36)
 export const syntaxGuide = syntaxFg.clone().setAlpha(0.2)
 export const syntaxAccent = tc({ h: syntaxHue, s: 1, l: 0.66 })
 
