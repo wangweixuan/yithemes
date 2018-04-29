@@ -1,17 +1,7 @@
 import { writeFile } from 'fs'
-import * as tc from 'tinycolor2'
-import darkSyntax from './dark.syntax'
-import darkWorkbench from './dark.workbench'
-import lightSyntax from './light.syntax'
-import lightWorkbench from './light.workbench'
-
-function interpret(key: string, value: any) {
-  if (value && value instanceof tc) {
-    const color = value as tinycolorInstance
-    return color.getAlpha() === 1 ? color.toHexString() : color.toHex8String()
-  }
-  return value
-}
+import { dark as darkSyntax, light as lightSyntax} from './syntax'
+import { dark as darkWorkbench, light as lightWorkbench} from './workbench'
+import { interpret } from './utilities'
 
 writeFile('dist/dark.json', JSON.stringify({
   $schema: 'vscode://schemas/color-theme',

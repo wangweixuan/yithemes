@@ -3,6 +3,14 @@ import * as tc from 'tinycolor2'
 export const INHERIT = undefined
 export const TRANSPARENT = tc('transparent')
 
+export function interpret(key: string, value: any) {
+  if (value && value instanceof tc) {
+    const color = value as tinycolorInstance
+    return color.getAlpha() === 1 ? color.toHexString() : color.toHex8String()
+  }
+  return value
+}
+
 // https://github.com/Microsoft/vscode-textmate/blob/master/src/theme.ts
 export class Rule {
   readonly settings: {
