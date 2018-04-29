@@ -161,6 +161,7 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     editor_rangeHighlightBorder: INHERIT, // TRANSPARENT
     editorWhitespace_foreground: palette.syntaxInvisibleCharacterColor,
     editorIndentGuide_background: palette.syntaxIndentGuideColor,
+    editorIndentGuide_activeBackground: palette.syntaxGutterTextColor,
     editorRuler_foreground: palette.syntaxWrapGuideColor,
     editorCodeLens_foreground: palette.mono3,
     editorBracketMatch_background: TRANSPARENT,
