@@ -1,6 +1,7 @@
 import { writeFile } from 'fs'
 import { dark as darkSyntax, light as lightSyntax} from './syntax'
 import { dark as darkWorkbench, light as lightWorkbench} from './workbench'
+import mdpreview from './mdpreview'
 import { interpret } from './utilities'
 
 writeFile('dist/dark.json', JSON.stringify({
@@ -18,3 +19,5 @@ writeFile('dist/light.json', JSON.stringify({
   colors: lightWorkbench,
   tokenColors: lightSyntax
 }, interpret).replace(/_/g, '.'), err => { if (err) throw err })
+
+writeFile('dist/mdpreview.css', mdpreview, err => { if (err) throw err })

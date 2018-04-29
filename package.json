@@ -51,6 +51,9 @@
         "uiTheme": "vs",
         "path": "dist/light.json"
       }
+    ],
+    "markdown.previewStyles": [
+      "dist/mdpreview.css"
     ]
   },
   "icon": "graphics/logo.png",
