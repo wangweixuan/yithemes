@@ -174,7 +174,7 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
 
     // Misc Workaround
     new Rule('text.xml punctuation.separator.namespace', palette.hue6),
-    new Rule('beginning.punctuation.definition.quote', palette.hue4),
+    new Rule('markup.quote', palette.mono3, { italic: true }),
     new Rule('beginning.punctuation.definition.list', palette.hue5),
   ]
 }
