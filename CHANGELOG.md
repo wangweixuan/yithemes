@@ -1,5 +1,11 @@
 # Version History
 
+## `0.3.0` April 29, 2018
+
+- Added Markdown Preview theming.
+- Added support of highlighted indent guides introduced in Visual Studio Code 1.23.
+- Fixed the wrong color of blockquotes in Markdown language.
+
 ## `0.2.0` April 22, 2018
 
 - Fixed the wrong color of line numbers in Yi Light theme.
