@@ -1,6 +1,7 @@
 import * as darkPalette from './dark'
 import * as lightPalette from './light'
 
+// https://github.com/Microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css
 // https://github.com/atom/markdown-preview/blob/master/styles/markdown-preview-default.less
 export default `
   .vscode-dark { color: ${darkPalette.textColor}; }
@@ -12,7 +13,8 @@ export default `
   .vscode-light.showEditorSelection .code-active-line:before {
     border-color: ${lightPalette.insetPanelBackgroundColor};
   }
-  .showEditorSelection .code-line:hover:before { border: none; }
+  .vscode-dark.showEditorSelection .code-line:hover:before,
+  .vscode-light.showEditorSelection .code-line:hover:before { border: none; }
 
   h1 { border: none; }
   .vscode-dark h1, .vscode-dark h2, .vscode-dark h3, .vscode-dark h4,
