@@ -1,5 +1,9 @@
 # Version History
 
+## `0.4.0` June 7, 2018
+
+- Added support of unused variable colors introduced in Visual Studio Code 1.24.
+
 ## `0.3.0` April 29, 2018
 
 - Added Markdown Preview theming.
