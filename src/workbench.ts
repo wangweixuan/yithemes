@@ -57,7 +57,7 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     inputValidation_warningBackground: palette.backgroundColorWarning,
     inputValidation_warningBorder: palette.textColorWarning,
 
-    // Scroll Bar Control
+    // Scrollbar Control
     // https://github.com/atom/one-dark-ui/blob/master/styles/atom.less#L14
     scrollbar_shadow: TRANSPARENT,
     scrollbarSlider_activeBackground: palette.scrollbarColor.clone().setAlpha(0.5),
@@ -88,6 +88,8 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     list_inactiveSelectionForeground: palette.textColorSelected,
     list_inactiveFocusBackground: palette.backgroundColorSelected,
     list_invalidItemForeground: palette.textColorError,
+    list_errorForeground: palette.textColorError,
+    list_warningForeground: palette.textColorWarning,
 
     // Activity Bar
     activityBar_background: palette.insetPanelBackgroundColor,
@@ -120,6 +122,8 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     tab_border: palette.tabBorderColor,
     tab_activeBorder: TRANSPARENT,
     tab_unfocusedActiveBorder: TRANSPARENT,
+    tab_activeBorderTop: INHERIT, // TRANSPARENT
+    tab_unfocusedActiveBorderTop: INHERIT, // TRANSPARENT
     tab_inactiveBackground: palette.tabBackgroundColor,
     tab_inactiveForeground: palette.tabTextColor,
     tab_unfocusedActiveForeground: palette.tabTextColorActive,
@@ -179,6 +183,7 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     editorOverviewRuler_errorForeground: palette.textColorError,
     editorOverviewRuler_warningForeground: palette.textColorWarning,
     editorOverviewRuler_infoForeground: palette.textColorInfo,
+    editorOverviewRuler_bracketMatchForeground: palette.syntaxGutterBackgroundColorSelected,
     editorError_foreground: palette.textColorError,
     editorError_border: INHERIT, // TRANSPARENT
     editorWarning_foreground: palette.textColorWarning,
@@ -187,6 +192,7 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     editorInfo_border: INHERIT, // TRANSPARENT
     editorHint_foreground: palette.textColorInfo,
     editorHint_border: INHERIT, // TRANSPARENT
+    editorUnnecessary_foreground: palette.mono2,
     editorGutter_background: palette.syntaxGutterBackgroundColor,
     editorGutter_modifiedBackground: palette.syntaxColorModified,
     editorGutter_addedBackground: palette.syntaxColorAdded,
@@ -203,6 +209,7 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     // https://github.com/atom/one-dark-ui/blob/master/styles/modal.less
     editorWidget_background: palette.overlayBackgroundColor,
     editorWidget_border: palette.overlayBorderColor,
+    editorWidget_resizeBorder: palette.overlayBackgroundColor,
     editorSuggestWidget_background: INHERIT, // palette.overlayBackgroundColor
     editorSuggestWidget_border: INHERIT, // palette.overlayBorderColor
     editorSuggestWidget_foreground: INHERIT, // palette.textColor
@@ -300,8 +307,8 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
 
     // Integrated Terminal Colors
     terminal_background: INHERIT,
+    terminal_border: INHERIT, // palette.toolPanelBorderColor
     terminal_foreground: INHERIT,
-    terminal_border: INHERIT,
     terminal_ansiBlack: INHERIT,
     terminal_ansiBlue: INHERIT,
     terminal_ansiBrightBlack: INHERIT,
@@ -324,6 +331,7 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
 
     // Debug
     debugToolBar_background: palette.overlayBackgroundColor,
+    debugToolBar_border: INHERIT, // TRANSPARENT
 
     // Welcome Page
     welcomePage_buttonBackground: palette.buttonBackgroundColor,
