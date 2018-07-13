@@ -1,5 +1,9 @@
 # Version History
 
+## `0.5.0` July 13, 2018
+
+- Added support of empty editor group colors introduced in Visual Studio Code 1.25.
+
 ## `0.4.0` June 7, 2018
 
 - Added support of unused variable colors introduced in Visual Studio Code 1.24.
