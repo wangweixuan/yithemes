@@ -111,12 +111,13 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
 
     // Editor Groups & Tabs
     // https://github.com/atom/one-dark-ui/blob/master/styles/tabs.less
-    editorGroup_background: palette.toolPanelBackgroundColor,
     editorGroup_border: palette.toolPanelBorderColor,
     editorGroup_dropBackground: palette.backgroundColorHighlight.clone().setAlpha(0.5),
     editorGroupHeader_noTabsBackground: palette.tabBarBackgroundColor,
     editorGroupHeader_tabsBackground: palette.tabBarBackgroundColor,
     editorGroupHeader_tabsBorder: palette.tabBarBorderColor,
+    editorGroup_emptyBackground: INHERIT, // palette.toolPanelBackgroundColor
+    editorGroup_focusedEmptyBorder: INHERIT, // palette.toolPanelBorderColor
     tab_activeBackground: palette.tabBackgroundColorActive,
     tab_activeForeground: palette.tabTextColorActive,
     tab_border: palette.tabBorderColor,
