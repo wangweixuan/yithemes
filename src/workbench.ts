@@ -73,6 +73,12 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     // https://github.com/atom/one-dark-ui/blob/master/styles/progress.less
     progressBar_background: palette.progressBackgroundColor,
 
+    // Breadcrumb
+    breadcrumb_breadcrumbsForeground: palette.textColor,
+    breadcrumb_breadcrumbsFocusForeground: palette.textColorHighlight,
+    breadcrumb_breadcrumbsActiveSelectionForeground: palette.textColorHighlight,
+    breadcrumb_breadcrumbsPickerBackground: palette.insetPanelBackgroundColor,
+
     // Lists and Trees
     // https://github.com/atom/one-dark-ui/blob/master/styles/lists.less
     // https://github.com/atom/one-dark-ui/blob/master/styles/tree-view.less
@@ -205,6 +211,7 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     diffEditor_insertedTextBorder: INHERIT, // TRANSPARENT
     diffEditor_removedTextBackground: palette.syntaxColorRemoved.clone().setAlpha(0.24),
     diffEditor_removedTextBorder: INHERIT, // TRANSPARENT
+    diffEditor_border: INHERIT, // TRANSPARENT
 
     // Editor Widget Colors
     // https://github.com/atom/one-dark-ui/blob/master/styles/modal.less
