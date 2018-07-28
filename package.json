@@ -1,6 +1,6 @@
 {
   "name": "yithemes",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Atom One Dark & One Light themes ported for VS Code.",
   "keywords": [
     "theme",
@@ -23,7 +23,7 @@
   "scripts": {
     "prepare": "tsc -p src && node dist/src",
     "pretest": "tsc -p src && node dist/src",
-    "test": "code --extensionDevelopmentPath=$PWD"
+    "test": "code-insiders --extensionDevelopmentPath=$PWD"
   },
   "devDependencies": {
     "@types/node": "latest",
