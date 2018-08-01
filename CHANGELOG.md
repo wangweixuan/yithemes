@@ -1,5 +1,9 @@
 # Version History
 
+## `0.6.0` August 1, 2018
+
+- Added support of breadcrumb navigation bars introduced in Visual Studio Code 1.26.
+
 ## `0.5.0` July 13, 2018
 
 - Added support of empty editor group colors introduced in Visual Studio Code 1.25.
