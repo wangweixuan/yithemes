@@ -40,6 +40,8 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     new Rule('variable.other.constant', palette.hue6),
 
     new Rule('string', palette.hue4),
+    new Rule('string source', palette.mono1),
+    new Rule('string.embedded', palette.mono1),
     new Rule('string.regexp', palette.hue1),
     new Rule('string.regexp keyword.operator', palette.hue1),
     new Rule('string.regexp keyword.other', palette.hue1),
