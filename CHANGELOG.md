@@ -1,8 +1,12 @@
 # Version History
 
+## `0.7.0` August 19, 2018
+
+- Added support of settings editor and custom menu colors introduced in Visual Studio Code 1.26.
+
 ## `0.6.0` August 1, 2018
 
-- Added support of breadcrumb navigation bars introduced in Visual Studio Code 1.26.
+- Added support of breadcrumb navigation bar colors introduced in Visual Studio Code 1.26.
 
 ## `0.5.0` July 13, 2018
 
