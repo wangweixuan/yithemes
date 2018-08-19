@@ -73,12 +73,6 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     // https://github.com/atom/one-dark-ui/blob/master/styles/progress.less
     progressBar_background: palette.progressBackgroundColor,
 
-    // Breadcrumb
-    breadcrumb_breadcrumbsForeground: palette.textColor,
-    breadcrumb_breadcrumbsFocusForeground: palette.textColorHighlight,
-    breadcrumb_breadcrumbsActiveSelectionForeground: palette.textColorHighlight,
-    breadcrumb_breadcrumbsPickerBackground: palette.insetPanelBackgroundColor,
-
     // Lists and Trees
     // https://github.com/atom/one-dark-ui/blob/master/styles/lists.less
     // https://github.com/atom/one-dark-ui/blob/master/styles/tree-view.less
@@ -354,6 +348,40 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     gitDecoration_ignoredResourceForeground: palette.textColorIgnored,
     gitDecoration_conflictingResourceForeground: INHERIT, // palette.textColor
     gitDecoration_submoduleResourceForeground: INHERIT, // palette.textColor
+
+    // Settings Editor Colors
+    // https://github.com/atom/one-dark-ui/blob/master/styles/settings.less
+    settings_headerForeground: palette.textColorHighlight,
+    settings_modifiedItemForeground: palette.textColorAdded,
+    settings_dropdownBackground: INHERIT, // palette.inputBackgroundColor
+    settings_dropdownForeground: INHERIT, // palette.textColor
+    settings_dropdownBorder: INHERIT, // palette.baseBorderColor
+    settings_checkboxBackground: INHERIT, // palette.inputBackgroundColor
+    settings_checkboxForeground: INHERIT, // palette.textColor
+    settings_checkboxBorder: INHERIT, // palette.baseBorderColor
+    settings_textInputBackground: INHERIT, // palette.inputBackgroundColor
+    settings_textInputForeground: INHERIT, // palette.textColorHighlight
+    settings_textInputBorder: INHERIT, // palette.inputBorderColor
+    settings_numberInputBackground: INHERIT, // palette.inputBackgroundColor
+    settings_numberInputForeground: INHERIT, // palette.textColorHighlight
+    settings_numberInputBorder: INHERIT, // palette.inputBorderColor
+
+    // Breadcrumbs
+    breadcrumb_foreground: palette.textColor,
+    breadcrumb_background: INHERIT, // palette.syntaxBackgroundColor
+    breadcrumb_focusForeground: palette.textColorHighlight,
+    breadcrumb_activeSelectionForeground: palette.textColorHighlight,
+    breadcrumbPicker_background: INHERIT, // palette.overlayBackgroundColor
+
+    // Menu
+    menu_background: palette.insetPanelBackgroundColor,
+    menu_foreground: palette.textColorHighlight,
+    menu_selectionBackground: palette.buttonBackgroundColorSelected,
+    menu_selectionForeground: INHERIT, // palette.textColorHighlight
+    menu_selectionBorder: INHERIT, // TRANSPARENT
+    menubar_selectionBackground: palette.buttonBackgroundColorSelected,
+    menubar_selectionForeground: INHERIT, // palette.textColorHighlight
+    menubar_selectionBorder: INHERIT, // TRANSPARENT
   }
 }
 
