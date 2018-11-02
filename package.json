@@ -1,6 +1,6 @@
 {
   "name": "yithemes",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Atom One Dark & One Light themes ported for VS Code.",
   "keywords": [
     "theme",
@@ -34,7 +34,7 @@
   "displayName": "Yi Dark & Yi Light Themes",
   "publisher": "wangweixuan",
   "engines": {
-    "vscode": "^1.21.0"
+    "vscode": "^1.26.0"
   },
   "categories": [
     "Themes"
@@ -53,7 +53,7 @@
       }
     ],
     "markdown.previewStyles": [
-      "dist/mdpreview.css"
+      "dist/markdown.css"
     ]
   },
   "icon": "graphics/logo.png",
