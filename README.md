@@ -21,10 +21,10 @@ Delicate ported themes of Atom One Dark & One Light for Visual Studio Code.
 
 Yi Themes wouldn't exist if it wasn't for the excellent original themes by Atom team at GitHub:
 
-- [One Dark UI](https://github.com/atom/one-dark-ui)
-- [One Dark Syntax](https://github.com/atom/one-dark-syntax)
-- [One Light UI](https://github.com/atom/one-light-ui)
-- [One Light Syntax](https://github.com/atom/one-light-syntax)
+- [One Dark UI](https://github.com/atom/atom/tree/master/packages/one-dark-ui)
+- [One Dark Syntax](https://github.com/atom/atom/tree/master/packages/one-dark-syntax)
+- [One Light UI](https://github.com/atom/atom/tree/master/packages/one-light-ui)
+- [One Light Syntax](https://github.com/atom/atom/tree/master/packages/one-light-syntax)
 
 ## Contributing
 

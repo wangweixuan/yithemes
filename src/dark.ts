@@ -1,6 +1,6 @@
 import * as tc from 'tinycolor2'
 
-// https://github.com/atom/one-dark-syntax/blob/master/styles/colors.less
+// https://github.com/atom/atom/blob/master/packages/one-dark-syntax/styles/colors.less
 export const syntaxHue = 220
 export const syntaxSaturation = 0.13
 export const syntaxBrightness = 0.18
@@ -24,7 +24,7 @@ export const syntaxGutter = syntaxFg.clone().darken(26)
 export const syntaxGuide = syntaxFg.clone().setAlpha(0.15)
 export const syntaxAccent = tc({ h: syntaxHue, s: 1, l: 0.66 })
 
-// https://github.com/atom/one-dark-syntax/blob/master/styles/syntax-variables.less
+// https://github.com/atom/atom/blob/master/packages/one-dark-syntax/styles/syntax-variables.less
 export const syntaxBackgroundColor = syntaxBg
 export const syntaxTextColor = syntaxFg
 export const syntaxCursorColor = syntaxAccent
@@ -68,7 +68,7 @@ export const syntaxDeprecatedBg = syntaxColorModified
 export const syntaxIllegalFg = tc('white')
 export const syntaxIllegalBg = syntaxColorRemoved
 
-// https://github.com/atom/one-dark-ui/blob/master/styles/ui-variables-custom.less#L1
+// https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/ui-variables-custom.less#L1
 export const uiSyntaxColor = syntaxBackgroundColor || tc({ h: 220, s: 0.24, l: 0.2 })
 
 export const uiInv = 0.1
@@ -97,7 +97,7 @@ export const uiFg = tc(
 export const uiBg = tc({ h: uiHue, s: uiSaturation, l: uiLightness })
 export const uiBorder = tc({ h: uiHue, s: uiSaturation, l: uiLightnessBorder })
 
-// https://github.com/atom/one-dark-ui/blob/master/styles/ui-variables.less#L1
+// https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/ui-variables.less#L1
 export const textColor = uiFg
 export const textColorSubtle = textColor.clone().setAlpha(textColor.getAlpha() - 0.4)
 export const textColorHighlight = textColor.clone().lighten(20)
@@ -119,7 +119,7 @@ export const backgroundColorError = tc({ h: 5, s: 0.64, l: 0.5 })
 export const backgroundColorHighlight = baseBackgroundColor.clone().lighten(4)
 export const backgroundColorSelected = baseBackgroundColor.clone().lighten(8)
 
-// https://github.com/atom/one-dark-ui/blob/master/styles/ui-variables-custom.less#L44
+// https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/ui-variables-custom.less#L44
 export const textColorFaded = textColor.clone().setAlpha(0.2)
 
 export const textColorAdded = textColorSuccess
@@ -154,7 +154,7 @@ export const accentOnlyTextColor = tc.mix(
   tc({ h: uiHue, s: 1, v: 0.66 }), tc({ h: uiHue, s: 1, l: 0.77 }), accentLuma
 )
 
-// https://github.com/atom/one-dark-ui/blob/master/styles/ui-variables.less#L34
+// https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/ui-variables.less#L34
 export const appBackgroundColor = level3Color
 
 export const paneItemBackgroundColor = baseBackgroundColor
@@ -196,7 +196,7 @@ export const uiSiteColor3 = tc({ h: 32, s: 0.6, l: 0.5 })
 export const uiSiteColor4 = tc('#D831B0')
 export const uiSiteColor5 = tc('#EBDD5B')
 
-// https://github.com/atom/one-dark-ui/blob/master/styles/ui-variables-custom.less#L83
+// https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/ui-variables-custom.less#L83
 export const badgeBackgroundColor = backgroundColorHighlight.clone().lighten(6)
 
 export const buttonTextColorSelected = accentBgTextColor
