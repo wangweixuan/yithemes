@@ -1,7 +1,9 @@
 import * as tc from 'tinycolor2'
 import * as darkPalette from './dark'
 import * as lightPalette from './light'
-import { INHERIT, TRANSPARENT } from './utilities'
+
+const INHERIT = undefined
+const TRANSPARENT = tc('transparent')
 
 // https://code.visualstudio.com/docs/getstarted/theme-color-reference
 function generate(palette: typeof darkPalette | typeof lightPalette) {
@@ -11,7 +13,7 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     contrastBorder: INHERIT, // TRANSPARENT
 
     // Base Colors
-    // https://github.com/atom/one-dark-ui/blob/master/styles/ui-variables.less
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/ui-variables.less
     focusBorder: palette.accentColor,
     foreground: palette.textColor,
     widget_shadow: tc({ h: 0, l: 0, s: 0, a: 0.4 }),
@@ -20,7 +22,7 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     errorForeground: palette.textColorError,
 
     // Text Colors
-    // https://github.com/atom/one-dark-ui/blob/master/styles/text.less
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/text.less
     textBlockQuote_background: palette.insetPanelBackgroundColor,
     textBlockQuote_border: TRANSPARENT,
     textCodeBlock_background: palette.backgroundColorHighlight,
@@ -30,52 +32,55 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     textSeparator_foreground: INHERIT,
 
     // Button Control
-    // https://github.com/atom/one-dark-ui/blob/master/styles/buttons.less
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/buttons.less
     button_background: palette.buttonBackgroundColor,
     button_foreground: palette.textColor,
     button_hoverBackground: palette.buttonBackgroundColorHover,
 
     // Dropdown Control
-    // https://github.com/atom/one-dark-ui/blob/master/styles/dropdowns.less
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/dropdowns.less
     dropdown_background: palette.inputBackgroundColor,
     dropdown_listBackground: palette.overlayBackgroundColor,
     dropdown_border: palette.baseBorderColor,
     dropdown_foreground: palette.textColor,
 
     // Input Control
-    // https://github.com/atom/one-dark-ui/blob/master/styles/inputs.less
-    // https://github.com/atom/one-dark-ui/blob/master/styles/editor.less
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/inputs.less
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/editor.less
     input_background: palette.inputBackgroundColor,
     input_border: palette.inputBorderColor,
     input_foreground: palette.textColorHighlight,
     input_placeholderForeground: palette.textColorSubtle,
     inputOption_activeBorder: palette.accentColor,
     inputValidation_errorBackground: palette.backgroundColorError,
+    inputValidation_errorForeground: palette.textColorHighlight,
     inputValidation_errorBorder: palette.textColorError,
     inputValidation_infoBackground: palette.backgroundColorInfo,
+    inputValidation_infoForeground: palette.textColorHighlight,
     inputValidation_infoBorder: palette.textColorInfo,
     inputValidation_warningBackground: palette.backgroundColorWarning,
+    inputValidation_warningForeground: palette.textColorHighlight,
     inputValidation_warningBorder: palette.textColorWarning,
 
     // Scrollbar Control
-    // https://github.com/atom/one-dark-ui/blob/master/styles/atom.less#L14
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/atom.less#L14
     scrollbar_shadow: TRANSPARENT,
     scrollbarSlider_activeBackground: palette.scrollbarColor.clone().setAlpha(0.5),
     scrollbarSlider_background: palette.scrollbarColor.clone().setAlpha(0.5),
     scrollbarSlider_hoverBackground: palette.scrollbarColor.clone().setAlpha(0.5),
 
     // Badge
-    // https://github.com/atom/one-dark-ui/blob/master/styles/badges.less
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/badges.less
     badge_foreground: palette.textColorHighlight,
     badge_background: palette.badgeBackgroundColor,
 
     // Progress Bar
-    // https://github.com/atom/one-dark-ui/blob/master/styles/progress.less
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/progress.less
     progressBar_background: palette.progressBackgroundColor,
 
     // Lists and Trees
-    // https://github.com/atom/one-dark-ui/blob/master/styles/lists.less
-    // https://github.com/atom/one-dark-ui/blob/master/styles/tree-view.less
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/lists.less
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/tree-view.less
     list_activeSelectionBackground: palette.buttonBackgroundColorSelected,
     list_activeSelectionForeground: palette.buttonTextColorSelected,
     list_dropBackground: palette.backgroundColorHighlight.clone().setAlpha(0.5),
@@ -95,12 +100,13 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     activityBar_background: palette.insetPanelBackgroundColor,
     activityBar_dropBackground: palette.backgroundColorHighlight.clone().setAlpha(0.5),
     activityBar_foreground: palette.textColorHighlight,
+    activityBar_inactiveForeground: palette.textColor,
     activityBar_border: palette.toolPanelBorderColor,
     activityBarBadge_background: INHERIT, // palette.badgeBackgroundColor
     activityBarBadge_foreground: INHERIT, // palette.textColorHighlight
 
     // Side Bar
-    // https://github.com/atom/one-dark-ui/blob/master/styles/panels.less
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/panels.less
     sideBar_background: palette.toolPanelBackgroundColor,
     sideBar_foreground: palette.textColor,
     sideBar_border: palette.toolPanelBorderColor,
@@ -108,9 +114,10 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     sideBarTitle_foreground: palette.textColorHighlight,
     sideBarSectionHeader_background: palette.panelHeadingBackgroundColor,
     sideBarSectionHeader_foreground: palette.textColor,
+    sideBarSectionHeader_border: INHERIT, // TRANSPARENT
 
     // Editor Groups & Tabs
-    // https://github.com/atom/one-dark-ui/blob/master/styles/tabs.less
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/tabs.less
     editorGroup_border: palette.toolPanelBorderColor,
     editorGroup_dropBackground: palette.backgroundColorHighlight.clone().setAlpha(0.5),
     editorGroupHeader_noTabsBackground: palette.tabBarBackgroundColor,
@@ -133,9 +140,13 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     tab_unfocusedHoverBackground: INHERIT, // TRANSPARENT
     tab_hoverBorder: INHERIT, // TRANSPARENT
     tab_unfocusedHoverBorder: INHERIT, // TRANSPARENT
+    tab_activeModifiedBorder: palette.accentColor,
+    tab_inactiveModifiedBorder: palette.accentColor,
+    tab_unfocusedActiveModifiedBorder: palette.accentColor,
+    tab_unfocusedInactiveModifiedBorder: palette.accentColor,
 
     // Editor Colors
-    // https://github.com/atom/one-dark-syntax/blob/master/styles/editor.less
+    // https://github.com/atom/atom/blob/master/packages/one-dark-syntax/styles/editor.less
     editor_background: palette.syntaxBackgroundColor,
     editor_foreground: palette.syntaxTextColor,
     editorLineNumber_foreground: palette.syntaxGutterTextColor,
@@ -193,14 +204,19 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     editorInfo_border: INHERIT, // TRANSPARENT
     editorHint_foreground: palette.textColorInfo,
     editorHint_border: INHERIT, // TRANSPARENT
-    editorUnnecessary_foreground: palette.mono2,
+    editorUnnecessaryCode_border: INHERIT, // TRANSPARENT
+    editorUnnecessaryCode_opacity: palette.mono2,
     editorGutter_background: palette.syntaxGutterBackgroundColor,
     editorGutter_modifiedBackground: palette.syntaxColorModified,
     editorGutter_addedBackground: palette.syntaxColorAdded,
     editorGutter_deletedBackground: palette.syntaxColorRemoved,
+    editor_snippetTabstopHighlightBackground: palette.syntaxResultMarkerColor,
+    editor_snippetTabstopHighlightBorder: INHERIT, // TRANSPARENT
+    editor_snippetFinalTabstopHighlightBackground: INHERIT, // TRANSPARENT
+    editor_snippetFinalTabstopHighlightBorder: palette.mono2,
 
     // Diff Editor Colors
-    // https://github.com/atom/one-dark-syntax/blob/master/styles/editor.less
+    // https://github.com/atom/atom/blob/master/packages/one-dark-syntax/styles/editor.less
     diffEditor_insertedTextBackground: palette.syntaxColorAdded.clone().setAlpha(0.24),
     diffEditor_insertedTextBorder: INHERIT, // TRANSPARENT
     diffEditor_removedTextBackground: palette.syntaxColorRemoved.clone().setAlpha(0.24),
@@ -208,7 +224,7 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     diffEditor_border: INHERIT, // TRANSPARENT
 
     // Editor Widget Colors
-    // https://github.com/atom/one-dark-ui/blob/master/styles/modal.less
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/modal.less
     editorWidget_background: palette.overlayBackgroundColor,
     editorWidget_border: palette.overlayBorderColor,
     editorWidget_resizeBorder: palette.overlayBackgroundColor,
@@ -255,7 +271,7 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     editorOverviewRuler_commonContentForeground: undefined,
 
     // Panel Colors
-    // https://github.com/atom/one-dark-ui/blob/master/styles/panels.less
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/panels.less
     panel_background: palette.toolPanelBackgroundColor,
     panel_border: palette.toolPanelBorderColor,
     panel_dropBackground: palette.backgroundColorHighlight.clone().setAlpha(0.5),
@@ -264,7 +280,7 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     panelTitle_inactiveForeground: palette.tabTextColor,
 
     // Status Bar Colors
-    // https://github.com/atom/one-dark-ui/blob/master/styles/status-bar.less
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/status-bar.less
     statusBar_background: palette.toolPanelBackgroundColor,
     statusBar_foreground: palette.textColor,
     statusBar_border: palette.toolPanelBorderColor,
@@ -279,16 +295,27 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     statusBarItem_prominentBackground: undefined,
     statusBarItem_prominentHoverBackground: undefined,
 
-    // Title Bar Colors (macOS)
-    // https://github.com/atom/one-dark-ui/blob/master/styles/title-bar.less
+    // Title Bar Colors
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/title-bar.less
     titleBar_activeBackground: palette.appBackgroundColor,
     titleBar_activeForeground: palette.textColorHighlight,
     titleBar_inactiveBackground: palette.appBackgroundColor,
     titleBar_inactiveForeground: palette.textColor,
     titleBar_border: palette.baseBorderColor,
 
+    // Menu Bar Colors
+    menubar_selectionForeground: INHERIT, // palette.textColorHighlight
+    menubar_selectionBackground: palette.buttonBackgroundColorSelected,
+    menubar_selectionBorder: INHERIT, // TRANSPARENT
+    menu_foreground: palette.textColorHighlight,
+    menu_background: palette.insetPanelBackgroundColor,
+    menu_selectionForeground: INHERIT, // palette.textColorHighlight
+    menu_selectionBackground: palette.buttonBackgroundColorSelected,
+    menu_selectionBorder: INHERIT, // TRANSPARENT
+    menu_separatorBackground: palette.baseBorderColor,
+
     // Notification Colors
-    // https://github.com/atom/one-dark-ui/blob/master/styles/modal.less
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/modal.less
     notificationCenter_border: INHERIT, // TRANSPARENT
     notificationCenterHeader_foreground: palette.textColorHighlight,
     notificationCenterHeader_background: palette.panelHeadingBackgroundColor,
@@ -341,7 +368,8 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     walkThrough_embeddedEditorBackground: palette.insetPanelBackgroundColor,
 
     // Git Colors
-    // https://github.com/atom/one-dark-ui/blob/master/styles/git.less
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/git.less
+    gitDecoration_addedResourceForeground: palette.textColorAdded,
     gitDecoration_modifiedResourceForeground: palette.textColorModified,
     gitDecoration_deletedResourceForeground: palette.textColorRemoved,
     gitDecoration_untrackedResourceForeground: palette.textColorAdded,
@@ -350,12 +378,13 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     gitDecoration_submoduleResourceForeground: INHERIT, // palette.textColor
 
     // Settings Editor Colors
-    // https://github.com/atom/one-dark-ui/blob/master/styles/settings.less
+    // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/settings.less
     settings_headerForeground: palette.textColorHighlight,
-    settings_modifiedItemForeground: palette.textColorAdded,
+    settings_modifiedItemIndicator: palette.textColorAdded,
     settings_dropdownBackground: INHERIT, // palette.inputBackgroundColor
     settings_dropdownForeground: INHERIT, // palette.textColor
     settings_dropdownBorder: INHERIT, // palette.baseBorderColor
+    settings_dropdownListBorder: INHERIT, // palette.overlayBorderColor
     settings_checkboxBackground: INHERIT, // palette.inputBackgroundColor
     settings_checkboxForeground: INHERIT, // palette.textColor
     settings_checkboxBorder: INHERIT, // palette.baseBorderColor
@@ -368,20 +397,9 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
 
     // Breadcrumbs
     breadcrumb_foreground: palette.textColor,
-    breadcrumb_background: INHERIT, // palette.syntaxBackgroundColor
     breadcrumb_focusForeground: palette.textColorHighlight,
     breadcrumb_activeSelectionForeground: palette.textColorHighlight,
     breadcrumbPicker_background: INHERIT, // palette.overlayBackgroundColor
-
-    // Menu
-    menu_background: palette.insetPanelBackgroundColor,
-    menu_foreground: palette.textColorHighlight,
-    menu_selectionBackground: palette.buttonBackgroundColorSelected,
-    menu_selectionForeground: INHERIT, // palette.textColorHighlight
-    menu_selectionBorder: INHERIT, // TRANSPARENT
-    menubar_selectionBackground: palette.buttonBackgroundColorSelected,
-    menubar_selectionForeground: INHERIT, // palette.textColorHighlight
-    menubar_selectionBorder: INHERIT, // TRANSPARENT
   }
 }
 
