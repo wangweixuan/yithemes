@@ -2,7 +2,7 @@
 */**
 !dist/dark.json
 !dist/light.json
-!dist/mdpreview.css
+!dist/markdown.css
 !graphics/logo.png
 !CHANGELOG.md
 !LICENSE.txt
