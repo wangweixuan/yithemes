@@ -205,7 +205,7 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     editorHint_foreground: palette.textColorInfo,
     editorHint_border: INHERIT, // TRANSPARENT
     editorUnnecessaryCode_border: INHERIT, // TRANSPARENT
-    editorUnnecessaryCode_opacity: palette.mono2,
+    editorUnnecessaryCode_opacity: INHERIT, // #000a, #0007
     editorGutter_background: palette.syntaxGutterBackgroundColor,
     editorGutter_modifiedBackground: palette.syntaxColorModified,
     editorGutter_addedBackground: palette.syntaxColorAdded,
@@ -361,6 +361,8 @@ function generate(palette: typeof darkPalette | typeof lightPalette) {
     // Debug
     debugToolBar_background: palette.overlayBackgroundColor,
     debugToolBar_border: INHERIT, // TRANSPARENT
+    editor_stackFrameHighlightBackground: INHERIT, // #ffff0033, #ffff6673
+    editor_focusedStackFrameHighlightBackground: INHERIT, // #7abd7a4d, #cee7ce73
 
     // Welcome Page
     welcomePage_buttonBackground: palette.buttonBackgroundColor,
