@@ -1,5 +1,9 @@
 # Version History
 
+## `0.8.1` November 17, 2018
+
+- Fixed the wrong color of unnecessary code.
+
 ## `0.8.0` November 2, 2018
 
 - Added support of modified tabs indicator colors introduces in Visual Studio Code 1.29.
