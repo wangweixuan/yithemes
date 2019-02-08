@@ -1,12 +1,17 @@
 # Version History
 
+## `0.9.0` February 8, 2019
+
+- Added support of list filter widget colors introduced in Visual Studio Code 1.31.
+- Updated links to point to [the new Visual Studio Code API documentation](https://code.visualstudio.com/api).
+
 ## `0.8.1` November 17, 2018
 
 - Fixed the wrong color of unnecessary code.
 
 ## `0.8.0` November 2, 2018
 
-- Added support of modified tabs indicator colors introduces in Visual Studio Code 1.29.
+- Added support of modified tabs indicator colors introduced in Visual Studio Code 1.29.
 - Added support of input validation foreground colors and snippet tabstop colors introduced in Visual Studio Code 1.28.
 - Added support of settings dropdown list border color and modified-item indicator color introduced in Visual Studio Code 1.27.
 - Updated links to point to [the new One Dark and One Light repository](https://github.com/atom/atom/issues/17854).
