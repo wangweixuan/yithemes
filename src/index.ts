@@ -1,31 +1,48 @@
 import { writeFile } from 'fs'
+import { join } from 'path'
 import * as tc from 'tinycolor2'
-import { dark as darkSyntax, light as lightSyntax} from './syntax'
-import { dark as darkWorkbench, light as lightWorkbench} from './workbench'
+import * as darkPalette from './dark'
+import * as lightPalette from './light'
 import { markdownCSS } from './markdown'
+import { generateSyntax } from './syntax'
+import { Palette } from './types'
+import { generateWorkbench } from './workbench'
+
+function assemble(name: string, type: 'dark' | 'light', palette: Palette) {
+  return JSON.stringify(
+    {
+      $schema: 'vscode://schemas/color-theme',
+      name,
+      type,
+      colors: generateWorkbench(palette),
+      tokenColors: generateSyntax(palette)
+    },
+    interpret
+  )
+}
 
 function interpret(key: string, value: any) {
   if (value && value instanceof tc) {
-    const color = value as tc.Instance
-    return color.getAlpha() === 1 ? color.toHexString() : color.toHex8String()
+    return value.getAlpha() === 1 ? value.toHexString() : value.toHex8String()
   }
+
   return value
 }
 
-writeFile('dist/dark.json', JSON.stringify({
-  $schema: 'vscode://schemas/color-theme',
-  name: 'Yi Dark',
-  type: 'dark',
-  colors: darkWorkbench,
-  tokenColors: darkSyntax
-}, interpret).replace(/_/g, '.'), err => { if (err) throw err })
+writeFile(
+  join(__dirname, '../dark.json'),
+  assemble('Yi Dark', 'dark', darkPalette),
+  (err) => { if (err) { throw err } }
+)
 
-writeFile('dist/light.json', JSON.stringify({
-  $schema: 'vscode://schemas/color-theme',
-  name: 'Yi Light',
-  type: 'light',
-  colors: lightWorkbench,
-  tokenColors: lightSyntax
-}, interpret).replace(/_/g, '.'), err => { if (err) throw err })
+writeFile(
+  join(__dirname, '../light.json'),
+  assemble('Yi Light', 'light', lightPalette),
+  (err) => { if (err) { throw err } }
+)
 
-writeFile('dist/markdown.css', markdownCSS, err => { if (err) throw err })
+writeFile(
+  join(__dirname, '../markdown.css'),
+  markdownCSS,
+  (err) => { if (err) { throw err } }
+)

@@ -1,409 +1,412 @@
 import * as tc from 'tinycolor2'
-import * as darkPalette from './dark'
-import * as lightPalette from './light'
+import { Palette } from './types'
 
 const INHERIT = undefined
 const TRANSPARENT = tc('transparent')
 
-// https://code.visualstudio.com/docs/getstarted/theme-color-reference
-function generate(palette: typeof darkPalette | typeof lightPalette) {
+// https://code.visualstudio.com/api/references/theme-color
+export function generateWorkbench(palette: Palette) {
   return {
     // Contrast Colors
-    contrastActiveBorder: INHERIT, // TRANSPARENT
-    contrastBorder: INHERIT, // TRANSPARENT
+    'contrastActiveBorder': INHERIT, // TRANSPARENT
+    'contrastBorder': INHERIT, // TRANSPARENT
 
     // Base Colors
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/ui-variables.less
-    focusBorder: palette.accentColor,
-    foreground: palette.textColor,
-    widget_shadow: tc({ h: 0, l: 0, s: 0, a: 0.4 }),
-    selection_background: palette.inputSelectionColorFocus,
-    descriptionForeground: palette.textColorSubtle,
-    errorForeground: palette.textColorError,
+    'focusBorder': palette.accentColor,
+    'foreground': palette.textColor,
+    'widget.shadow': tc({ h: 0, l: 0, s: 0, a: 0.4 }),
+    'selection.background': palette.inputSelectionColorFocus,
+    'descriptionForeground': palette.textColorSubtle,
+    'errorForeground': palette.textColorError,
 
     // Text Colors
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/text.less
-    textBlockQuote_background: palette.insetPanelBackgroundColor,
-    textBlockQuote_border: TRANSPARENT,
-    textCodeBlock_background: palette.backgroundColorHighlight,
-    textLink_activeForeground: palette.accentColor,
-    textLink_foreground: palette.accentColor,
-    textPreformat_foreground: INHERIT,
-    textSeparator_foreground: INHERIT,
+    'textBlockQuote.background': palette.insetPanelBackgroundColor,
+    'textBlockQuote.border': TRANSPARENT,
+    'textCodeBlock.background': palette.backgroundColorHighlight,
+    'textLink.activeForeground': palette.accentColor,
+    'textLink.foreground': palette.accentColor,
+    'textPreformat.foreground': INHERIT,
+    'textSeparator.foreground': INHERIT,
 
     // Button Control
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/buttons.less
-    button_background: palette.buttonBackgroundColor,
-    button_foreground: palette.textColor,
-    button_hoverBackground: palette.buttonBackgroundColorHover,
+    'button.background': palette.buttonBackgroundColor,
+    'button.foreground': palette.textColor,
+    'button.hoverBackground': palette.buttonBackgroundColorHover,
 
     // Dropdown Control
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/dropdowns.less
-    dropdown_background: palette.inputBackgroundColor,
-    dropdown_listBackground: palette.overlayBackgroundColor,
-    dropdown_border: palette.baseBorderColor,
-    dropdown_foreground: palette.textColor,
+    'dropdown.background': palette.inputBackgroundColor,
+    'dropdown.listBackground': palette.overlayBackgroundColor,
+    'dropdown.border': palette.baseBorderColor,
+    'dropdown.foreground': palette.textColor,
 
     // Input Control
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/inputs.less
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/editor.less
-    input_background: palette.inputBackgroundColor,
-    input_border: palette.inputBorderColor,
-    input_foreground: palette.textColorHighlight,
-    input_placeholderForeground: palette.textColorSubtle,
-    inputOption_activeBorder: palette.accentColor,
-    inputValidation_errorBackground: palette.backgroundColorError,
-    inputValidation_errorForeground: palette.textColorHighlight,
-    inputValidation_errorBorder: palette.textColorError,
-    inputValidation_infoBackground: palette.backgroundColorInfo,
-    inputValidation_infoForeground: palette.textColorHighlight,
-    inputValidation_infoBorder: palette.textColorInfo,
-    inputValidation_warningBackground: palette.backgroundColorWarning,
-    inputValidation_warningForeground: palette.textColorHighlight,
-    inputValidation_warningBorder: palette.textColorWarning,
+    'input.background': palette.inputBackgroundColor,
+    'input.border': palette.inputBorderColor,
+    'input.foreground': palette.textColorHighlight,
+    'input.placeholderForeground': palette.textColorSubtle,
+    'inputOption.activeBorder': palette.accentColor,
+    'inputValidation.errorBackground': palette.backgroundColorError,
+    'inputValidation.errorForeground': palette.textColorHighlight,
+    'inputValidation.errorBorder': palette.textColorError,
+    'inputValidation.infoBackground': palette.backgroundColorInfo,
+    'inputValidation.infoForeground': palette.textColorHighlight,
+    'inputValidation.infoBorder': palette.textColorInfo,
+    'inputValidation.warningBackground': palette.backgroundColorWarning,
+    'inputValidation.warningForeground': palette.textColorHighlight,
+    'inputValidation.warningBorder': palette.textColorWarning,
 
     // Scrollbar Control
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/atom.less#L14
-    scrollbar_shadow: TRANSPARENT,
-    scrollbarSlider_activeBackground: palette.scrollbarColor.clone().setAlpha(0.5),
-    scrollbarSlider_background: palette.scrollbarColor.clone().setAlpha(0.5),
-    scrollbarSlider_hoverBackground: palette.scrollbarColor.clone().setAlpha(0.5),
+    'scrollbar.shadow': TRANSPARENT,
+    'scrollbarSlider.activeBackground': palette.scrollbarColor.clone().setAlpha(0.5),
+    'scrollbarSlider.background': palette.scrollbarColor.clone().setAlpha(0.5),
+    'scrollbarSlider.hoverBackground': palette.scrollbarColor.clone().setAlpha(0.5),
 
     // Badge
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/badges.less
-    badge_foreground: palette.textColorHighlight,
-    badge_background: palette.badgeBackgroundColor,
+    'badge.foreground': palette.textColorHighlight,
+    'badge.background': palette.badgeBackgroundColor,
 
     // Progress Bar
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/progress.less
-    progressBar_background: palette.progressBackgroundColor,
+    'progressBar.background': palette.progressBackgroundColor,
 
     // Lists and Trees
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/lists.less
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/tree-view.less
-    list_activeSelectionBackground: palette.buttonBackgroundColorSelected,
-    list_activeSelectionForeground: palette.buttonTextColorSelected,
-    list_dropBackground: palette.backgroundColorHighlight.clone().setAlpha(0.5),
-    list_focusBackground: palette.buttonBackgroundColorSelected,
-    list_focusForeground: palette.buttonTextColorSelected,
-    list_highlightForeground: palette.textColorHighlight,
-    list_hoverBackground: TRANSPARENT,
-    list_hoverForeground: INHERIT,
-    list_inactiveSelectionBackground: palette.backgroundColorSelected,
-    list_inactiveSelectionForeground: palette.textColorSelected,
-    list_inactiveFocusBackground: palette.backgroundColorSelected,
-    list_invalidItemForeground: palette.textColorError,
-    list_errorForeground: palette.textColorError,
-    list_warningForeground: palette.textColorWarning,
+    'list.activeSelectionBackground': palette.buttonBackgroundColorSelected,
+    'list.activeSelectionForeground': palette.buttonTextColorSelected,
+    'list.dropBackground': palette.backgroundColorHighlight.clone().setAlpha(0.5),
+    'list.focusBackground': palette.buttonBackgroundColorSelected,
+    'list.focusForeground': palette.buttonTextColorSelected,
+    'list.highlightForeground': palette.textColorHighlight,
+    'list.hoverBackground': TRANSPARENT,
+    'list.hoverForeground': INHERIT,
+    'list.inactiveSelectionBackground': palette.backgroundColorSelected,
+    'list.inactiveSelectionForeground': palette.textColorSelected,
+    'list.inactiveFocusBackground': palette.backgroundColorSelected,
+    'list.invalidItemForeground': palette.textColorError,
+    'list.errorForeground': palette.textColorError,
+    'list.warningForeground': palette.textColorWarning,
+    'listFilterWidget.background': palette.inputBackgroundColor,
+    'listFilterWidget.outline': palette.accentColor,
+    'listFilterWidget.noMatchesOutline': palette.textColorError,
 
     // Activity Bar
-    activityBar_background: palette.insetPanelBackgroundColor,
-    activityBar_dropBackground: palette.backgroundColorHighlight.clone().setAlpha(0.5),
-    activityBar_foreground: palette.textColorHighlight,
-    activityBar_inactiveForeground: palette.textColor,
-    activityBar_border: palette.toolPanelBorderColor,
-    activityBarBadge_background: INHERIT, // palette.badgeBackgroundColor
-    activityBarBadge_foreground: INHERIT, // palette.textColorHighlight
+    'activityBar.background': palette.insetPanelBackgroundColor,
+    'activityBar.dropBackground': palette.backgroundColorHighlight.clone().setAlpha(0.5),
+    'activityBar.foreground': palette.textColorHighlight,
+    'activityBar.inactiveForeground': palette.textColor,
+    'activityBar.border': palette.toolPanelBorderColor,
+    'activityBarBadge.background': INHERIT, // badgeBackgroundColor
+    'activityBarBadge.foreground': INHERIT, // textColorHighlight
 
     // Side Bar
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/panels.less
-    sideBar_background: palette.toolPanelBackgroundColor,
-    sideBar_foreground: palette.textColor,
-    sideBar_border: palette.toolPanelBorderColor,
-    sideBar_dropBackground: palette.backgroundColorHighlight.clone().setAlpha(0.5),
-    sideBarTitle_foreground: palette.textColorHighlight,
-    sideBarSectionHeader_background: palette.panelHeadingBackgroundColor,
-    sideBarSectionHeader_foreground: palette.textColor,
-    sideBarSectionHeader_border: INHERIT, // TRANSPARENT
+    'sideBar.background': palette.toolPanelBackgroundColor,
+    'sideBar.foreground': palette.textColor,
+    'sideBar.border': palette.toolPanelBorderColor,
+    'sideBar.dropBackground': palette.backgroundColorHighlight.clone().setAlpha(0.5),
+    'sideBarTitle.foreground': palette.textColorHighlight,
+    'sideBarSectionHeader.background': palette.panelHeadingBackgroundColor,
+    'sideBarSectionHeader.foreground': palette.textColor,
+    'sideBarSectionHeader.border': INHERIT, // TRANSPARENT
 
     // Editor Groups & Tabs
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/tabs.less
-    editorGroup_border: palette.toolPanelBorderColor,
-    editorGroup_dropBackground: palette.backgroundColorHighlight.clone().setAlpha(0.5),
-    editorGroupHeader_noTabsBackground: palette.tabBarBackgroundColor,
-    editorGroupHeader_tabsBackground: palette.tabBarBackgroundColor,
-    editorGroupHeader_tabsBorder: palette.tabBarBorderColor,
-    editorGroup_emptyBackground: INHERIT, // palette.toolPanelBackgroundColor
-    editorGroup_focusedEmptyBorder: INHERIT, // palette.toolPanelBorderColor
-    tab_activeBackground: palette.tabBackgroundColorActive,
-    tab_activeForeground: palette.tabTextColorActive,
-    tab_border: palette.tabBorderColor,
-    tab_activeBorder: TRANSPARENT,
-    tab_unfocusedActiveBorder: TRANSPARENT,
-    tab_activeBorderTop: INHERIT, // TRANSPARENT
-    tab_unfocusedActiveBorderTop: INHERIT, // TRANSPARENT
-    tab_inactiveBackground: palette.tabBackgroundColor,
-    tab_inactiveForeground: palette.tabTextColor,
-    tab_unfocusedActiveForeground: palette.tabTextColorActive,
-    tab_unfocusedInactiveForeground: palette.tabTextColor,
-    tab_hoverBackground: INHERIT, // TRANSPARENT
-    tab_unfocusedHoverBackground: INHERIT, // TRANSPARENT
-    tab_hoverBorder: INHERIT, // TRANSPARENT
-    tab_unfocusedHoverBorder: INHERIT, // TRANSPARENT
-    tab_activeModifiedBorder: palette.accentColor,
-    tab_inactiveModifiedBorder: palette.accentColor,
-    tab_unfocusedActiveModifiedBorder: palette.accentColor,
-    tab_unfocusedInactiveModifiedBorder: palette.accentColor,
+    'editorGroup.border': palette.toolPanelBorderColor,
+    'editorGroup.dropBackground': palette.backgroundColorHighlight.clone().setAlpha(0.5),
+    'editorGroupHeader.noTabsBackground': palette.tabBarBackgroundColor,
+    'editorGroupHeader.tabsBackground': palette.tabBarBackgroundColor,
+    'editorGroupHeader.tabsBorder': palette.tabBarBorderColor,
+    'editorGroup.emptyBackground': INHERIT, // toolPanelBackgroundColor
+    'editorGroup.focusedEmptyBorder': INHERIT, // toolPanelBorderColor
+    'tab.activeBackground': palette.tabBackgroundColorActive,
+    'tab.activeForeground': palette.tabTextColorActive,
+    'tab.border': palette.tabBorderColor,
+    'tab.activeBorder': TRANSPARENT,
+    'tab.unfocusedActiveBorder': TRANSPARENT,
+    'tab.activeBorderTop': INHERIT, // TRANSPARENT
+    'tab.unfocusedActiveBorderTop': INHERIT, // TRANSPARENT
+    'tab.inactiveBackground': palette.tabBackgroundColor,
+    'tab.inactiveForeground': palette.tabTextColor,
+    'tab.unfocusedActiveForeground': palette.tabTextColorActive,
+    'tab.unfocusedInactiveForeground': palette.tabTextColor,
+    'tab.hoverBackground': INHERIT, // TRANSPARENT
+    'tab.unfocusedHoverBackground': INHERIT, // TRANSPARENT
+    'tab.hoverBorder': INHERIT, // TRANSPARENT
+    'tab.unfocusedHoverBorder': INHERIT, // TRANSPARENT
+    'tab.activeModifiedBorder': palette.accentColor,
+    'tab.inactiveModifiedBorder': palette.accentColor,
+    'tab.unfocusedActiveModifiedBorder': palette.accentColor,
+    'tab.unfocusedInactiveModifiedBorder': palette.accentColor,
+    'editorPane.background': INHERIT, // syntaxBackgroundColor
 
     // Editor Colors
     // https://github.com/atom/atom/blob/master/packages/one-dark-syntax/styles/editor.less
-    editor_background: palette.syntaxBackgroundColor,
-    editor_foreground: palette.syntaxTextColor,
-    editorLineNumber_foreground: palette.syntaxGutterTextColor,
-    editorLineNumber_activeForeground: palette.syntaxGutterTextColorSelected,
-    editorCursor_background: INHERIT, // palette.syntaxCursorColor
-    editorCursor_foreground: palette.syntaxCursorColor,
-    editor_selectionBackground: palette.syntaxSelectionColor,
-    editor_selectionForeground: INHERIT,
-    editor_inactiveSelectionBackground: palette.syntaxSelectionColor,
-    editor_selectionHighlightBackground: palette.syntaxCursorLine,
-    editor_selectionHighlightBorder: INHERIT, // TRANSPARENT
-    editor_wordHighlightBackground: TRANSPARENT,
-    // TODO word highlight is colliding with selection & selection highlight
-    editor_wordHighlightBorder: INHERIT, // TRANSPARENT
-    editor_wordHighlightStrongBackground: TRANSPARENT,
-    editor_wordHighlightStrongBorder: INHERIT, // TRANSPARENT
-    editor_findMatchBackground: palette.syntaxResultMarkerColor,
-    editor_findMatchHighlightBackground: palette.syntaxResultMarkerColor,
-    editor_findRangeHighlightBackground: palette.syntaxSelectionColor,
-    editor_findMatchBorder: palette.syntaxResultMarkerColorSelected,
-    editor_findMatchHighlightBorder: INHERIT, // TRANSPARENT
-    editor_findRangeHighlightBorder: INHERIT, // TRANSPARENT
-    editor_hoverHighlightBackground: TRANSPARENT,
-    editor_lineHighlightBackground: palette.syntaxCursorLine,
-    editor_lineHighlightBorder: TRANSPARENT,
-    editorLink_activeForeground: palette.hue1,
-    editor_rangeHighlightBackground: INHERIT, // TRANSPARENT
-    editor_rangeHighlightBorder: INHERIT, // TRANSPARENT
-    editorWhitespace_foreground: palette.syntaxInvisibleCharacterColor,
-    editorIndentGuide_background: palette.syntaxIndentGuideColor,
-    editorIndentGuide_activeBackground: palette.syntaxGutterTextColor,
-    editorRuler_foreground: palette.syntaxWrapGuideColor,
-    editorCodeLens_foreground: palette.mono3,
-    editorBracketMatch_background: TRANSPARENT,
-    editorBracketMatch_border: palette.syntaxCursorColor,
-    editorOverviewRuler_border: TRANSPARENT,
+    'editor.background': palette.syntaxBackgroundColor,
+    'editor.foreground': palette.syntaxTextColor,
+    'editorLineNumber.foreground': palette.syntaxGutterTextColor,
+    'editorLineNumber.activeForeground': palette.syntaxGutterTextColorSelected,
+    'editorCursor.background': INHERIT, // syntaxCursorColor
+    'editorCursor.foreground': palette.syntaxCursorColor,
+    'editor.selectionBackground': palette.syntaxSelectionColor,
+    'editor.selectionForeground': INHERIT,
+    'editor.inactiveSelectionBackground': palette.syntaxSelectionColor,
+    'editor.selectionHighlightBackground': palette.syntaxCursorLine,
+    'editor.selectionHighlightBorder': INHERIT, // TRANSPARENT
+    'editor.wordHighlightBackground': TRANSPARENT,
+    // TODO: word highlight is colliding with selection & selection highlight
+    'editor.wordHighlightBorder': INHERIT, // TRANSPARENT
+    'editor.wordHighlightStrongBackground': TRANSPARENT,
+    'editor.wordHighlightStrongBorder': INHERIT, // TRANSPARENT
+    'editor.findMatchBackground': palette.syntaxResultMarkerColor,
+    'editor.findMatchHighlightBackground': palette.syntaxResultMarkerColor,
+    'editor.findRangeHighlightBackground': palette.syntaxSelectionColor,
+    'editor.findMatchBorder': palette.syntaxResultMarkerColorSelected,
+    'editor.findMatchHighlightBorder': INHERIT, // TRANSPARENT
+    'editor.findRangeHighlightBorder': INHERIT, // TRANSPARENT
+    'editor.hoverHighlightBackground': TRANSPARENT,
+    'editor.lineHighlightBackground': palette.syntaxCursorLine,
+    'editor.lineHighlightBorder': TRANSPARENT,
+    'editorLink.activeForeground': palette.hue1,
+    'editor.rangeHighlightBackground': INHERIT, // TRANSPARENT
+    'editor.rangeHighlightBorder': INHERIT, // TRANSPARENT
+    'editorWhitespace.foreground': palette.syntaxInvisibleCharacterColor,
+    'editorIndentGuide.background': palette.syntaxIndentGuideColor,
+    'editorIndentGuide.activeBackground': palette.syntaxGutterTextColor,
+    'editorRuler.foreground': palette.syntaxWrapGuideColor,
+    'editorCodeLens.foreground': palette.mono3,
+    'editorBracketMatch.background': TRANSPARENT,
+    'editorBracketMatch.border': palette.syntaxCursorColor,
+    'editorOverviewRuler.border': TRANSPARENT,
     // TODO editor.overviewRulerBorder user setting is not regarded
-    editorOverviewRuler_findMatchForeground: palette.syntaxResultMarkerColor,
-    editorOverviewRuler_rangeHighlightForeground: INHERIT, // TRANSPARENT
-    editorOverviewRuler_selectionHighlightForeground: palette.syntaxGutterBackgroundColorSelected,
-    editorOverviewRuler_wordHighlightForeground: palette.syntaxGutterBackgroundColorSelected,
-    editorOverviewRuler_wordHighlightStrongForeground: palette.syntaxGutterBackgroundColorSelected,
-    editorOverviewRuler_modifiedForeground: palette.syntaxColorModified,
-    editorOverviewRuler_addedForeground: palette.syntaxColorAdded,
-    editorOverviewRuler_deletedForeground: palette.syntaxColorRemoved,
-    editorOverviewRuler_errorForeground: palette.textColorError,
-    editorOverviewRuler_warningForeground: palette.textColorWarning,
-    editorOverviewRuler_infoForeground: palette.textColorInfo,
-    editorOverviewRuler_bracketMatchForeground: palette.syntaxGutterBackgroundColorSelected,
-    editorError_foreground: palette.textColorError,
-    editorError_border: INHERIT, // TRANSPARENT
-    editorWarning_foreground: palette.textColorWarning,
-    editorWarning_border: INHERIT, // TRANSPARENT
-    editorInfo_foreground: palette.textColorInfo,
-    editorInfo_border: INHERIT, // TRANSPARENT
-    editorHint_foreground: palette.textColorInfo,
-    editorHint_border: INHERIT, // TRANSPARENT
-    editorUnnecessaryCode_border: INHERIT, // TRANSPARENT
-    editorUnnecessaryCode_opacity: INHERIT, // #000a, #0007
-    editorGutter_background: palette.syntaxGutterBackgroundColor,
-    editorGutter_modifiedBackground: palette.syntaxColorModified,
-    editorGutter_addedBackground: palette.syntaxColorAdded,
-    editorGutter_deletedBackground: palette.syntaxColorRemoved,
-    editor_snippetTabstopHighlightBackground: palette.syntaxResultMarkerColor,
-    editor_snippetTabstopHighlightBorder: INHERIT, // TRANSPARENT
-    editor_snippetFinalTabstopHighlightBackground: INHERIT, // TRANSPARENT
-    editor_snippetFinalTabstopHighlightBorder: palette.mono2,
+    'editorOverviewRuler.findMatchForeground': palette.syntaxResultMarkerColor,
+    'editorOverviewRuler.rangeHighlightForeground': INHERIT, // TRANSPARENT
+    'editorOverviewRuler.selectionHighlightForeground': palette.syntaxGutterBackgroundColorSelected,
+    'editorOverviewRuler.wordHighlightForeground': palette.syntaxGutterBackgroundColorSelected,
+    'editorOverviewRuler.wordHighlightStrongForeground': palette.syntaxGutterBackgroundColorSelected,
+    'editorOverviewRuler.modifiedForeground': palette.syntaxColorModified,
+    'editorOverviewRuler.addedForeground': palette.syntaxColorAdded,
+    'editorOverviewRuler.deletedForeground': palette.syntaxColorRemoved,
+    'editorOverviewRuler.errorForeground': palette.textColorError,
+    'editorOverviewRuler.warningForeground': palette.textColorWarning,
+    'editorOverviewRuler.infoForeground': palette.textColorInfo,
+    'editorOverviewRuler.bracketMatchForeground': palette.syntaxGutterBackgroundColorSelected,
+    'editorError.foreground': palette.textColorError,
+    'editorError.border': INHERIT, // TRANSPARENT
+    'editorWarning.foreground': palette.textColorWarning,
+    'editorWarning.border': INHERIT, // TRANSPARENT
+    'editorInfo.foreground': palette.textColorInfo,
+    'editorInfo.border': INHERIT, // TRANSPARENT
+    'editorHint.foreground': palette.textColorInfo,
+    'editorHint.border': INHERIT, // TRANSPARENT
+    'editorUnnecessaryCode.border': INHERIT, // TRANSPARENT
+    'editorUnnecessaryCode.opacity': INHERIT, // #000a, #0007
+    'editorGutter.background': palette.syntaxGutterBackgroundColor,
+    'editorGutter.modifiedBackground': palette.syntaxColorModified,
+    'editorGutter.addedBackground': palette.syntaxColorAdded,
+    'editorGutter.deletedBackground': palette.syntaxColorRemoved,
 
     // Diff Editor Colors
     // https://github.com/atom/atom/blob/master/packages/one-dark-syntax/styles/editor.less
-    diffEditor_insertedTextBackground: palette.syntaxColorAdded.clone().setAlpha(0.24),
-    diffEditor_insertedTextBorder: INHERIT, // TRANSPARENT
-    diffEditor_removedTextBackground: palette.syntaxColorRemoved.clone().setAlpha(0.24),
-    diffEditor_removedTextBorder: INHERIT, // TRANSPARENT
-    diffEditor_border: INHERIT, // TRANSPARENT
+    'diffEditor.insertedTextBackground': palette.syntaxColorAdded.clone().setAlpha(0.24),
+    'diffEditor.insertedTextBorder': INHERIT, // TRANSPARENT
+    'diffEditor.removedTextBackground': palette.syntaxColorRemoved.clone().setAlpha(0.24),
+    'diffEditor.removedTextBorder': INHERIT, // TRANSPARENT
+    'diffEditor.border': INHERIT, // TRANSPARENT
 
     // Editor Widget Colors
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/modal.less
-    editorWidget_background: palette.overlayBackgroundColor,
-    editorWidget_border: palette.overlayBorderColor,
-    editorWidget_resizeBorder: palette.overlayBackgroundColor,
-    editorSuggestWidget_background: INHERIT, // palette.overlayBackgroundColor
-    editorSuggestWidget_border: INHERIT, // palette.overlayBorderColor
-    editorSuggestWidget_foreground: INHERIT, // palette.textColor
-    editorSuggestWidget_highlightForeground: INHERIT, // palette.textColorHighlight
-    editorSuggestWidget_selectedBackground: INHERIT, // palette.buttonBackgroundColorSelected
-    editorHoverWidget_background: INHERIT, // palette.overlayBackgroundColor
-    editorHoverWidget_border: INHERIT, // palette.overlayBorderColor
-    debugExceptionWidget_background: INHERIT, // palette.overlayBackgroundColor
-    debugExceptionWidget_border: INHERIT, // palette.overlayBorderColor
-    editorMarkerNavigation_background: palette.backgroundColorHighlight,
-    editorMarkerNavigationError_background: palette.backgroundColorError,
-    editorMarkerNavigationWarning_background: palette.backgroundColorWarning,
-    editorMarkerNavigationInfo_background: palette.backgroundColorInfo,
+    'editorWidget.background': palette.overlayBackgroundColor,
+    'editorWidget.border': palette.overlayBorderColor,
+    'editorWidget.resizeBorder': palette.overlayBackgroundColor,
+    'editorSuggestWidget.background': INHERIT, // overlayBackgroundColor
+    'editorSuggestWidget.border': INHERIT, // overlayBorderColor
+    'editorSuggestWidget.foreground': INHERIT, // textColor
+    'editorSuggestWidget.highlightForeground': INHERIT, // textColorHighlight
+    'editorSuggestWidget.selectedBackground': INHERIT, // buttonBackgroundColorSelected
+    'editorHoverWidget.background': INHERIT, // overlayBackgroundColor
+    'editorHoverWidget.border': INHERIT, // overlayBorderColor
+    'debugExceptionWidget.background': INHERIT, // overlayBackgroundColor
+    'debugExceptionWidget.border': INHERIT, // overlayBorderColor
+    'editorMarkerNavigation.background': palette.backgroundColorHighlight,
+    'editorMarkerNavigationError.background': palette.backgroundColorError,
+    'editorMarkerNavigationWarning.background': palette.backgroundColorWarning,
+    'editorMarkerNavigationInfo.background': palette.backgroundColorInfo,
 
     // Peek View Colors
-    peekView_border: palette.accentColor,
-    peekViewEditor_background: palette.insetPanelBackgroundColor,
-    peekViewEditorGutter_background: INHERIT, // palette.insetPanelBackgroundColor
-    peekViewEditor_matchHighlightBackground: palette.syntaxResultMarkerColor,
-    peekViewEditor_matchHighlightBorder: INHERIT, // TRANSPARENT
-    peekViewResult_background: palette.panelHeadingBackgroundColor,
-    peekViewResult_fileForeground: palette.textColorHighlight,
-    peekViewResult_lineForeground: palette.textColor,
-    peekViewResult_matchHighlightBackground: palette.syntaxResultMarkerColor,
-    peekViewResult_selectionBackground: palette.buttonBackgroundColorSelected,
-    peekViewResult_selectionForeground: palette.buttonTextColorSelected,
-    peekViewTitle_background: palette.panelHeadingBackgroundColor,
-    peekViewTitleDescription_foreground: palette.textColor,
-    peekViewTitleLabel_foreground: palette.textColorHighlight,
+    'peekView.border': palette.accentColor,
+    'peekViewEditor.background': palette.insetPanelBackgroundColor,
+    'peekViewEditorGutter.background': INHERIT, // insetPanelBackgroundColor
+    'peekViewEditor.matchHighlightBackground': palette.syntaxResultMarkerColor,
+    'peekViewEditor.matchHighlightBorder': INHERIT, // TRANSPARENT
+    'peekViewResult.background': palette.panelHeadingBackgroundColor,
+    'peekViewResult.fileForeground': palette.textColorHighlight,
+    'peekViewResult.lineForeground': palette.textColor,
+    'peekViewResult.matchHighlightBackground': palette.syntaxResultMarkerColor,
+    'peekViewResult.selectionBackground': palette.buttonBackgroundColorSelected,
+    'peekViewResult.selectionForeground': palette.buttonTextColorSelected,
+    'peekViewTitle.background': palette.panelHeadingBackgroundColor,
+    'peekViewTitleDescription.foreground': palette.textColor,
+    'peekViewTitleLabel.foreground': palette.textColorHighlight,
 
     // Merge Conflicts
-    merge_currentHeaderBackground: undefined,
-    merge_currentContentBackground: undefined,
-    merge_incomingHeaderBackground: undefined,
-    merge_incomingContentBackground: undefined,
-    merge_border: undefined,
-    merge_commonContentBackground: undefined,
-    merge_commonHeaderBackground: undefined,
-    editorOverviewRuler_currentContentForeground: undefined,
-    editorOverviewRuler_incomingContentForeground: undefined,
-    editorOverviewRuler_commonContentForeground: undefined,
+    'merge.currentHeaderBackground': undefined,
+    'merge.currentContentBackground': undefined,
+    'merge.incomingHeaderBackground': undefined,
+    'merge.incomingContentBackground': undefined,
+    'merge.border': undefined,
+    'merge.commonContentBackground': undefined,
+    'merge.commonHeaderBackground': undefined,
+    'editorOverviewRuler.currentContentForeground': undefined,
+    'editorOverviewRuler.incomingContentForeground': undefined,
+    'editorOverviewRuler.commonContentForeground': undefined,
 
     // Panel Colors
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/panels.less
-    panel_background: palette.toolPanelBackgroundColor,
-    panel_border: palette.toolPanelBorderColor,
-    panel_dropBackground: palette.backgroundColorHighlight.clone().setAlpha(0.5),
-    panelTitle_activeBorder: TRANSPARENT,
-    panelTitle_activeForeground: palette.tabTextColorActive,
-    panelTitle_inactiveForeground: palette.tabTextColor,
+    'panel.background': palette.toolPanelBackgroundColor,
+    'panel.border': palette.toolPanelBorderColor,
+    'panel.dropBackground': palette.backgroundColorHighlight.clone().setAlpha(0.5),
+    'panelTitle.activeBorder': TRANSPARENT,
+    'panelTitle.activeForeground': palette.tabTextColorActive,
+    'panelTitle.inactiveForeground': palette.tabTextColor,
 
     // Status Bar Colors
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/status-bar.less
-    statusBar_background: palette.toolPanelBackgroundColor,
-    statusBar_foreground: palette.textColor,
-    statusBar_border: palette.toolPanelBorderColor,
-    statusBar_debuggingBackground: undefined,
-    statusBar_debuggingForeground: INHERIT, // palette.textColor
-    statusBar_debuggingBorder: INHERIT, // palette.toolPanelBorderColor
-    statusBar_noFolderBackground: undefined,
-    statusBar_noFolderForeground: INHERIT, // palette.textColor
-    statusBar_noFolderBorder: INHERIT, // palette.toolPanelBorderColor
-    statusBarItem_activeBackground: palette.level3ColorActive,
-    statusBarItem_hoverBackground: palette.level3ColorHover,
-    statusBarItem_prominentBackground: undefined,
-    statusBarItem_prominentHoverBackground: undefined,
+    'statusBar.background': palette.toolPanelBackgroundColor,
+    'statusBar.foreground': palette.textColor,
+    'statusBar.border': palette.toolPanelBorderColor,
+    'statusBar.debuggingBackground': undefined,
+    'statusBar.debuggingForeground': INHERIT, // textColor
+    'statusBar.debuggingBorder': INHERIT, // toolPanelBorderColor
+    'statusBar.noFolderBackground': undefined,
+    'statusBar.noFolderForeground': INHERIT, // textColor
+    'statusBar.noFolderBorder': INHERIT, // toolPanelBorderColor
+    'statusBarItem.activeBackground': palette.level3ColorActive,
+    'statusBarItem.hoverBackground': palette.level3ColorHover,
+    'statusBarItem.prominentBackground': undefined,
+    'statusBarItem.prominentHoverBackground': undefined,
 
     // Title Bar Colors
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/title-bar.less
-    titleBar_activeBackground: palette.appBackgroundColor,
-    titleBar_activeForeground: palette.textColorHighlight,
-    titleBar_inactiveBackground: palette.appBackgroundColor,
-    titleBar_inactiveForeground: palette.textColor,
-    titleBar_border: palette.baseBorderColor,
+    'titleBar.activeBackground': palette.appBackgroundColor,
+    'titleBar.activeForeground': palette.textColorHighlight,
+    'titleBar.inactiveBackground': palette.appBackgroundColor,
+    'titleBar.inactiveForeground': palette.textColor,
+    'titleBar.border': palette.baseBorderColor,
 
     // Menu Bar Colors
-    menubar_selectionForeground: INHERIT, // palette.textColorHighlight
-    menubar_selectionBackground: palette.buttonBackgroundColorSelected,
-    menubar_selectionBorder: INHERIT, // TRANSPARENT
-    menu_foreground: palette.textColorHighlight,
-    menu_background: palette.insetPanelBackgroundColor,
-    menu_selectionForeground: INHERIT, // palette.textColorHighlight
-    menu_selectionBackground: palette.buttonBackgroundColorSelected,
-    menu_selectionBorder: INHERIT, // TRANSPARENT
-    menu_separatorBackground: palette.baseBorderColor,
+    'menubar.selectionForeground': INHERIT, // textColorHighlight
+    'menubar.selectionBackground': palette.buttonBackgroundColorSelected,
+    'menubar.selectionBorder': INHERIT, // TRANSPARENT
+    'menu.foreground': palette.textColorHighlight,
+    'menu.background': palette.insetPanelBackgroundColor,
+    'menu.selectionForeground': INHERIT, // textColorHighlight
+    'menu.selectionBackground': palette.buttonBackgroundColorSelected,
+    'menu.selectionBorder': INHERIT, // TRANSPARENT
+    'menu.separatorBackground': palette.baseBorderColor,
 
     // Notification Colors
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/modal.less
-    notificationCenter_border: INHERIT, // TRANSPARENT
-    notificationCenterHeader_foreground: palette.textColorHighlight,
-    notificationCenterHeader_background: palette.panelHeadingBackgroundColor,
-    notificationToast_border: INHERIT, // TRANSPARENT
-    notifications_foreground: INHERIT, // palette.textColor
-    notifications_background: palette.insetPanelBackgroundColor,
-    notifications_border: palette.insetPanelBorderColor,
-    notificationLink_foreground: INHERIT, // palette.accentColor
+    'notificationCenter.border': INHERIT, // TRANSPARENT
+    'notificationCenterHeader.foreground': palette.textColorHighlight,
+    'notificationCenterHeader.background': palette.panelHeadingBackgroundColor,
+    'notificationToast.border': INHERIT, // TRANSPARENT
+    'notifications.foreground': INHERIT, // textColor
+    'notifications.background': palette.insetPanelBackgroundColor,
+    'notifications.border': palette.insetPanelBorderColor,
+    'notificationLink.foreground': INHERIT, // accentColor
 
     // Extensions
-    extensionButton_prominentForeground: palette.textColorHighlight,
-    extensionButton_prominentBackground: palette.accentBgColor,
-    extensionButton_prominentHoverBackground: palette.accentBgColor,
+    'extensionButton.prominentForeground': palette.textColorHighlight,
+    'extensionButton.prominentBackground': palette.accentBgColor,
+    'extensionButton.prominentHoverBackground': palette.accentBgColor,
 
     // Quick Picker
-    pickerGroup_border: palette.overlayBorderColor,
-    pickerGroup_foreground: palette.textColor,
+    'pickerGroup.border': palette.overlayBorderColor,
+    'pickerGroup.foreground': palette.textColor,
 
     // Integrated Terminal Colors
-    terminal_background: INHERIT,
-    terminal_border: INHERIT, // palette.toolPanelBorderColor
-    terminal_foreground: INHERIT,
-    terminal_ansiBlack: INHERIT,
-    terminal_ansiBlue: INHERIT,
-    terminal_ansiBrightBlack: INHERIT,
-    terminal_ansiBrightBlue: INHERIT,
-    terminal_ansiBrightCyan: INHERIT,
-    terminal_ansiBrightGreen: INHERIT,
-    terminal_ansiBrightMagenta: INHERIT,
-    terminal_ansiBrightRed: INHERIT,
-    terminal_ansiBrightWhite: INHERIT,
-    terminal_ansiBrightYellow: INHERIT,
-    terminal_ansiCyan: INHERIT,
-    terminal_ansiGreen: INHERIT,
-    terminal_ansiMagenta: INHERIT,
-    terminal_ansiRed: INHERIT,
-    terminal_ansiWhite: INHERIT,
-    terminal_ansiYellow: INHERIT,
-    terminal_selectionBackground: INHERIT,
-    terminalCursor_background: INHERIT,
-    terminalCursor_foreground: INHERIT,
+    'terminal.background': INHERIT,
+    'terminal.border': INHERIT, // toolPanelBorderColor
+    'terminal.foreground': INHERIT,
+    'terminal.ansiBlack': INHERIT,
+    'terminal.ansiBlue': INHERIT,
+    'terminal.ansiBrightBlack': INHERIT,
+    'terminal.ansiBrightBlue': INHERIT,
+    'terminal.ansiBrightCyan': INHERIT,
+    'terminal.ansiBrightGreen': INHERIT,
+    'terminal.ansiBrightMagenta': INHERIT,
+    'terminal.ansiBrightRed': INHERIT,
+    'terminal.ansiBrightWhite': INHERIT,
+    'terminal.ansiBrightYellow': INHERIT,
+    'terminal.ansiCyan': INHERIT,
+    'terminal.ansiGreen': INHERIT,
+    'terminal.ansiMagenta': INHERIT,
+    'terminal.ansiRed': INHERIT,
+    'terminal.ansiWhite': INHERIT,
+    'terminal.ansiYellow': INHERIT,
+    'terminal.selectionBackground': INHERIT,
+    'terminalCursor.background': INHERIT,
+    'terminalCursor.foreground': INHERIT,
 
     // Debug
-    debugToolBar_background: palette.overlayBackgroundColor,
-    debugToolBar_border: INHERIT, // TRANSPARENT
-    editor_stackFrameHighlightBackground: INHERIT, // #ffff0033, #ffff6673
-    editor_focusedStackFrameHighlightBackground: INHERIT, // #7abd7a4d, #cee7ce73
+    'debugToolBar.background': palette.overlayBackgroundColor,
+    'debugToolBar.border': INHERIT, // TRANSPARENT
+    'editor.stackFrameHighlightBackground': INHERIT, // #ffff0033, #ffff6673
+    'editor.focusedStackFrameHighlightBackground': INHERIT, // #7abd7a4d, #cee7ce73
 
     // Welcome Page
-    welcomePage_buttonBackground: palette.buttonBackgroundColor,
-    welcomePage_buttonHoverBackground: palette.buttonBackgroundColorHover,
-    walkThrough_embeddedEditorBackground: palette.insetPanelBackgroundColor,
+    'welcomePage.buttonBackground': palette.buttonBackgroundColor,
+    'welcomePage.buttonHoverBackground': palette.buttonBackgroundColorHover,
+    'walkThrough.embeddedEditorBackground': palette.insetPanelBackgroundColor,
 
     // Git Colors
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/git.less
-    gitDecoration_addedResourceForeground: palette.textColorAdded,
-    gitDecoration_modifiedResourceForeground: palette.textColorModified,
-    gitDecoration_deletedResourceForeground: palette.textColorRemoved,
-    gitDecoration_untrackedResourceForeground: palette.textColorAdded,
-    gitDecoration_ignoredResourceForeground: palette.textColorIgnored,
-    gitDecoration_conflictingResourceForeground: INHERIT, // palette.textColor
-    gitDecoration_submoduleResourceForeground: INHERIT, // palette.textColor
+    'gitDecoration.addedResourceForeground': palette.textColorAdded,
+    'gitDecoration.modifiedResourceForeground': palette.textColorModified,
+    'gitDecoration.deletedResourceForeground': palette.textColorRemoved,
+    'gitDecoration.untrackedResourceForeground': palette.textColorAdded,
+    'gitDecoration.ignoredResourceForeground': palette.textColorIgnored,
+    'gitDecoration.conflictingResourceForeground': INHERIT, // textColor
+    'gitDecoration.submoduleResourceForeground': INHERIT, // textColor
 
     // Settings Editor Colors
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/settings.less
-    settings_headerForeground: palette.textColorHighlight,
-    settings_modifiedItemIndicator: palette.textColorAdded,
-    settings_dropdownBackground: INHERIT, // palette.inputBackgroundColor
-    settings_dropdownForeground: INHERIT, // palette.textColor
-    settings_dropdownBorder: INHERIT, // palette.baseBorderColor
-    settings_dropdownListBorder: INHERIT, // palette.overlayBorderColor
-    settings_checkboxBackground: INHERIT, // palette.inputBackgroundColor
-    settings_checkboxForeground: INHERIT, // palette.textColor
-    settings_checkboxBorder: INHERIT, // palette.baseBorderColor
-    settings_textInputBackground: INHERIT, // palette.inputBackgroundColor
-    settings_textInputForeground: INHERIT, // palette.textColorHighlight
-    settings_textInputBorder: INHERIT, // palette.inputBorderColor
-    settings_numberInputBackground: INHERIT, // palette.inputBackgroundColor
-    settings_numberInputForeground: INHERIT, // palette.textColorHighlight
-    settings_numberInputBorder: INHERIT, // palette.inputBorderColor
+    'settings.headerForeground': palette.textColorHighlight,
+    'settings.modifiedItemIndicator': palette.textColorAdded,
+    'settings.dropdownBackground': INHERIT, // inputBackgroundColor
+    'settings.dropdownForeground': INHERIT, // textColor
+    'settings.dropdownBorder': INHERIT, // baseBorderColor
+    'settings.dropdownListBorder': INHERIT, // overlayBorderColor
+    'settings.checkboxBackground': INHERIT, // inputBackgroundColor
+    'settings.checkboxForeground': INHERIT, // textColor
+    'settings.checkboxBorder': INHERIT, // baseBorderColor
+    'settings.textInputBackground': INHERIT, // inputBackgroundColor
+    'settings.textInputForeground': INHERIT, // textColorHighlight
+    'settings.textInputBorder': INHERIT, // inputBorderColor
+    'settings.numberInputBackground': INHERIT, // inputBackgroundColor
+    'settings.numberInputForeground': INHERIT, // textColorHighlight
+    'settings.numberInputBorder': INHERIT, // inputBorderColor
 
     // Breadcrumbs
-    breadcrumb_foreground: palette.textColor,
-    breadcrumb_focusForeground: palette.textColorHighlight,
-    breadcrumb_activeSelectionForeground: palette.textColorHighlight,
-    breadcrumbPicker_background: INHERIT, // palette.overlayBackgroundColor
+    'breadcrumb.background': INHERIT, // syntaxBackgroundColor
+    'breadcrumb.foreground': palette.textColor,
+    'breadcrumb.focusForeground': palette.textColorHighlight,
+    'breadcrumb.activeSelectionForeground': palette.textColorHighlight,
+    'breadcrumbPicker.background': INHERIT, // overlayBackgroundColor
+
+    // Snippets
+    'editor.snippetTabstopHighlightBackground': palette.syntaxResultMarkerColor,
+    'editor.snippetTabstopHighlightBorder': INHERIT, // TRANSPARENT
+    'editor.snippetFinalTabstopHighlightBackground': INHERIT, // TRANSPARENT
+    'editor.snippetFinalTabstopHighlightBorder': palette.mono2,
   }
 }
-
-export const dark = generate(darkPalette)
-export const light = generate(lightPalette)
