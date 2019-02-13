@@ -109,19 +109,20 @@ export const level3ColorActive = level3Color.clone().darken(3)
 
 export const accentLuma = tc({ h: uiHue, s: 0.5, l: 0.5 }).getLuminance()
 
-export const accentColor = tc.mix(
-  tc({ h: uiHue, s: 0.6, l: 0.6 }), tc({ h: uiHue, s: 1, l: 0.68 }), accentLuma * 2
-)
+// TODO: check tc.mix
+export const accentColor = tc('#556de8') /* tc.mix(
+  tc({ h: uiHue, s: 0.6, v: 0.6 }), tc({ h: uiHue, s: 1, l: 0.68 }), accentLuma * 2
+) */
 export const accentTextColor = tc.mostReadable(
   accentColor, [tc({ h: uiHue, s: 1, l: 0.16 }), tc('white')]
 ) // TODO threshold 0.4 missing
 
-export const accentBgColor = tc.mix(
+export const accentBgColor = tc('#5871ef') /* tc.mix(
   tc({ h: uiHue, s: 0.4, v: 0.72 }), tc({ h: uiHue, s: 1, l: 0.66 }), accentLuma * 2
-)
-export const accentBgTextColor = tc.mostReadable(
+) */
+export const accentBgTextColor = tc('white') /* tc.mostReadable(
   accentBgColor, [tc({ h: uiHue, s: 1, l: 0.1 }), tc('white')]
-) // TODO threshold 0.4 missing
+) // TODO threshold 0.4 missing */
 
 export const accentOnlyTextColor = tc.mix(
   tc({ h: uiHue, s: 0.7, v: 0.5 }), tc({ h: uiHue, s: 1, l: 0.6 }), accentLuma * 2
@@ -138,6 +139,7 @@ export const backgroundColorError = tc({ h: 5, s: 0.72, l: 0.56 })
 
 export const backgroundColorHighlight = baseBackgroundColor.clone().darken(2)
 export const backgroundColorSelected = baseBackgroundColor.clone().darken(6)
+export const backgroundColorInactive = tc('#dbdbdc')
 
 export const appBackgroundColor = level3Color
 

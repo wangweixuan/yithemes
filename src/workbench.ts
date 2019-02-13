@@ -82,15 +82,15 @@ export function generateWorkbench(palette: Palette) {
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/tree-view.less
     'list.activeSelectionBackground': palette.buttonBackgroundColorSelected,
     'list.activeSelectionForeground': palette.buttonTextColorSelected,
-    'list.dropBackground': palette.backgroundColorHighlight.clone().setAlpha(0.5),
-    'list.focusBackground': palette.buttonBackgroundColorSelected,
-    'list.focusForeground': palette.buttonTextColorSelected,
-    'list.highlightForeground': palette.textColorHighlight,
+    'list.dropBackground': palette.backgroundColorHighlight,
+    'list.focusBackground': palette.backgroundColorInactive,
+    'list.focusForeground': palette.textColorSelected,
+    'list.highlightForeground': palette.accentColor,
     'list.hoverBackground': TRANSPARENT,
-    'list.hoverForeground': INHERIT,
-    'list.inactiveSelectionBackground': palette.backgroundColorSelected,
-    'list.inactiveSelectionForeground': palette.textColorSelected,
-    'list.inactiveFocusBackground': palette.backgroundColorSelected,
+    'list.hoverForeground': INHERIT, // textColor
+    'list.inactiveSelectionBackground': palette.backgroundColorInactive,
+    'list.inactiveSelectionForeground': INHERIT, // textColorSelected
+    'list.inactiveFocusBackground': palette.backgroundColorInactive,
     'list.invalidItemForeground': palette.textColorError,
     'list.errorForeground': palette.textColorError,
     'list.warningForeground': palette.textColorWarning,
@@ -230,8 +230,8 @@ export function generateWorkbench(palette: Palette) {
     'editorSuggestWidget.background': INHERIT, // overlayBackgroundColor
     'editorSuggestWidget.border': INHERIT, // overlayBorderColor
     'editorSuggestWidget.foreground': INHERIT, // textColor
-    'editorSuggestWidget.highlightForeground': INHERIT, // textColorHighlight
-    'editorSuggestWidget.selectedBackground': INHERIT, // buttonBackgroundColorSelected
+    'editorSuggestWidget.highlightForeground': palette.textColorHighlight,
+    'editorSuggestWidget.selectedBackground': INHERIT, // backgroundColorInactive
     'editorHoverWidget.background': INHERIT, // overlayBackgroundColor
     'editorHoverWidget.border': INHERIT, // overlayBorderColor
     'debugExceptionWidget.background': INHERIT, // overlayBackgroundColor

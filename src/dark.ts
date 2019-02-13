@@ -118,6 +118,7 @@ export const backgroundColorError = tc({ h: 5, s: 0.64, l: 0.5 })
 
 export const backgroundColorHighlight = baseBackgroundColor.clone().lighten(4)
 export const backgroundColorSelected = baseBackgroundColor.clone().lighten(8)
+export const backgroundColorInactive = tc('#3a3f4b')
 
 // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/ui-variables-custom.less#L44
 export const textColorFaded = textColor.clone().setAlpha(0.2)
