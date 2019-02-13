@@ -1,5 +1,14 @@
 # Version History
 
+## `0.10.0` February 13, 2019
+
+- Fixed the wrong background color of selected items in suggestions list and command palette:
+  they now get less prominent grayish colors.
+- Fixed the wrong background color of active buttons and list items in Yi Light theme:
+  they now get a blue background instead of dark purple. ([#1 (comment)](https://github.com/wangweixuan/yithemes/issues/1#issuecomment-462909426))
+- Added workaround for [Microsoft/vscode#3429](https://github.com/Microsoft/vscode/issues/3429):
+  illegal code now gets a red color. ([#1 (comment)](https://github.com/wangweixuan/yithemes/issues/1#issuecomment-462912594))
+
 ## `0.9.0` February 8, 2019
 
 - Added support of list filter widget colors introduced in Visual Studio Code 1.31.
