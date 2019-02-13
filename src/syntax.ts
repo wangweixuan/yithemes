@@ -170,8 +170,11 @@ export function generateSyntax(palette: Palette): SyntaxRule[] {
 
     { scope: 'invalid.deprecated', settings: {
       foreground: palette.syntaxDeprecatedFg, background: palette.syntaxDeprecatedBg } },
+    /* { scope: 'invalid.illegal', settings: {
+      foreground: palette.syntaxIllegalFg, background: palette.syntaxIllegalBg } }, */
+    // Workaround for https://github.com/Microsoft/vscode/issues/3429
     { scope: 'invalid.illegal', settings: {
-      foreground: palette.syntaxIllegalFg, background: palette.syntaxIllegalBg } },
+      foreground: palette.syntaxIllegalBg } },
 
     { scope: 'markup.bold', settings: {
       foreground: palette.hue6, fontStyle: 'bold' } },
