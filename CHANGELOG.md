@@ -1,5 +1,9 @@
 # Version History
 
+## `0.10.1` February 15, 2019
+
+- Fixed the wrong color of some buttons in Yi Light theme. ([#1 (comment)](https://github.com/wangweixuan/yithemes/issues/1#issuecomment-463841367))
+
 ## `0.10.0` February 13, 2019
 
 - Fixed the wrong background color of selected items in suggestions list and command palette:
