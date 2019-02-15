@@ -325,7 +325,7 @@ export function generateWorkbench(palette: Palette) {
     'notificationLink.foreground': INHERIT, // accentColor
 
     // Extensions
-    'extensionButton.prominentForeground': palette.textColorHighlight,
+    'extensionButton.prominentForeground': palette.accentBgTextColor,
     'extensionButton.prominentBackground': palette.accentBgColor,
     'extensionButton.prominentHoverBackground': palette.accentBgColor,
 
