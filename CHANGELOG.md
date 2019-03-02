@@ -1,5 +1,10 @@
 # Version History
 
+## `0.10.2` March 2, 2019
+
+- Fixed the wrong color of status bar in Yi Light theme:
+  it now gets a light background when no folder is opened, and a white foreground when debugging. ([#2](https://github.com/wangweixuan/yithemes/issues/2))
+
 ## `0.10.1` February 15, 2019
 
 - Fixed the wrong color of some buttons in Yi Light theme. ([#1 (comment)](https://github.com/wangweixuan/yithemes/issues/1#issuecomment-463841367))
