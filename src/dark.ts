@@ -142,14 +142,14 @@ export const accentColor = tc.mix(
 )
 export const accentTextColor = tc.mostReadable(
   accentColor, [tc({ h: uiHue, s: 1, l: 0.1 }), tc('white')]
-) // TODO threshold 0.25 missing
+) // TODO: threshold 0.25 missing
 
 export const accentBgColor = tc.mix(
   tc({ h: uiHue, s: 0.66, v: 0.66 }), tc({ h: uiHue, s: 0.66, l: 0.6 }), accentLuma * 2
 )
 export const accentBgTextColor = tc.mostReadable(
   accentBgColor, [tc({ h: uiHue, s: 1, l: 0.1 }), tc('white')]
-) // TODO threshold 0.3 missing
+) // TODO: threshold 0.3 missing
 
 export const accentOnlyTextColor = tc.mix(
   tc({ h: uiHue, s: 1, v: 0.66 }), tc({ h: uiHue, s: 1, l: 0.77 }), accentLuma

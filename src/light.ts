@@ -115,14 +115,14 @@ export const accentColor = tc('#556de8') /* tc.mix(
 ) */
 export const accentTextColor = tc.mostReadable(
   accentColor, [tc({ h: uiHue, s: 1, l: 0.16 }), tc('white')]
-) // TODO threshold 0.4 missing
+) // TODO: threshold 0.4 missing
 
 export const accentBgColor = tc('#5871ef') /* tc.mix(
   tc({ h: uiHue, s: 0.4, v: 0.72 }), tc({ h: uiHue, s: 1, l: 0.66 }), accentLuma * 2
 ) */
 export const accentBgTextColor = tc('white') /* tc.mostReadable(
   accentBgColor, [tc({ h: uiHue, s: 1, l: 0.1 }), tc('white')]
-) // TODO threshold 0.4 missing */
+) // TODO: threshold 0.4 missing */
 
 export const accentOnlyTextColor = tc.mix(
   tc({ h: uiHue, s: 0.7, v: 0.5 }), tc({ h: uiHue, s: 1, l: 0.6 }), accentLuma * 2

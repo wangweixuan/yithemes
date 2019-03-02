@@ -186,7 +186,7 @@ export function generateWorkbench(palette: Palette) {
     'editorBracketMatch.background': TRANSPARENT,
     'editorBracketMatch.border': palette.syntaxCursorColor,
     'editorOverviewRuler.border': TRANSPARENT,
-    // TODO editor.overviewRulerBorder user setting is not regarded
+    // TODO: editor.overviewRulerBorder user setting is not regarded
     'editorOverviewRuler.findMatchForeground': palette.syntaxResultMarkerColor,
     'editorOverviewRuler.rangeHighlightForeground': INHERIT, // TRANSPARENT
     'editorOverviewRuler.selectionHighlightForeground': palette.syntaxGutterBackgroundColorSelected,
@@ -283,10 +283,10 @@ export function generateWorkbench(palette: Palette) {
     'statusBar.background': palette.toolPanelBackgroundColor,
     'statusBar.foreground': palette.textColor,
     'statusBar.border': palette.toolPanelBorderColor,
-    'statusBar.debuggingBackground': undefined,
-    'statusBar.debuggingForeground': INHERIT, // textColor
+    'statusBar.debuggingBackground': INHERIT,
+    'statusBar.debuggingForeground': palette.accentBgTextColor,
     'statusBar.debuggingBorder': INHERIT, // toolPanelBorderColor
-    'statusBar.noFolderBackground': undefined,
+    'statusBar.noFolderBackground': palette.toolPanelBackgroundColor,
     'statusBar.noFolderForeground': INHERIT, // textColor
     'statusBar.noFolderBorder': INHERIT, // toolPanelBorderColor
     'statusBarItem.activeBackground': palette.level3ColorActive,
