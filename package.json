@@ -1,6 +1,6 @@
 {
   "name": "yithemes",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "description": "Atom One Dark & One Light themes ported for VS Code.",
   "keywords": [
     "theme",
@@ -18,11 +18,11 @@
     "test": "code-insiders --extensionDevelopmentPath=$PWD"
   },
   "devDependencies": {
-    "@types/node": "^11.9.4",
+    "@types/node": "^11.10.4",
     "@types/tinycolor2": "^1.4.1",
     "tinycolor2": "^1.4.1",
-    "tslint": "^5.12.1",
-    "typescript": "^3.3.3"
+    "tslint": "^5.13.1",
+    "typescript": "^3.3.3333"
   },
   "displayName": "Yi Dark & Yi Light Themes",
   "publisher": "wangweixuan",
