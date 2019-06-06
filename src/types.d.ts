@@ -6,12 +6,12 @@ export type Palette = typeof darkPalette | typeof lightPalette
 
 // https://github.com/Microsoft/vscode-textmate/blob/master/src/theme.ts
 export type SyntaxRule = {
-  scope: string
+  scope: string;
   settings: {
-    foreground: tc.Instance
+    foreground: tc.Instance;
     // https://github.com/Microsoft/vscode/issues/3429
-    background?: tc.Instance
+    background?: tc.Instance;
     fontStyle?: 'bold' | 'italic' | 'underline' | 'bold italic' | 'bold underline' |
-      'italic underline' | 'bold italic underline'
-  }
+      'italic underline' | 'bold italic underline';
+  };
 }
