@@ -128,6 +128,7 @@ export function generateWorkbench(palette: Palette) {
     'editorGroup.emptyBackground': INHERIT, // toolPanelBackgroundColor
     'editorGroup.focusedEmptyBorder': INHERIT, // toolPanelBorderColor
     'tab.activeBackground': palette.tabBackgroundColorActive,
+    'tab.unfocusedActiveBackground': INHERIT, // tabBackgroundColorActive
     'tab.activeForeground': palette.tabTextColorActive,
     'tab.border': palette.tabBorderColor,
     'tab.activeBorder': TRANSPARENT,
@@ -291,8 +292,9 @@ export function generateWorkbench(palette: Palette) {
     'statusBar.noFolderBorder': INHERIT, // toolPanelBorderColor
     'statusBarItem.activeBackground': palette.level3ColorActive,
     'statusBarItem.hoverBackground': palette.level3ColorHover,
-    'statusBarItem.prominentBackground': undefined,
-    'statusBarItem.prominentHoverBackground': undefined,
+    'statusBarItem.prominentForeground': palette.accentBgTextColor,
+    'statusBarItem.prominentBackground': palette.accentBgColor,
+    'statusBarItem.prominentHoverBackground': palette.accentBgColor,
 
     // Title Bar Colors
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/title-bar.less
@@ -397,7 +399,6 @@ export function generateWorkbench(palette: Palette) {
     'settings.numberInputBorder': INHERIT, // inputBorderColor
 
     // Breadcrumbs
-    'breadcrumb.background': INHERIT, // syntaxBackgroundColor
     'breadcrumb.foreground': palette.textColor,
     'breadcrumb.focusForeground': palette.textColorHighlight,
     'breadcrumb.activeSelectionForeground': palette.textColorHighlight,
