@@ -12,6 +12,6 @@ export type SyntaxRule = {
     // https://github.com/Microsoft/vscode/issues/3429
     background?: tc.Instance;
     fontStyle?: 'bold' | 'italic' | 'underline' | 'bold italic' | 'bold underline' |
-      'italic underline' | 'bold italic underline';
+    'italic underline' | 'bold italic underline';
   };
 }

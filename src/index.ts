@@ -17,16 +17,14 @@ function assemble(name: string, type: 'dark' | 'light', palette: Palette) {
       colors: generateWorkbench(palette),
       tokenColors: generateSyntax(palette)
     },
-    interpret
+    (key, value) => {
+      if (value && value instanceof tc) {
+        return value.getAlpha() === 1 ? value.toHexString() : value.toHex8String()
+      }
+
+      return value
+    }
   )
-}
-
-function interpret(key: string, value: any) {
-  if (value && value instanceof tc) {
-    return value.getAlpha() === 1 ? value.toHexString() : value.toHex8String()
-  }
-
-  return value
 }
 
 writeFile(
