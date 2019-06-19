@@ -1,5 +1,9 @@
 # Version History
 
+## `0.10.3` June 19, 2019
+
+- Fixed the wrong color of square brackets in Python source code. ([#3](https://github.com/wangweixuan/yithemes/issues/3))
+
 ## `0.10.2` March 2, 2019
 
 - Fixed the wrong color of status bar in Yi Light theme:
