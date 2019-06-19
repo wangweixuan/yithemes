@@ -308,7 +308,7 @@ export function generateSyntax(palette: Palette): SyntaxRule[] {
       foreground: palette.hue6 } },
     { scope: 'markup.quote', settings: {
       foreground: palette.mono3, fontStyle: 'italic' } },
-    { scope: 'punctuation.definition.list.begin', settings: {
+    { scope: 'punctuation.definition.list.begin.markdown', settings: {
       foreground: palette.hue5 } },
   ]
 }
