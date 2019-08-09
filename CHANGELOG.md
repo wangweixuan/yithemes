@@ -1,5 +1,9 @@
 # Version History
 
+## `0.11.0` August 9, 2019
+
+- Added support of minimap search result colors introduced in Visual Studio Code 1.37.
+
 ## `0.10.3` June 19, 2019
 
 - Fixed the wrong color of square brackets in Python source code. ([#3](https://github.com/wangweixuan/yithemes/issues/3))
