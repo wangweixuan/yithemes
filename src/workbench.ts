@@ -50,7 +50,8 @@ export function generateWorkbench(palette: Palette) {
     'input.border': palette.inputBorderColor,
     'input.foreground': palette.textColorHighlight,
     'input.placeholderForeground': palette.textColorSubtle,
-    'inputOption.activeBorder': palette.accentColor,
+    'inputOption.activeBackground': INHERIT, // accentColor
+    'inputOption.activeBorder': INHERIT, // TRANSPARENT
     'inputValidation.errorBackground': palette.backgroundColorError,
     'inputValidation.errorForeground': palette.textColorHighlight,
     'inputValidation.errorBorder': palette.textColorError,
@@ -117,6 +118,9 @@ export function generateWorkbench(palette: Palette) {
     'sideBarSectionHeader.background': palette.panelHeadingBackgroundColor,
     'sideBarSectionHeader.foreground': palette.textColor,
     'sideBarSectionHeader.border': INHERIT, // TRANSPARENT
+
+    // Minimap
+    'minimap.findMatchHighlight': palette.syntaxResultMarkerColorSelected,
 
     // Editor Groups & Tabs
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/tabs.less
