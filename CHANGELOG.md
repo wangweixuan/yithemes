@@ -1,5 +1,9 @@
 # Version History
 
+## `0.11.1` August 20, 2019
+
+- Fixed the wrong color of function names in Python source code. ([#4](https://github.com/wangweixuan/yithemes/issues/4))
+
 ## `0.11.0` August 9, 2019
 
 - Added support of minimap search result colors introduced in Visual Studio Code 1.37.
