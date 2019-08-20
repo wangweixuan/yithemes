@@ -282,6 +282,22 @@ export function generateSyntax(palette: Palette): SyntaxRule[] {
       foreground: palette.mono1 } },
 
     // https://github.com/atom/atom/blob/master/packages/one-dark-syntax/styles/syntax/javascript.less
+    /* { scope: 'source.js keyword.operator', settings: {
+      foreground: palette.hue1 } },
+    { scope: 'source.js keyword.delete', settings: {
+      foreground: palette.hue3 } },
+    { scope: 'source.js keyword.in', settings: {
+      foreground: palette.hue3 } },
+    { scope: 'source.js keyword.of', settings: {
+      foreground: palette.hue3 } },
+    { scope: 'source.js keyword.instanceof', settings: {
+      foreground: palette.hue3 } },
+    { scope: 'source.js keyword.new', settings: {
+      foreground: palette.hue3 } },
+    { scope: 'source.js keyword.typeof', settings: {
+      foreground: palette.hue3 } },
+    { scope: 'source.js keyword.void', settings: {
+      foreground: palette.hue3 } }, */
 
     // https://github.com/atom/atom/blob/master/packages/one-dark-syntax/styles/syntax/json.less
     { scope: 'source.json support.type.property-name', settings: {
@@ -303,6 +319,12 @@ export function generateSyntax(palette: Palette): SyntaxRule[] {
     { scope: 'source.ruby constant.other.symbol punctuation', settings: {
       foreground: palette.hue1 } },
 
+    // https://github.com/atom/atom/blob/master/packages/one-dark-syntax/styles/syntax/typescript.less
+    /* { scope: 'source.ts keyword.operator', settings: {
+      foreground: palette.hue1 } },
+    { scope: 'source.flow keyword.operator', settings: {
+      foreground: palette.hue1 } }, */
+
     // Misc Workaround
     { scope: 'text.xml punctuation.separator.namespace', settings: {
       foreground: palette.hue6 } },
@@ -310,5 +332,7 @@ export function generateSyntax(palette: Palette): SyntaxRule[] {
       foreground: palette.mono3, fontStyle: 'italic' } },
     { scope: 'punctuation.definition.list.begin.markdown', settings: {
       foreground: palette.hue5 } },
+    { scope: 'meta.function-call.generic.python', settings: {
+      foreground: palette.hue2 } },
   ]
 }
