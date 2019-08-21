@@ -1,11 +1,19 @@
 import * as tc from 'tinycolor2'
-import { Palette } from './types'
+import * as darkPalette from './dark'
+import * as lightPalette from './light'
+
+export const WORKBENCH_DARK = generateWorkbench(darkPalette)
+export const WORKBENCH_LIGHT = generateWorkbench(lightPalette)
+
+export type WorkbenchRules = Record<string, tc.Instance | undefined>
 
 const INHERIT = undefined
 const TRANSPARENT = tc('transparent')
 
 // https://code.visualstudio.com/api/references/theme-color
-export function generateWorkbench(palette: Palette) {
+function generateWorkbench(
+  palette: typeof darkPalette | typeof lightPalette
+): WorkbenchRules {
   return {
     // Contrast Colors
     'contrastActiveBorder': INHERIT, // TRANSPARENT
@@ -65,9 +73,13 @@ export function generateWorkbench(palette: Palette) {
     // Scrollbar Control
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/atom.less#L14
     'scrollbar.shadow': TRANSPARENT,
-    'scrollbarSlider.activeBackground': palette.scrollbarColor.clone().setAlpha(0.5),
+    'scrollbarSlider.activeBackground': palette.scrollbarColor
+      .clone()
+      .setAlpha(0.5),
     'scrollbarSlider.background': palette.scrollbarColor.clone().setAlpha(0.5),
-    'scrollbarSlider.hoverBackground': palette.scrollbarColor.clone().setAlpha(0.5),
+    'scrollbarSlider.hoverBackground': palette.scrollbarColor
+      .clone()
+      .setAlpha(0.5),
 
     // Badge
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/badges.less
@@ -101,7 +113,9 @@ export function generateWorkbench(palette: Palette) {
 
     // Activity Bar
     'activityBar.background': palette.insetPanelBackgroundColor,
-    'activityBar.dropBackground': palette.backgroundColorHighlight.clone().setAlpha(0.5),
+    'activityBar.dropBackground': palette.backgroundColorHighlight
+      .clone()
+      .setAlpha(0.5),
     'activityBar.foreground': palette.textColorHighlight,
     'activityBar.inactiveForeground': palette.textColor,
     'activityBar.border': palette.toolPanelBorderColor,
@@ -113,7 +127,9 @@ export function generateWorkbench(palette: Palette) {
     'sideBar.background': palette.toolPanelBackgroundColor,
     'sideBar.foreground': palette.textColor,
     'sideBar.border': palette.toolPanelBorderColor,
-    'sideBar.dropBackground': palette.backgroundColorHighlight.clone().setAlpha(0.5),
+    'sideBar.dropBackground': palette.backgroundColorHighlight
+      .clone()
+      .setAlpha(0.5),
     'sideBarTitle.foreground': palette.textColorHighlight,
     'sideBarSectionHeader.background': palette.panelHeadingBackgroundColor,
     'sideBarSectionHeader.foreground': palette.textColor,
@@ -125,7 +141,9 @@ export function generateWorkbench(palette: Palette) {
     // Editor Groups & Tabs
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/tabs.less
     'editorGroup.border': palette.toolPanelBorderColor,
-    'editorGroup.dropBackground': palette.backgroundColorHighlight.clone().setAlpha(0.5),
+    'editorGroup.dropBackground': palette.backgroundColorHighlight
+      .clone()
+      .setAlpha(0.5),
     'editorGroupHeader.noTabsBackground': palette.tabBarBackgroundColor,
     'editorGroupHeader.tabsBackground': palette.tabBarBackgroundColor,
     'editorGroupHeader.tabsBorder': palette.tabBarBorderColor,
@@ -194,16 +212,20 @@ export function generateWorkbench(palette: Palette) {
     // TODO: editor.overviewRulerBorder user setting is not regarded
     'editorOverviewRuler.findMatchForeground': palette.syntaxResultMarkerColor,
     'editorOverviewRuler.rangeHighlightForeground': INHERIT, // TRANSPARENT
-    'editorOverviewRuler.selectionHighlightForeground': palette.syntaxGutterBackgroundColorSelected,
-    'editorOverviewRuler.wordHighlightForeground': palette.syntaxGutterBackgroundColorSelected,
-    'editorOverviewRuler.wordHighlightStrongForeground': palette.syntaxGutterBackgroundColorSelected,
+    'editorOverviewRuler.selectionHighlightForeground':
+      palette.syntaxGutterBackgroundColorSelected,
+    'editorOverviewRuler.wordHighlightForeground':
+      palette.syntaxGutterBackgroundColorSelected,
+    'editorOverviewRuler.wordHighlightStrongForeground':
+      palette.syntaxGutterBackgroundColorSelected,
     'editorOverviewRuler.modifiedForeground': palette.syntaxColorModified,
     'editorOverviewRuler.addedForeground': palette.syntaxColorAdded,
     'editorOverviewRuler.deletedForeground': palette.syntaxColorRemoved,
     'editorOverviewRuler.errorForeground': palette.textColorError,
     'editorOverviewRuler.warningForeground': palette.textColorWarning,
     'editorOverviewRuler.infoForeground': palette.textColorInfo,
-    'editorOverviewRuler.bracketMatchForeground': palette.syntaxGutterBackgroundColorSelected,
+    'editorOverviewRuler.bracketMatchForeground':
+      palette.syntaxGutterBackgroundColorSelected,
     'editorError.foreground': palette.textColorError,
     'editorError.border': INHERIT, // TRANSPARENT
     'editorWarning.foreground': palette.textColorWarning,
@@ -221,9 +243,13 @@ export function generateWorkbench(palette: Palette) {
 
     // Diff Editor Colors
     // https://github.com/atom/atom/blob/master/packages/one-dark-syntax/styles/editor.less
-    'diffEditor.insertedTextBackground': palette.syntaxColorAdded.clone().setAlpha(0.24),
+    'diffEditor.insertedTextBackground': palette.syntaxColorAdded
+      .clone()
+      .setAlpha(0.24),
     'diffEditor.insertedTextBorder': INHERIT, // TRANSPARENT
-    'diffEditor.removedTextBackground': palette.syntaxColorRemoved.clone().setAlpha(0.24),
+    'diffEditor.removedTextBackground': palette.syntaxColorRemoved
+      .clone()
+      .setAlpha(0.24),
     'diffEditor.removedTextBorder': INHERIT, // TRANSPARENT
     'diffEditor.border': INHERIT, // TRANSPARENT
 
@@ -278,7 +304,9 @@ export function generateWorkbench(palette: Palette) {
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/panels.less
     'panel.background': palette.toolPanelBackgroundColor,
     'panel.border': palette.toolPanelBorderColor,
-    'panel.dropBackground': palette.backgroundColorHighlight.clone().setAlpha(0.5),
+    'panel.dropBackground': palette.backgroundColorHighlight
+      .clone()
+      .setAlpha(0.5),
     'panelTitle.activeBorder': TRANSPARENT,
     'panelTitle.activeForeground': palette.tabTextColorActive,
     'panelTitle.inactiveForeground': palette.tabTextColor,
@@ -412,6 +440,6 @@ export function generateWorkbench(palette: Palette) {
     'editor.snippetTabstopHighlightBackground': palette.syntaxResultMarkerColor,
     'editor.snippetTabstopHighlightBorder': INHERIT, // TRANSPARENT
     'editor.snippetFinalTabstopHighlightBackground': INHERIT, // TRANSPARENT
-    'editor.snippetFinalTabstopHighlightBorder': palette.mono2,
+    'editor.snippetFinalTabstopHighlightBorder': palette.mono2
   }
 }

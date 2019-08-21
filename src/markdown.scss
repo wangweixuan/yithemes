@@ -1,0 +1,130 @@
+// https://github.com/Microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css
+// https://github.com/atom/markdown-preview/blob/master/styles/markdown-preview-default.less
+
+.vscode-dark {
+  color: dark-palette(textColor);
+
+  &.showEditorSelection .code-active-line:before {
+    border-color: dark-palette(insetPanelBackgroundColor);
+  }
+  .showEditorSelection .code-line:hover:before {
+    border: none;
+  }
+
+  h1 {
+    border: none;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: dark-palette(textColorHighlight);
+  }
+
+  strong {
+    color: dark-palette(textColorHighlight);
+  }
+  s {
+    color: dark-palette(textColorSubtle);
+  }
+
+  a:hover,
+  a code {
+    color: dark-palette(accentColor);
+  }
+  a:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+  }
+
+  blockquote {
+    background: none;
+    color: dark-palette(textColorSubtle);
+    border-color: dark-palette(textColorSubtle);
+  }
+
+  hr {
+    border: dashed dark-palette(textColorSubtle);
+  }
+
+  th {
+    color: dark-palette(textColorHighlight);
+  }
+  th,
+  td {
+    border-color: dark-palette(textColorSubtle);
+  }
+
+  code {
+    color: dark-palette(textColorHighlight);
+    background-color: dark-palette(syntaxSelectionColor);
+  }
+}
+
+.vscode-light {
+  color: light-palette(textColor);
+
+  &.showEditorSelection .code-active-line:before {
+    border-color: light-palette(insetPanelBackgroundColor);
+  }
+  .showEditorSelection .code-line:hover:before {
+    border: none;
+  }
+
+  h1 {
+    border: none;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: light-palette(textColorHighlight);
+  }
+
+  strong {
+    color: light-palette(textColorHighlight);
+  }
+  s {
+    color: light-palette(textColorSubtle);
+  }
+
+  a:hover,
+  a code {
+    color: light-palette(accentColor);
+  }
+  a:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+  }
+
+  blockquote {
+    background: none;
+    color: light-palette(textColorSubtle);
+    border-color: light-palette(textColorSubtle);
+  }
+
+  hr {
+    border: dashed light-palette(textColorSubtle);
+  }
+
+  th {
+    color: light-palette(textColorHighlight);
+  }
+  th,
+  td {
+    border-color: light-palette(textColorSubtle);
+  }
+
+  code {
+    color: light-palette(textColorHighlight);
+    background-color: light-palette(syntaxSelectionColor);
+  }
+}

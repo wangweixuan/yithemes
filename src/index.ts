@@ -1,26 +1,29 @@
 import { writeFile } from 'fs'
 import { join } from 'path'
 import * as tc from 'tinycolor2'
-import * as darkPalette from './dark'
-import * as lightPalette from './light'
-import { markdownCSS } from './markdown'
-import { generateSyntax } from './syntax'
-import { Palette } from './types'
-import { generateWorkbench } from './workbench'
+import { MARKDOWN_CSS } from './markdown'
+import { SyntaxRules, SYNTAX_DARK, SYNTAX_LIGHT } from './syntax'
+import { WorkbenchRules, WORKBENCH_DARK, WORKBENCH_LIGHT } from './workbench'
 
-function assemble(name: string, type: 'dark' | 'light', palette: Palette) {
+function assembleTheme(
+  name: string,
+  type: string,
+  syntax: SyntaxRules,
+  workbench: WorkbenchRules
+) {
   return JSON.stringify(
     {
       $schema: 'vscode://schemas/color-theme',
       name,
       type,
-      colors: generateWorkbench(palette),
-      tokenColors: generateSyntax(palette)
+      colors: syntax,
+      tokenColors: workbench
     },
     (key, value) => {
-      if (value && value instanceof tc) {
-        return value.getAlpha() === 1 ? value.toHexString() : value.toHex8String()
-      }
+      if (value && value instanceof tc)
+        return value.getAlpha() === 1
+          ? value.toHexString()
+          : value.toHex8String()
 
       return value
     }
@@ -29,18 +32,20 @@ function assemble(name: string, type: 'dark' | 'light', palette: Palette) {
 
 writeFile(
   join(__dirname, '../dark.json'),
-  assemble('Yi Dark', 'dark', darkPalette),
-  (err) => { if (err) { throw err } }
+  assembleTheme('Yi Dark', 'dark', SYNTAX_DARK, WORKBENCH_DARK),
+  err => {
+    if (err) throw err
+  }
 )
 
 writeFile(
   join(__dirname, '../light.json'),
-  assemble('Yi Light', 'light', lightPalette),
-  (err) => { if (err) { throw err } }
+  assembleTheme('Yi Light', 'light', SYNTAX_LIGHT, WORKBENCH_LIGHT),
+  err => {
+    if (err) throw err
+  }
 )
 
-writeFile(
-  join(__dirname, '../markdown.css'),
-  markdownCSS,
-  (err) => { if (err) { throw err } }
-)
+writeFile(join(__dirname, '../markdown.css'), MARKDOWN_CSS, err => {
+  if (err) throw err
+})

@@ -1,61 +1,29 @@
+import { renderSync, types } from 'node-sass'
+import { join } from 'path'
+import * as tc from 'tinycolor2'
 import * as darkPalette from './dark'
 import * as lightPalette from './light'
 
-// https://github.com/Microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css
-// https://github.com/atom/markdown-preview/blob/master/styles/markdown-preview-default.less
-export const markdownCSS = `\
-.vscode-dark { color: ${darkPalette.textColor}; }
-.vscode-light { color: ${lightPalette.textColor}; }
+export const MARKDOWN_CSS = renderSync({
+  file: join(__dirname, '../../src/markdown.scss'),
+  functions: {
+    'dark-palette($id)': (id: types.Value) => {
+      if (!(id instanceof types.String)) throw new Error()
 
-.vscode-dark.showEditorSelection .code-active-line:before {
-  border-color: ${darkPalette.insetPanelBackgroundColor};
-}
-.vscode-light.showEditorSelection .code-active-line:before {
-  border-color: ${lightPalette.insetPanelBackgroundColor};
-}
-.vscode-dark.showEditorSelection .code-line:hover:before,
-.vscode-light.showEditorSelection .code-line:hover:before { border: none; }
+      const color = ((darkPalette as any) as Record<string, tc.Instance>)[
+        id.getValue()
+      ].toRgb()
+      return new types.Color(color.r, color.g, color.b, color.a)
+    },
 
-h1 { border: none; }
-.vscode-dark h1, .vscode-dark h2, .vscode-dark h3, .vscode-dark h4,
-.vscode-dark h5, .vscode-dark h6 { color: ${darkPalette.textColorHighlight}; }
-.vscode-light h1, .vscode-light h2, .vscode-light h3, .vscode-light h4,
-.vscode-light h5, .vscode-light h6 { color: ${lightPalette.textColorHighlight}; }
+    'light-palette($id)': (id: types.Value) => {
+      if (!(id instanceof types.String)) throw new Error()
 
-.vscode-dark strong { color: ${darkPalette.textColorHighlight}; }
-.vscode-dark s { color: ${darkPalette.textColorSubtle}; }
-.vscode-light strong { color: ${lightPalette.textColorHighlight}; }
-.vscode-light s { color: ${lightPalette.textColorSubtle}; }
-
-.vscode-dark a:hover, .vscode-dark a code { color: ${darkPalette.accentColor}; }
-.vscode-light a:hover, .vscode-light a code { color: ${lightPalette.accentColor}; }
-a:focus, input:focus, select:focus, textarea:focus { outline: none; }
-
-.vscode-dark blockquote {
-  background: none;
-  color: ${darkPalette.textColorSubtle};
-  border-color: ${darkPalette.textColorSubtle};
-}
-.vscode-light blockquote {
-  background: none;
-  color: ${lightPalette.textColorSubtle};
-  border-color: ${lightPalette.textColorSubtle};
-}
-
-.vscode-dark hr { border: dashed ${darkPalette.textColorSubtle}; }
-.vscode-light hr { border: dashed ${lightPalette.textColorSubtle}; }
-
-.vscode-dark th { color: ${darkPalette.textColorHighlight}; }
-.vscode-light th { color: ${lightPalette.textColorHighlight}; }
-.vscode-dark th, .vscode-dark td { border-color: ${darkPalette.textColorSubtle}; }
-.vscode-light th, .vscode-light td { border-color: ${lightPalette.textColorSubtle}; }
-
-.vscode-dark code {
-  color: ${darkPalette.textColorHighlight};
-  background-color: ${darkPalette.syntaxSelectionColor};
-}
-.vscode-light code {
-  color: ${lightPalette.textColorHighlight};
-  background-color: ${lightPalette.syntaxSelectionColor};
-}
-`
+      const color = ((lightPalette as any) as Record<string, tc.Instance>)[
+        id.getValue()
+      ].toRgb()
+      return new types.Color(color.r, color.g, color.b, color.a)
+    }
+  },
+  outputStyle: 'compressed'
+}).css

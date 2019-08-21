@@ -10,8 +10,8 @@ export const mono2 = tc({ h: syntaxHue, s: 0.06, l: 0.44 })
 export const mono3 = tc({ h: syntaxHue, s: 0.04, l: 0.64 })
 
 export const hue1 = tc({ h: 198, s: 0.99, l: 0.37 })
-export const hue2 = tc({ h: 221, s: 0.87, l: 0.60 })
-export const hue3 = tc({ h: 301, s: 0.63, l: 0.40 })
+export const hue2 = tc({ h: 221, s: 0.87, l: 0.6 })
+export const hue3 = tc({ h: 301, s: 0.63, l: 0.4 })
 export const hue4 = tc({ h: 119, s: 0.34, l: 0.47 })
 export const hue5 = tc({ h: 5, s: 0.74, l: 0.59 })
 export const hue52 = tc({ h: 344, s: 0.84, l: 0.43 })
@@ -19,7 +19,11 @@ export const hue6 = tc({ h: 41, s: 0.99, l: 0.3 })
 export const hue62 = tc({ h: 41, s: 0.99, l: 0.38 })
 
 export const syntaxFg = mono1
-export const syntaxBg = tc({ h: syntaxHue, s: syntaxSaturation, l: syntaxBrightness })
+export const syntaxBg = tc({
+  h: syntaxHue,
+  s: syntaxSaturation,
+  l: syntaxBrightness
+})
 export const syntaxGutter = syntaxBg.clone().darken(36)
 export const syntaxGuide = syntaxFg.clone().setAlpha(0.2)
 export const syntaxAccent = tc({ h: syntaxHue, s: 1, l: 0.66 })
@@ -69,7 +73,8 @@ export const syntaxIllegalFg = tc('white')
 export const syntaxIllegalBg = syntaxColorRemoved
 
 // https://github.com/atom/atom/blob/master/packages/atom-light-ui/styles/ui-variables-custom.less#L1
-export const uiSyntaxColor = syntaxBackgroundColor || tc({ h: 220, s: 0.01, l: 0.98 })
+export const uiSyntaxColor =
+  syntaxBackgroundColor || tc({ h: 220, s: 0.01, l: 0.98 })
 
 export const uiHue = uiSyntaxColor.toHsl().h || 220
 export const uiSaturation = Math.min(uiSyntaxColor.toHsl().s, 0.24)
@@ -110,22 +115,31 @@ export const level3ColorActive = level3Color.clone().darken(3)
 export const accentLuma = tc({ h: uiHue, s: 0.5, l: 0.5 }).getLuminance()
 
 // TODO: check tc.mix
-export const accentColor = tc('#556de8') /* tc.mix(
+export const accentColor = tc(
+  '#556de8'
+) /* tc.mix(
   tc({ h: uiHue, s: 0.6, v: 0.6 }), tc({ h: uiHue, s: 1, l: 0.68 }), accentLuma * 2
 ) */
-export const accentTextColor = tc.mostReadable(
-  accentColor, [tc({ h: uiHue, s: 1, l: 0.16 }), tc('white')]
-) // TODO: threshold 0.4 missing
+export const accentTextColor = tc.mostReadable(accentColor, [
+  tc({ h: uiHue, s: 1, l: 0.16 }),
+  tc('white')
+]) // TODO: threshold 0.4 missing
 
-export const accentBgColor = tc('#5871ef') /* tc.mix(
+export const accentBgColor = tc(
+  '#5871ef'
+) /* tc.mix(
   tc({ h: uiHue, s: 0.4, v: 0.72 }), tc({ h: uiHue, s: 1, l: 0.66 }), accentLuma * 2
 ) */
-export const accentBgTextColor = tc('white') /* tc.mostReadable(
+export const accentBgTextColor = tc(
+  'white'
+) /* tc.mostReadable(
   accentBgColor, [tc({ h: uiHue, s: 1, l: 0.1 }), tc('white')]
 ) // TODO: threshold 0.4 missing */
 
 export const accentOnlyTextColor = tc.mix(
-  tc({ h: uiHue, s: 0.7, v: 0.5 }), tc({ h: uiHue, s: 1, l: 0.6 }), accentLuma * 2
+  tc({ h: uiHue, s: 0.7, v: 0.5 }),
+  tc({ h: uiHue, s: 1, l: 0.6 }),
+  accentLuma * 2
 )
 
 // https://github.com/atom/atom/blob/master/packages/atom-light-ui/styles/ui-variables-custom.less#L22
@@ -156,7 +170,8 @@ export const toolPanelBackgroundColor = level3Color
 export const toolPanelBorderColor = baseBorderColor
 
 export const insetPanelBackgroundColor = level2Color.clone().lighten(4)
-export const insetPanelBorderColor = baseBorderColor.clone()
+export const insetPanelBorderColor = baseBorderColor
+  .clone()
   .setAlpha(baseBorderColor.getAlpha() - 0.15)
 
 export const panelHeadingBackgroundColor = level2Color
@@ -166,7 +181,9 @@ export const overlayBackgroundColor = tc.mix(level2Color, level3Color)
 export const overlayBorderColor = baseBorderColor
 
 export const buttonBackgroundColor = level1Color
-export const buttonBackgroundColorHover = buttonBackgroundColor.clone().darken(4)
+export const buttonBackgroundColorHover = buttonBackgroundColor
+  .clone()
+  .darken(4)
 export const buttonBackgroundColorSelected = accentBgColor
 export const buttonBorderColor = baseBorderColor
 
@@ -195,29 +212,39 @@ export const checkboxBackgroundColor = accentBgColor.clone().setAlpha(0.33)
 
 export const inputBackgroundColorFocus = tc({ h: uiHue, s: 1, l: 0.96 })
 export const inputSelectionColor = tc.mix(
-  tc({ h: uiHue, s: 0.33, l: 0.95 }), tc({ h: uiHue, s: 1, l: 0.98 }), accentLuma * 2
+  tc({ h: uiHue, s: 0.33, l: 0.95 }),
+  tc({ h: uiHue, s: 1, l: 0.98 }),
+  accentLuma * 2
 )
 export const inputSelectionColorFocus = tc.mix(
-  tc({ h: uiHue, s: 0.44, l: 0.9 }), tc({ h: uiHue, s: 1, l: 0.94 }), accentLuma * 2
+  tc({ h: uiHue, s: 0.44, l: 0.9 }),
+  tc({ h: uiHue, s: 1, l: 0.94 }),
+  accentLuma * 2
 )
 
-export const overlayBackdropColor = tc({ h: uiHue, s: uiSaturation * 0.4, l: uiLightness * 0.8 })
+export const overlayBackdropColor = tc({
+  h: uiHue,
+  s: uiSaturation * 0.4,
+  l: uiLightness * 0.8
+})
 export const overlayBackdropOpacity = 0.66
 
 export const progressBackgroundColor = accentColor
 
 export const scrollbarColor = level3Color.clone().darken(14)
 export const scrollbarBackgroundColor = level3Color
-export const scrollbarColorEditor = tc.mostReadable(
-  uiSyntaxColor, [uiSyntaxColor.clone().darken(14), uiSyntaxColor.clone().lighten(9)]
-)
+export const scrollbarColorEditor = tc.mostReadable(uiSyntaxColor, [
+  uiSyntaxColor.clone().darken(14),
+  uiSyntaxColor.clone().lighten(9)
+])
 export const scrollbarBackgroundColorEditor = uiSyntaxColor
 
 export const tabTextColor = textColorSubtle
 export const tabTextColorActive = textColorHighlight
-export const tabTextColorEditor = tc.mostReadable(
-  uiSyntaxColor, [uiSyntaxColor.clone().lighten(70), textColorHighlight]
-)
+export const tabTextColorEditor = tc.mostReadable(uiSyntaxColor, [
+  uiSyntaxColor.clone().lighten(70),
+  textColorHighlight
+])
 export const tabBackgroundColorEditor = uiSyntaxColor
 export const tabInactiveStatusAdded = textColorSuccess.clone().setAlpha(0.77)
 export const tabInactiveStatusModified = textColorWarning.clone().setAlpha(0.77)
