@@ -2,9 +2,6 @@ import * as tc from 'tinycolor2'
 import * as darkPalette from './dark'
 import * as lightPalette from './light'
 
-export const WORKBENCH_DARK = generateWorkbench(darkPalette)
-export const WORKBENCH_LIGHT = generateWorkbench(lightPalette)
-
 export type WorkbenchRules = Record<string, tc.Instance | undefined>
 
 const INHERIT = undefined
@@ -443,3 +440,6 @@ function generateWorkbench(
     'editor.snippetFinalTabstopHighlightBorder': palette.mono2
   }
 }
+
+export const WORKBENCH_DARK = generateWorkbench(darkPalette)
+export const WORKBENCH_LIGHT = generateWorkbench(lightPalette)

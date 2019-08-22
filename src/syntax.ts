@@ -2,9 +2,6 @@ import * as tc from 'tinycolor2'
 import * as darkPalette from './dark'
 import * as lightPalette from './light'
 
-export const SYNTAX_DARK = generateSyntax(darkPalette)
-export const SYNTAX_LIGHT = generateSyntax(lightPalette)
-
 // https://github.com/Microsoft/vscode-textmate/blob/master/src/theme.ts
 export type SyntaxRules = Array<{
   scope: string
@@ -248,3 +245,6 @@ function generateSyntax(
     settings: settings[scope]
   }))
 }
+
+export const SYNTAX_DARK = generateSyntax(darkPalette)
+export const SYNTAX_LIGHT = generateSyntax(lightPalette)

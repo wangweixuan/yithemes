@@ -16,8 +16,8 @@ function assembleTheme(
       $schema: 'vscode://schemas/color-theme',
       name,
       type,
-      colors: syntax,
-      tokenColors: workbench
+      colors: workbench,
+      tokenColors: syntax
     },
     (key, value) => {
       if (value && value instanceof tc)

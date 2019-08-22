@@ -7,7 +7,7 @@
   &.showEditorSelection .code-active-line:before {
     border-color: dark-palette(insetPanelBackgroundColor);
   }
-  .showEditorSelection .code-line:hover:before {
+  &.showEditorSelection .code-line:hover:before {
     border: none;
   }
 
@@ -71,7 +71,7 @@
   &.showEditorSelection .code-active-line:before {
     border-color: light-palette(insetPanelBackgroundColor);
   }
-  .showEditorSelection .code-line:hover:before {
+  &.showEditorSelection .code-line:hover:before {
     border: none;
   }
 
