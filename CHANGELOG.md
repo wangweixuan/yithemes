@@ -1,5 +1,11 @@
 # Version History
 
+## `0.12.0` August 22, 2019
+
+- Fixed the missing color of separator between documents in the diff editor. ([#5](https://github.com/wangweixuan/yithemes/issues/5))
+- Engineering: migrated to [Prettier](https://prettier.io) for TypeScript code formatting.
+- Engineering: migrated to [Sass](https://sass-lang.com) for the generation of Markdown Preview stylesheets.
+
 ## `0.11.1` August 20, 2019
 
 - Fixed the wrong color of function names in Python source code. ([#4](https://github.com/wangweixuan/yithemes/issues/4))
