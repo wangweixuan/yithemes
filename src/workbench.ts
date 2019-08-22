@@ -72,11 +72,11 @@ function generateWorkbench(
     'scrollbar.shadow': TRANSPARENT,
     'scrollbarSlider.activeBackground': palette.scrollbarColor
       .clone()
-      .setAlpha(0.5),
+      .setAlpha(0.8),
     'scrollbarSlider.background': palette.scrollbarColor.clone().setAlpha(0.5),
     'scrollbarSlider.hoverBackground': palette.scrollbarColor
       .clone()
-      .setAlpha(0.5),
+      .setAlpha(0.8),
 
     // Badge
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/badges.less
@@ -248,7 +248,7 @@ function generateWorkbench(
       .clone()
       .setAlpha(0.24),
     'diffEditor.removedTextBorder': INHERIT, // TRANSPARENT
-    'diffEditor.border': INHERIT, // TRANSPARENT
+    'diffEditor.border': palette.toolPanelBorderColor,
 
     // Editor Widget Colors
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/modal.less
