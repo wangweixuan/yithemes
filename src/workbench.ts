@@ -110,9 +110,7 @@ function generateWorkbench(
 
     // Activity Bar
     'activityBar.background': palette.insetPanelBackgroundColor,
-    'activityBar.dropBackground': palette.backgroundColorHighlight
-      .clone()
-      .setAlpha(0.5),
+    'activityBar.dropBackground': tc('gray').setAlpha(0.15),
     'activityBar.foreground': palette.textColorHighlight,
     'activityBar.inactiveForeground': palette.textColor,
     'activityBar.border': palette.toolPanelBorderColor,
@@ -124,9 +122,7 @@ function generateWorkbench(
     'sideBar.background': palette.toolPanelBackgroundColor,
     'sideBar.foreground': palette.textColor,
     'sideBar.border': palette.toolPanelBorderColor,
-    'sideBar.dropBackground': palette.backgroundColorHighlight
-      .clone()
-      .setAlpha(0.5),
+    'sideBar.dropBackground': tc('gray').setAlpha(0.15),
     'sideBarTitle.foreground': palette.textColorHighlight,
     'sideBarSectionHeader.background': palette.panelHeadingBackgroundColor,
     'sideBarSectionHeader.foreground': palette.textColor,
@@ -138,9 +134,7 @@ function generateWorkbench(
     // Editor Groups & Tabs
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/tabs.less
     'editorGroup.border': palette.toolPanelBorderColor,
-    'editorGroup.dropBackground': palette.backgroundColorHighlight
-      .clone()
-      .setAlpha(0.5),
+    'editorGroup.dropBackground': tc('gray').setAlpha(0.15),
     'editorGroupHeader.noTabsBackground': palette.tabBarBackgroundColor,
     'editorGroupHeader.tabsBackground': palette.tabBarBackgroundColor,
     'editorGroupHeader.tabsBorder': palette.tabBarBorderColor,
@@ -207,22 +201,20 @@ function generateWorkbench(
     'editorBracketMatch.border': palette.syntaxCursorColor,
     'editorOverviewRuler.border': TRANSPARENT,
     // TODO: editor.overviewRulerBorder user setting is not regarded
-    'editorOverviewRuler.findMatchForeground': palette.syntaxResultMarkerColor,
+    'editorOverviewRuler.findMatchForeground': palette.syntaxSelectionColor,
     'editorOverviewRuler.rangeHighlightForeground': INHERIT, // TRANSPARENT
     'editorOverviewRuler.selectionHighlightForeground':
-      palette.syntaxGutterBackgroundColorSelected,
-    'editorOverviewRuler.wordHighlightForeground':
-      palette.syntaxGutterBackgroundColorSelected,
+      palette.syntaxSelectionColor,
+    'editorOverviewRuler.wordHighlightForeground': palette.syntaxSelectionColor,
     'editorOverviewRuler.wordHighlightStrongForeground':
-      palette.syntaxGutterBackgroundColorSelected,
+      palette.syntaxSelectionColor,
     'editorOverviewRuler.modifiedForeground': palette.syntaxColorModified,
     'editorOverviewRuler.addedForeground': palette.syntaxColorAdded,
     'editorOverviewRuler.deletedForeground': palette.syntaxColorRemoved,
     'editorOverviewRuler.errorForeground': palette.textColorError,
     'editorOverviewRuler.warningForeground': palette.textColorWarning,
     'editorOverviewRuler.infoForeground': palette.textColorInfo,
-    'editorOverviewRuler.bracketMatchForeground':
-      palette.syntaxGutterBackgroundColorSelected,
+    'editorOverviewRuler.bracketMatchForeground': palette.syntaxSelectionColor,
     'editorError.foreground': palette.textColorError,
     'editorError.border': INHERIT, // TRANSPARENT
     'editorWarning.foreground': palette.textColorWarning,
@@ -301,9 +293,7 @@ function generateWorkbench(
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/panels.less
     'panel.background': palette.toolPanelBackgroundColor,
     'panel.border': palette.toolPanelBorderColor,
-    'panel.dropBackground': palette.backgroundColorHighlight
-      .clone()
-      .setAlpha(0.5),
+    'panel.dropBackground': tc('gray').setAlpha(0.1),
     'panelTitle.activeBorder': TRANSPARENT,
     'panelTitle.activeForeground': palette.tabTextColorActive,
     'panelTitle.inactiveForeground': palette.tabTextColor,
