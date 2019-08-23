@@ -1,5 +1,9 @@
 # Version History
 
+## `0.12.1` August 23, 2019
+
+- Fixed the wrong color of drag-and-drop overlay. ([#6](https://github.com/wangweixuan/yithemes/issues/6))
+
 ## `0.12.0` August 22, 2019
 
 - Fixed the missing color of separator between documents in the diff editor. ([#5](https://github.com/wangweixuan/yithemes/issues/5))
