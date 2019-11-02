@@ -1,5 +1,10 @@
 # Version History
 
+## `0.13.0` November 2, 2019
+
+- Added support of minimap selection highlight color introduced in Visual Studio Code 1.39.
+- Added support of various colors introduced in Visual Studio Code 1.38.
+
 ## `0.12.1` August 23, 2019
 
 - Fixed the wrong color of drag-and-drop overlay. ([#6](https://github.com/wangweixuan/yithemes/issues/6))
