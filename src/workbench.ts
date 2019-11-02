@@ -11,6 +11,8 @@ const TRANSPARENT = tc('transparent')
 function generateWorkbench(
   palette: typeof darkPalette | typeof lightPalette
 ): WorkbenchRules {
+  const dropBackground = tc('gray').setAlpha(1 - palette.overlayBackdropOpacity)
+
   return {
     // Contrast Colors
     'contrastActiveBorder': INHERIT, // TRANSPARENT
@@ -24,6 +26,7 @@ function generateWorkbench(
     'selection.background': palette.inputSelectionColorFocus,
     'descriptionForeground': palette.textColorSubtle,
     'errorForeground': palette.textColorError,
+    'icon.foreground': palette.textColor,
 
     // Text Colors
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/text.less
@@ -40,6 +43,9 @@ function generateWorkbench(
     'button.background': palette.buttonBackgroundColor,
     'button.foreground': palette.textColor,
     'button.hoverBackground': palette.buttonBackgroundColorHover,
+    'checkbox.background': INHERIT, // inputBackgroundColor
+    'checkbox.foreground': INHERIT, // textColor
+    'checkbox.border': INHERIT, // baseBorderColor
 
     // Dropdown Control
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/dropdowns.less
@@ -107,10 +113,11 @@ function generateWorkbench(
     'listFilterWidget.background': palette.inputBackgroundColor,
     'listFilterWidget.outline': palette.accentColor,
     'listFilterWidget.noMatchesOutline': palette.textColorError,
+    'tree.indentGuidesStroke': palette.syntaxIndentGuideColor,
 
     // Activity Bar
     'activityBar.background': palette.insetPanelBackgroundColor,
-    'activityBar.dropBackground': tc('gray').setAlpha(0.15),
+    'activityBar.dropBackground': dropBackground,
     'activityBar.foreground': palette.textColorHighlight,
     'activityBar.inactiveForeground': palette.textColor,
     'activityBar.border': palette.toolPanelBorderColor,
@@ -122,7 +129,7 @@ function generateWorkbench(
     'sideBar.background': palette.toolPanelBackgroundColor,
     'sideBar.foreground': palette.textColor,
     'sideBar.border': palette.toolPanelBorderColor,
-    'sideBar.dropBackground': tc('gray').setAlpha(0.15),
+    'sideBar.dropBackground': dropBackground,
     'sideBarTitle.foreground': palette.textColorHighlight,
     'sideBarSectionHeader.background': palette.panelHeadingBackgroundColor,
     'sideBarSectionHeader.foreground': palette.textColor,
@@ -130,11 +137,12 @@ function generateWorkbench(
 
     // Minimap
     'minimap.findMatchHighlight': palette.syntaxResultMarkerColorSelected,
+    'minimap.selectionHighlight': palette.syntaxResultMarkerColor,
 
-    // Editor Groups & Tabs
+    // Editor Groups and Tabs
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/tabs.less
     'editorGroup.border': palette.toolPanelBorderColor,
-    'editorGroup.dropBackground': tc('gray').setAlpha(0.15),
+    'editorGroup.dropBackground': dropBackground,
     'editorGroupHeader.noTabsBackground': palette.tabBarBackgroundColor,
     'editorGroupHeader.tabsBackground': palette.tabBarBackgroundColor,
     'editorGroupHeader.tabsBorder': palette.tabBarBorderColor,
@@ -197,6 +205,8 @@ function generateWorkbench(
     'editorIndentGuide.activeBackground': palette.syntaxGutterTextColor,
     'editorRuler.foreground': palette.syntaxWrapGuideColor,
     'editorCodeLens.foreground': palette.mono3,
+    'editorLightBulb.foreground': INHERIT, // #ffcc00, #ddb100
+    'editorLightBulbAutoFix.foreground': INHERIT, // #75beff, #007acc
     'editorBracketMatch.background': TRANSPARENT,
     'editorBracketMatch.border': palette.syntaxCursorColor,
     'editorOverviewRuler.border': TRANSPARENT,
@@ -223,12 +233,16 @@ function generateWorkbench(
     'editorInfo.border': INHERIT, // TRANSPARENT
     'editorHint.foreground': palette.textColorInfo,
     'editorHint.border': INHERIT, // TRANSPARENT
+    'problemsErrorIcon.foreground': INHERIT, // textColorError
+    'problemsWarningIcon.foreground': INHERIT, // textColorWarning
+    'problemsInfoIcon.foreground': INHERIT, // textColorInfo
     'editorUnnecessaryCode.border': INHERIT, // TRANSPARENT
     'editorUnnecessaryCode.opacity': INHERIT, // #000a, #0007
     'editorGutter.background': palette.syntaxGutterBackgroundColor,
     'editorGutter.modifiedBackground': palette.syntaxColorModified,
     'editorGutter.addedBackground': palette.syntaxColorAdded,
     'editorGutter.deletedBackground': palette.syntaxColorRemoved,
+    'editorGutter.commentRangeForeground': palette.syntaxWrapGuideColor,
 
     // Diff Editor Colors
     // https://github.com/atom/atom/blob/master/packages/one-dark-syntax/styles/editor.less
@@ -244,6 +258,7 @@ function generateWorkbench(
 
     // Editor Widget Colors
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/modal.less
+    'editorWidget.foreground': INHERIT, // textColor
     'editorWidget.background': palette.overlayBackgroundColor,
     'editorWidget.border': palette.overlayBorderColor,
     'editorWidget.resizeBorder': palette.overlayBackgroundColor,
@@ -254,6 +269,8 @@ function generateWorkbench(
     'editorSuggestWidget.selectedBackground': INHERIT, // backgroundColorInactive
     'editorHoverWidget.background': INHERIT, // overlayBackgroundColor
     'editorHoverWidget.border': INHERIT, // overlayBorderColor
+    'editorHoverWidget.foreground': INHERIT, // textColor
+    'editorHoverWidget.statusBarBackground': palette.overlayBackgroundColor,
     'debugExceptionWidget.background': INHERIT, // overlayBackgroundColor
     'debugExceptionWidget.border': INHERIT, // overlayBorderColor
     'editorMarkerNavigation.background': palette.backgroundColorHighlight,
@@ -293,10 +310,14 @@ function generateWorkbench(
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/panels.less
     'panel.background': palette.toolPanelBackgroundColor,
     'panel.border': palette.toolPanelBorderColor,
-    'panel.dropBackground': tc('gray').setAlpha(0.1),
+    'panel.dropBackground': dropBackground,
     'panelTitle.activeBorder': TRANSPARENT,
     'panelTitle.activeForeground': palette.tabTextColorActive,
     'panelTitle.inactiveForeground': palette.tabTextColor,
+    'panelInput.border': palette.inputBorderColor,
+
+    // Preview
+    'imagePreview.border': palette.toolPanelBorderColor,
 
     // Status Bar Colors
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/status-bar.less
@@ -314,6 +335,8 @@ function generateWorkbench(
     'statusBarItem.prominentForeground': palette.accentBgTextColor,
     'statusBarItem.prominentBackground': palette.accentBgColor,
     'statusBarItem.prominentHoverBackground': palette.accentBgColor,
+    'statusBarItem.remoteBackground': INHERIT, // badgeBackgroundColor
+    'statusBarItem.remoteForeground': INHERIT, // textColorHighlight
 
     // Title Bar Colors
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/title-bar.less
@@ -333,6 +356,7 @@ function generateWorkbench(
     'menu.selectionBackground': palette.buttonBackgroundColorSelected,
     'menu.selectionBorder': INHERIT, // TRANSPARENT
     'menu.separatorBackground': palette.baseBorderColor,
+    'menu.border': INHERIT, // TRANSPARENT
 
     // Notification Colors
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/modal.less
@@ -344,15 +368,22 @@ function generateWorkbench(
     'notifications.background': palette.insetPanelBackgroundColor,
     'notifications.border': palette.insetPanelBorderColor,
     'notificationLink.foreground': INHERIT, // accentColor
+    'notificationsErrorIcon.foreground': INHERIT, // textColorError
+    'notificationsWarningIcon.foreground': INHERIT, // textColorWarning
+    'notificationsInfoIcon.foreground': INHERIT, // textColorInfo
 
     // Extensions
     'extensionButton.prominentForeground': palette.accentBgTextColor,
     'extensionButton.prominentBackground': palette.accentBgColor,
     'extensionButton.prominentHoverBackground': palette.accentBgColor,
+    'extensionBadge.remoteBackground': INHERIT, // badgeBackgroundColor
+    'extensionBadge.remoteForeground': INHERIT, // textColorHighlight
 
     // Quick Picker
     'pickerGroup.border': palette.overlayBorderColor,
     'pickerGroup.foreground': palette.textColor,
+    'quickInput.background': palette.overlayBackgroundColor,
+    'quickInput.foreground': INHERIT, // textColor
 
     // Integrated Terminal Colors
     'terminal.background': INHERIT,
