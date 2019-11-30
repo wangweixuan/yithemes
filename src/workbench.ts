@@ -28,6 +28,10 @@ function generateWorkbench(
     'errorForeground': palette.textColorError,
     'icon.foreground': palette.textColor,
 
+    // Window Border
+    'window.activeBorder': INHERIT,
+    'window.inactiveBorder': INHERIT,
+
     // Text Colors
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/text.less
     'textBlockQuote.background': palette.insetPanelBackgroundColor,
@@ -121,6 +125,8 @@ function generateWorkbench(
     'activityBar.foreground': palette.textColorHighlight,
     'activityBar.inactiveForeground': palette.textColor,
     'activityBar.border': palette.toolPanelBorderColor,
+    'activityBar.activeBorder': INHERIT, // textColorHighlight
+    'activityBar.activeBackground': INHERIT, // insetPanelBackgroundColor
     'activityBarBadge.background': INHERIT, // badgeBackgroundColor
     'activityBarBadge.foreground': INHERIT, // textColorHighlight
 
@@ -458,7 +464,42 @@ function generateWorkbench(
     'editor.snippetTabstopHighlightBackground': palette.syntaxResultMarkerColor,
     'editor.snippetTabstopHighlightBorder': INHERIT, // TRANSPARENT
     'editor.snippetFinalTabstopHighlightBackground': INHERIT, // TRANSPARENT
-    'editor.snippetFinalTabstopHighlightBorder': palette.mono2
+    'editor.snippetFinalTabstopHighlightBorder': palette.mono2,
+
+    // Symbol Icons
+    'symbolIcon.arrayForeground': INHERIT,
+    'symbolIcon.booleanForeground': INHERIT,
+    'symbolIcon.classForeground': INHERIT,
+    'symbolIcon.colorForeground': INHERIT,
+    'symbolIcon.constantForeground': INHERIT,
+    'symbolIcon.constructorForeground': INHERIT,
+    'symbolIcon.enumeratorForeground': INHERIT,
+    'symbolIcon.enumeratorMemberForeground': INHERIT,
+    'symbolIcon.eventForeground': INHERIT,
+    'symbolIcon.fieldForeground': INHERIT,
+    'symbolIcon.fileForeground': INHERIT,
+    'symbolIcon.folderForeground': INHERIT,
+    'symbolIcon.functionForeground': INHERIT,
+    'symbolIcon.interfaceForeground': INHERIT,
+    'symbolIcon.keyForeground': INHERIT,
+    'symbolIcon.keywordForeground': INHERIT,
+    'symbolIcon.methodForeground': INHERIT,
+    'symbolIcon.moduleForeground': INHERIT,
+    'symbolIcon.namespaceForeground': INHERIT,
+    'symbolIcon.nullForeground': INHERIT,
+    'symbolIcon.numberForeground': INHERIT,
+    'symbolIcon.objectForeground': INHERIT,
+    'symbolIcon.operatorForeground': INHERIT,
+    'symbolIcon.packageForeground': INHERIT,
+    'symbolIcon.propertyForeground': INHERIT,
+    'symbolIcon.referenceForeground': INHERIT,
+    'symbolIcon.snippetForeground': INHERIT,
+    'symbolIcon.stringForeground': INHERIT,
+    'symbolIcon.structForeground': INHERIT,
+    'symbolIcon.textForeground': INHERIT,
+    'symbolIcon.typeParameterForeground': INHERIT,
+    'symbolIcon.unitForeground': INHERIT,
+    'symbolIcon.variableForeground': INHERIT
   }
 }
 
