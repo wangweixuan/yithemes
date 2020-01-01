@@ -117,6 +117,8 @@ function generateWorkbench(
     'listFilterWidget.background': palette.inputBackgroundColor,
     'listFilterWidget.outline': palette.accentColor,
     'listFilterWidget.noMatchesOutline': palette.textColorError,
+    'list.filterMatchBackground': INHERIT, // syntaxResultMarkerColor
+    'list.filterMatchBorder': INHERIT, // TRANSPARENT
     'tree.indentGuidesStroke': palette.syntaxIndentGuideColor,
 
     // Activity Bar
@@ -125,10 +127,11 @@ function generateWorkbench(
     'activityBar.foreground': palette.textColorHighlight,
     'activityBar.inactiveForeground': palette.textColor,
     'activityBar.border': palette.toolPanelBorderColor,
-    'activityBar.activeBorder': INHERIT, // textColorHighlight
-    'activityBar.activeBackground': INHERIT, // insetPanelBackgroundColor
     'activityBarBadge.background': INHERIT, // badgeBackgroundColor
     'activityBarBadge.foreground': INHERIT, // textColorHighlight
+    'activityBar.activeBorder': INHERIT, // textColorHighlight
+    'activityBar.activeBackground': INHERIT, // textColorHighlight
+    'activityBar.activeFocusBorder': INHERIT, // TRANSPARENT
 
     // Side Bar
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/panels.less
@@ -144,6 +147,11 @@ function generateWorkbench(
     // Minimap
     'minimap.findMatchHighlight': palette.syntaxResultMarkerColorSelected,
     'minimap.selectionHighlight': palette.syntaxResultMarkerColor,
+    'minimap.errorHighlight': palette.textColorError,
+    'minimap.warningHighlight': palette.textColorWarning,
+    'minimapGutter.addedBackground': palette.textColorAdded,
+    'minimapGutter.modifiedBackground': palette.textColorModified,
+    'minimapGutter.deletedBackground': palette.textColorRemoved,
 
     // Editor Groups and Tabs
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/tabs.less
@@ -200,12 +208,16 @@ function generateWorkbench(
     'editor.findMatchBorder': palette.syntaxResultMarkerColorSelected,
     'editor.findMatchHighlightBorder': INHERIT, // TRANSPARENT
     'editor.findRangeHighlightBorder': INHERIT, // TRANSPARENT
+    'searchEditor.findMatchBackground': palette.syntaxResultMarkerColor,
+    'searchEditor.findMatchBorder': INHERIT, // TRANSPARENT
     'editor.hoverHighlightBackground': TRANSPARENT,
     'editor.lineHighlightBackground': palette.syntaxCursorLine,
     'editor.lineHighlightBorder': TRANSPARENT,
     'editorLink.activeForeground': palette.hue1,
     'editor.rangeHighlightBackground': INHERIT, // TRANSPARENT
     'editor.rangeHighlightBorder': INHERIT, // TRANSPARENT
+    'editor.symbolHighlightBackground': INHERIT, // syntaxResultMarkerColor
+    'editor.symbolHighlightBorder': INHERIT, // TRANSPARENT
     'editorWhitespace.foreground': palette.syntaxInvisibleCharacterColor,
     'editorIndentGuide.background': palette.syntaxIndentGuideColor,
     'editorIndentGuide.activeBackground': palette.syntaxGutterTextColor,
@@ -273,9 +285,9 @@ function generateWorkbench(
     'editorSuggestWidget.foreground': INHERIT, // textColor
     'editorSuggestWidget.highlightForeground': palette.textColorHighlight,
     'editorSuggestWidget.selectedBackground': INHERIT, // backgroundColorInactive
+    'editorHoverWidget.foreground': INHERIT, // textColor
     'editorHoverWidget.background': INHERIT, // overlayBackgroundColor
     'editorHoverWidget.border': INHERIT, // overlayBorderColor
-    'editorHoverWidget.foreground': INHERIT, // textColor
     'editorHoverWidget.statusBarBackground': palette.overlayBackgroundColor,
     'debugExceptionWidget.background': INHERIT, // overlayBackgroundColor
     'debugExceptionWidget.border': INHERIT, // overlayBorderColor
@@ -499,7 +511,24 @@ function generateWorkbench(
     'symbolIcon.textForeground': INHERIT,
     'symbolIcon.typeParameterForeground': INHERIT,
     'symbolIcon.unitForeground': INHERIT,
-    'symbolIcon.variableForeground': INHERIT
+    'symbolIcon.variableForeground': INHERIT,
+
+    // Debug Icons
+    'debugIcon.breakpointForeground': INHERIT,
+    'debugIcon.breakpointDisabledForeground': INHERIT,
+    'debugIcon.breakpointUnverifiedForeground': INHERIT,
+    'debugIcon.breakpointCurrentStackframeForeground': INHERIT,
+    'debugIcon.breakpointStackframeForeground': INHERIT,
+    'debugIcon.startForeground': INHERIT,
+    'debugIcon.pauseForeground': INHERIT,
+    'debugIcon.stopForeground': INHERIT,
+    'debugIcon.disconnectForeground': INHERIT,
+    'debugIcon.restartForeground': INHERIT,
+    'debugIcon.stepOverForeground': INHERIT,
+    'debugIcon.stepIntoForeground': INHERIT,
+    'debugIcon.stepOutForeground': INHERIT,
+    'debugIcon.continueForeground': INHERIT,
+    'debugIcon.stepBackForeground': INHERIT
   }
 }
 

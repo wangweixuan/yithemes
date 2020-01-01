@@ -45,6 +45,16 @@ Below are some commands to build the extension:
 
 This extension does not include unit tests or integration tests.
 
+## Color References
+
+You can find VS Code's theme color reference at the following locations:
+
+- [Theme Color docs](https://github.com/Microsoft/vscode-docs/blob/master/api/references/theme-color.md)
+- [theme.ts](https://github.com/microsoft/vscode/blob/master/src/vs/workbench/common/theme.ts)
+- [colorRegistry.ts](https://github.com/microsoft/vscode/blob/master/src/vs/platform/theme/common/colorRegistry.ts)
+- [editorColorRegistry.ts](https://github.com/microsoft/vscode/blob/master/src/vs/editor/common/view/editorColorRegistry.ts)
+
+
 ## Versioning & Publishing
 
 Yi Themes adheres to [Semantic Versioning](https://semver.org). Its version is unrelated to the version of One Dark & One Light themes or Visual Studio Code. A new version will be published regularly when One Dark & One Light themes or Code gets an update.
