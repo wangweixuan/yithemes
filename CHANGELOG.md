@@ -1,5 +1,9 @@
 # Version History
 
+## `0.14.0` January 1, 2020
+
+- Added support of various colors introduced in Visual Studio Code 1.41 and 1.40.
+
 ## `0.13.0` November 2, 2019
 
 - Added support of minimap selection highlight color introduced in Visual Studio Code 1.39.

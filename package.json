@@ -1,6 +1,6 @@
 {
   "name": "yithemes",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "Atom One Dark & One Light themes ported for VS Code.",
   "keywords": [
     "theme",
@@ -13,19 +13,19 @@
   "repository": "https://github.com/wangweixuan/yithemes.git",
   "private": true,
   "scripts": {
-    "lint": "prettier --write --no-semi --quote-props consistent --single-quote src/*.ts",
+    "lint": "prettier --write --config src/.prettierrc.json src/*.ts",
     "prepare": "tsc -p src && node dist/src",
     "pretest": "tsc -p src && node dist/src",
-    "test": "command -v code-insiders >/dev/null 2>&1 && code-insiders --extensionDevelopmentPath=$PWD || code --extensionDevelopmentPath=$PWD"
+    "test": "code --extensionDevelopmentPath=$PWD"
   },
   "devDependencies": {
-    "@types/node": "^12.12.5",
-    "@types/node-sass": "^4.13.0",
+    "@types/node": "^13.1.2",
+    "@types/node-sass": "^4.11.0",
     "@types/tinycolor2": "^1.4.2",
-    "node-sass": "^4.12.0",
-    "prettier": "1.18.2",
+    "node-sass": "^4.13.0",
+    "prettier": "^1.19.1",
     "tinycolor2": "^1.4.1",
-    "typescript": "^3.6.4"
+    "typescript": "^3.7.4"
   },
   "displayName": "Yi Dark & Yi Light Themes",
   "publisher": "wangweixuan",
