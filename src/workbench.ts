@@ -127,9 +127,9 @@ function generateWorkbench(
     'activityBar.foreground': palette.textColorHighlight,
     'activityBar.inactiveForeground': palette.textColor,
     'activityBar.border': palette.toolPanelBorderColor,
-    'activityBarBadge.background': INHERIT, // badgeBackgroundColor
-    'activityBarBadge.foreground': INHERIT, // textColorHighlight
-    'activityBar.activeBorder': INHERIT, // textColorHighlight
+    'activityBarBadge.background': palette.accentBgColor,
+    'activityBarBadge.foreground': palette.textColorHighlight,
+    'activityBar.activeBorder': palette.accentBgColor,
     'activityBar.activeBackground': INHERIT, // textColorHighlight
     'activityBar.activeFocusBorder': INHERIT, // TRANSPARENT
 
