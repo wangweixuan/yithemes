@@ -1,5 +1,9 @@
 # Version History
 
+## `0.14.1` January 14, 2020
+
+- Fixed the color of active activity bar item indicator. ([#7](https://github.com/wangweixuan/yithemes/issues/7))
+
 ## `0.14.0` January 1, 2020
 
 - Added support of various colors introduced in Visual Studio Code 1.41 and 1.40.
