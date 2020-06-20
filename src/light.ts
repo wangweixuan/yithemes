@@ -114,27 +114,23 @@ export const level3ColorActive = level3Color.clone().darken(3)
 
 export const accentLuma = tc({ h: uiHue, s: 0.5, l: 0.5 }).getLuminance()
 
-// TODO: check tc.mix
-export const accentColor = tc(
-  '#556de8'
-) /* tc.mix(
+export const accentColor = tc('#556de8')
+/* tc.mix(
   tc({ h: uiHue, s: 0.6, v: 0.6 }), tc({ h: uiHue, s: 1, l: 0.68 }), accentLuma * 2
 ) */
 export const accentTextColor = tc.mostReadable(accentColor, [
   tc({ h: uiHue, s: 1, l: 0.16 }),
   tc('white')
-]) // TODO: threshold 0.4 missing
+])
 
-export const accentBgColor = tc(
-  '#5871ef'
-) /* tc.mix(
+export const accentBgColor = tc('#5871ef')
+/* tc.mix(
   tc({ h: uiHue, s: 0.4, v: 0.72 }), tc({ h: uiHue, s: 1, l: 0.66 }), accentLuma * 2
 ) */
-export const accentBgTextColor = tc(
-  'white'
-) /* tc.mostReadable(
+export const accentBgTextColor = tc('white')
+/* tc.mostReadable(
   accentBgColor, [tc({ h: uiHue, s: 1, l: 0.1 }), tc('white')]
-) // TODO: threshold 0.4 missing */
+) */
 
 export const accentOnlyTextColor = tc.mix(
   tc({ h: uiHue, s: 0.7, v: 0.5 }),

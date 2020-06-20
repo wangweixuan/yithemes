@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "outDir": "../dist/src",
-    "strict": true
+    "module": "CommonJS",
+    "outDir": "../dist/intermediate",
+    "strict": true,
+    "target": "ES6"
   }
 }

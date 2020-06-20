@@ -240,7 +240,7 @@ function generateSyntax(
     'meta.function-call.generic.python': { foreground: palette.hue2 }
   }
 
-  return Object.keys(settings).map(scope => ({
+  return Object.keys(settings).map((scope) => ({
     scope,
     settings: settings[scope]
   }))

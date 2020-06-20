@@ -5,47 +5,49 @@ import { MARKDOWN_CSS } from './markdown'
 import { SyntaxRules, SYNTAX_DARK, SYNTAX_LIGHT } from './syntax'
 import { WorkbenchRules, WORKBENCH_DARK, WORKBENCH_LIGHT } from './workbench'
 
+function writeAll() {
+  writeFile(
+    join(__dirname, '../dark.json'),
+    assembleTheme('Yi Dark', 'dark', SYNTAX_DARK, WORKBENCH_DARK),
+    handleError
+  )
+
+  writeFile(
+    join(__dirname, '../light.json'),
+    assembleTheme('Yi Light', 'light', SYNTAX_LIGHT, WORKBENCH_LIGHT),
+    handleError
+  )
+
+  writeFile(join(__dirname, '../markdown.css'), MARKDOWN_CSS, handleError)
+}
+
 function assembleTheme(
   name: string,
   type: string,
   syntax: SyntaxRules,
   workbench: WorkbenchRules
 ) {
-  return JSON.stringify(
-    {
-      $schema: 'vscode://schemas/color-theme',
-      name,
-      type,
-      colors: workbench,
-      tokenColors: syntax
-    },
-    (key, value) => {
-      if (value && value instanceof tc)
-        return value.getAlpha() === 1
-          ? value.toHexString()
-          : value.toHex8String()
+  const content = {
+    $schema: 'vscode://schemas/color-theme',
+    name,
+    type,
+    colors: workbench,
+    tokenColors: syntax
+  }
 
-      return value
-    }
-  )
+  return JSON.stringify(content, stringifyColor)
 }
 
-writeFile(
-  join(__dirname, '../dark.json'),
-  assembleTheme('Yi Dark', 'dark', SYNTAX_DARK, WORKBENCH_DARK),
-  err => {
-    if (err) throw err
-  }
-)
-
-writeFile(
-  join(__dirname, '../light.json'),
-  assembleTheme('Yi Light', 'light', SYNTAX_LIGHT, WORKBENCH_LIGHT),
-  err => {
-    if (err) throw err
-  }
-)
-
-writeFile(join(__dirname, '../markdown.css'), MARKDOWN_CSS, err => {
+function handleError(err: NodeJS.ErrnoException | null) {
   if (err) throw err
-})
+}
+
+function stringifyColor(_key: string, value: any): any {
+  if (value && value instanceof tc) {
+    return value.getAlpha() === 1 ? value.toHexString() : value.toHex8String()
+  }
+
+  return value
+}
+
+writeAll()
