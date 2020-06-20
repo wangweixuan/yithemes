@@ -65,8 +65,9 @@ function generateWorkbench(
     'input.border': palette.inputBorderColor,
     'input.foreground': palette.textColorHighlight,
     'input.placeholderForeground': palette.textColorSubtle,
-    'inputOption.activeBackground': INHERIT, // accentColor
-    'inputOption.activeBorder': INHERIT, // TRANSPARENT
+    'inputOption.activeBackground': palette.buttonBackgroundColorSelected,
+    'inputOption.activeBorder': TRANSPARENT,
+    'inputOption.activeForeground': palette.textColorSelected,
     'inputValidation.errorBackground': palette.backgroundColorError,
     'inputValidation.errorForeground': palette.textColorHighlight,
     'inputValidation.errorBorder': palette.textColorError,
@@ -114,6 +115,7 @@ function generateWorkbench(
     'list.invalidItemForeground': palette.textColorError,
     'list.errorForeground': palette.textColorError,
     'list.warningForeground': palette.textColorWarning,
+    'list.deemphasizedForeground': palette.textColorSubtle,
     'listFilterWidget.background': palette.inputBackgroundColor,
     'listFilterWidget.outline': palette.accentColor,
     'listFilterWidget.noMatchesOutline': palette.textColorError,
@@ -123,10 +125,11 @@ function generateWorkbench(
 
     // Activity Bar
     'activityBar.background': palette.insetPanelBackgroundColor,
-    'activityBar.dropBackground': dropBackground,
     'activityBar.foreground': palette.textColorHighlight,
     'activityBar.inactiveForeground': palette.textColor,
     'activityBar.border': palette.toolPanelBorderColor,
+    'activityBar.dropBackground': dropBackground,
+    'activityBar.dropBorder': palette.accentColor,
     'activityBarBadge.background': palette.accentBgColor,
     'activityBarBadge.foreground': palette.textColorHighlight,
     'activityBar.activeBorder': palette.accentBgColor,
@@ -145,10 +148,18 @@ function generateWorkbench(
     'sideBarSectionHeader.border': INHERIT, // TRANSPARENT
 
     // Minimap
+    'minimap.background': INHERIT, // syntaxBackgroundColor
     'minimap.findMatchHighlight': palette.syntaxResultMarkerColorSelected,
     'minimap.selectionHighlight': palette.syntaxResultMarkerColor,
     'minimap.errorHighlight': palette.textColorError,
     'minimap.warningHighlight': palette.textColorWarning,
+    'minimapSlider.background': palette.scrollbarColor.clone().setAlpha(0.5),
+    'minimapSlider.hoverBackground': palette.scrollbarColor
+      .clone()
+      .setAlpha(0.8),
+    'minimapSlider.activeBackground': palette.scrollbarColor
+      .clone()
+      .setAlpha(0.8),
     'minimapGutter.addedBackground': palette.textColorAdded,
     'minimapGutter.modifiedBackground': palette.textColorModified,
     'minimapGutter.deletedBackground': palette.textColorRemoved,
@@ -157,9 +168,10 @@ function generateWorkbench(
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/tabs.less
     'editorGroup.border': palette.toolPanelBorderColor,
     'editorGroup.dropBackground': dropBackground,
+    'editorGroupHeader.border': palette.tabBarBorderColor,
     'editorGroupHeader.noTabsBackground': palette.tabBarBackgroundColor,
     'editorGroupHeader.tabsBackground': palette.tabBarBackgroundColor,
-    'editorGroupHeader.tabsBorder': palette.tabBarBorderColor,
+    'editorGroupHeader.tabsBorder': TRANSPARENT,
     'editorGroup.emptyBackground': INHERIT, // toolPanelBackgroundColor
     'editorGroup.focusedEmptyBorder': INHERIT, // toolPanelBorderColor
     'tab.activeBackground': palette.tabBackgroundColorActive,
@@ -171,11 +183,14 @@ function generateWorkbench(
     'tab.activeBorderTop': INHERIT, // TRANSPARENT
     'tab.unfocusedActiveBorderTop': INHERIT, // TRANSPARENT
     'tab.inactiveBackground': palette.tabBackgroundColor,
+    'tab.unfocusedInactiveBackground': INHERIT, // tabBackgroundColor
     'tab.inactiveForeground': palette.tabTextColor,
     'tab.unfocusedActiveForeground': palette.tabTextColorActive,
     'tab.unfocusedInactiveForeground': palette.tabTextColor,
     'tab.hoverBackground': INHERIT, // TRANSPARENT
     'tab.unfocusedHoverBackground': INHERIT, // TRANSPARENT
+    'tab.hoverForeground': palette.textColorHighlight,
+    'tab.unfocusedHoverForeground': INHERIT, // textColorHighlight
     'tab.hoverBorder': INHERIT, // TRANSPARENT
     'tab.unfocusedHoverBorder': INHERIT, // TRANSPARENT
     'tab.activeModifiedBorder': palette.accentColor,
@@ -198,7 +213,6 @@ function generateWorkbench(
     'editor.selectionHighlightBackground': palette.syntaxCursorLine,
     'editor.selectionHighlightBorder': INHERIT, // TRANSPARENT
     'editor.wordHighlightBackground': TRANSPARENT,
-    // TODO: word highlight is colliding with selection & selection highlight
     'editor.wordHighlightBorder': INHERIT, // TRANSPARENT
     'editor.wordHighlightStrongBackground': TRANSPARENT,
     'editor.wordHighlightStrongBorder': INHERIT, // TRANSPARENT
@@ -210,6 +224,7 @@ function generateWorkbench(
     'editor.findRangeHighlightBorder': INHERIT, // TRANSPARENT
     'searchEditor.findMatchBackground': palette.syntaxResultMarkerColor,
     'searchEditor.findMatchBorder': INHERIT, // TRANSPARENT
+    'searchEditor.textInputBorder': INHERIT, // inputBorderColor
     'editor.hoverHighlightBackground': TRANSPARENT,
     'editor.lineHighlightBackground': palette.syntaxCursorLine,
     'editor.lineHighlightBorder': TRANSPARENT,
@@ -227,8 +242,9 @@ function generateWorkbench(
     'editorLightBulbAutoFix.foreground': INHERIT, // #75beff, #007acc
     'editorBracketMatch.background': TRANSPARENT,
     'editorBracketMatch.border': palette.syntaxCursorColor,
+    'editor.foldBackground': palette.syntaxCursorLine,
+    'editorOverviewRuler.background': INHERIT, // syntaxBackgroundColor
     'editorOverviewRuler.border': TRANSPARENT,
-    // TODO: editor.overviewRulerBorder user setting is not regarded
     'editorOverviewRuler.findMatchForeground': palette.syntaxSelectionColor,
     'editorOverviewRuler.rangeHighlightForeground': INHERIT, // TRANSPARENT
     'editorOverviewRuler.selectionHighlightForeground':
@@ -261,6 +277,7 @@ function generateWorkbench(
     'editorGutter.addedBackground': palette.syntaxColorAdded,
     'editorGutter.deletedBackground': palette.syntaxColorRemoved,
     'editorGutter.commentRangeForeground': palette.syntaxWrapGuideColor,
+    'editorGutter.foldingControlForeground': INHERIT, // textColor
 
     // Diff Editor Colors
     // https://github.com/atom/atom/blob/master/packages/one-dark-syntax/styles/editor.less
@@ -273,6 +290,7 @@ function generateWorkbench(
       .setAlpha(0.24),
     'diffEditor.removedTextBorder': INHERIT, // TRANSPARENT
     'diffEditor.border': palette.toolPanelBorderColor,
+    'diffEditor.diagonalFill': palette.syntaxGuide,
 
     // Editor Widget Colors
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/modal.less
@@ -329,10 +347,16 @@ function generateWorkbench(
     'panel.background': palette.toolPanelBackgroundColor,
     'panel.border': palette.toolPanelBorderColor,
     'panel.dropBackground': dropBackground,
+    'panel.dropBorder': INHERIT, // tabTextColorActive
     'panelTitle.activeBorder': TRANSPARENT,
     'panelTitle.activeForeground': palette.tabTextColorActive,
     'panelTitle.inactiveForeground': palette.tabTextColor,
     'panelInput.border': palette.inputBorderColor,
+    'panelSection.border': INHERIT, // toolPanelBorderColor
+    'panelSection.dropBackground': INHERIT, // dropBackground
+    'panelSectionHeader.background': palette.panelHeadingBackgroundColor,
+    'panelSectionHeader.foreground': INHERIT, // textColor
+    'panelSectionHeader.border': INHERIT, // TRANSPARENT
 
     // Preview
     'imagePreview.border': palette.toolPanelBorderColor,
@@ -402,6 +426,7 @@ function generateWorkbench(
     'pickerGroup.foreground': palette.textColor,
     'quickInput.background': palette.overlayBackgroundColor,
     'quickInput.foreground': INHERIT, // textColor
+    'quickInputTitle.background': palette.overlayBackgroundColor,
 
     // Integrated Terminal Colors
     'terminal.background': INHERIT,
@@ -430,8 +455,20 @@ function generateWorkbench(
     // Debug
     'debugToolBar.background': palette.overlayBackgroundColor,
     'debugToolBar.border': INHERIT, // TRANSPARENT
-    'editor.stackFrameHighlightBackground': INHERIT, // #ffff0033, #ffff6673
-    'editor.focusedStackFrameHighlightBackground': INHERIT, // #7abd7a4d, #cee7ce73
+    'editor.stackFrameHighlightBackground': palette.backgroundColorWarning,
+    'editor.focusedStackFrameHighlightBackground':
+      palette.backgroundColorWarning,
+    'debugView.exceptionLabelForeground': palette.textColor,
+    'debugView.exceptionLabelBackground': palette.backgroundColorError,
+    'debugView.stateLabelForeground': INHERIT, // textColor
+    'debugView.stateLabelBackground': palette.backgroundColorSuccess,
+    'debugView.valueChangedHighlight': palette.backgroundColorInfo,
+    'debugTokenExpression.name': palette.hue5,
+    'debugTokenExpression.value': palette.hue1,
+    'debugTokenExpression.string': palette.hue4,
+    'debugTokenExpression.boolean': palette.hue6,
+    'debugTokenExpression.number': palette.hue6,
+    'debugTokenExpression.error': palette.textColorError,
 
     // Welcome Page
     'welcomePage.buttonBackground': palette.buttonBackgroundColor,
@@ -528,7 +565,12 @@ function generateWorkbench(
     'debugIcon.stepIntoForeground': INHERIT,
     'debugIcon.stepOutForeground': INHERIT,
     'debugIcon.continueForeground': INHERIT,
-    'debugIcon.stepBackForeground': INHERIT
+    'debugIcon.stepBackForeground': INHERIT,
+    'debugConsole.infoForeground': INHERIT, // textColorInfo
+    'debugConsole.warningForeground': INHERIT, // textColorWarning
+    'debugConsole.errorForeground': INHERIT, // textColorError
+    'debugConsole.sourceForeground': INHERIT, // textColor
+    'debugConsoleInputIcon.foreground': INHERIT // textColor
   }
 }
 
