@@ -1,5 +1,9 @@
 # Version History
 
+## `0.15.0` June 20, 2020
+
+- Added support of various colors introduced in Visual Studio Code 1.42 to 1.46.
+
 ## `0.14.1` January 14, 2020
 
 - Fixed the color of active activity bar item indicator. ([#7](https://github.com/wangweixuan/yithemes/issues/7))
@@ -42,16 +46,16 @@
 
 ## `0.10.1` February 15, 2019
 
-- Fixed the wrong color of some buttons in Yi Light theme. ([#1 (comment)](https://github.com/wangweixuan/yithemes/issues/1#issuecomment-463841367))
+- Fixed the wrong color of some buttons in Yi Light theme. ([#1](https://github.com/wangweixuan/yithemes/issues/1#issuecomment-463841367))
 
 ## `0.10.0` February 13, 2019
 
 - Fixed the wrong background color of selected items in suggestions list and command palette:
   they now get less prominent grayish colors.
 - Fixed the wrong background color of active buttons and list items in Yi Light theme:
-  they now get a blue background instead of dark purple. ([#1 (comment)](https://github.com/wangweixuan/yithemes/issues/1#issuecomment-462909426))
+  they now get a blue background instead of dark purple. ([#1](https://github.com/wangweixuan/yithemes/issues/1#issuecomment-462909426))
 - Added workaround for [Microsoft/vscode#3429](https://github.com/Microsoft/vscode/issues/3429):
-  illegal code now gets a red color. ([#1 (comment)](https://github.com/wangweixuan/yithemes/issues/1#issuecomment-462912594))
+  illegal code now gets a red color. ([#1](https://github.com/wangweixuan/yithemes/issues/1#issuecomment-462912594))
 
 ## `0.9.0` February 8, 2019
 
