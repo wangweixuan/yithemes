@@ -25,6 +25,7 @@ function generateWorkbench(
     'focusBorder': palette.accentColor,
     'foreground': palette.textColor,
     'icon.foreground': palette.textColor,
+    'sash.hoverBorder': INHERIT,
     'selection.background': palette.inputSelectionColorFocus,
     'widget.shadow': tc({ h: 0, l: 0, s: 0, a: 0.4 }),
 
@@ -42,11 +43,20 @@ function generateWorkbench(
     'textPreformat.foreground': INHERIT,
     'textSeparator.foreground': INHERIT,
 
+    // Action Colors
+    'toolbar.activeBackground': INHERIT,
+    'toolbar.hoverBackground': INHERIT,
+    'toolbar.hoverOutline': INHERIT,
+
     // Button Control
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/buttons.less
     'button.background': palette.buttonBackgroundColor,
+    'button.border': INHERIT,
     'button.foreground': palette.textColor,
     'button.hoverBackground': palette.buttonBackgroundColorHover,
+    'button.secondaryBackground': INHERIT,
+    'button.secondaryForeground': INHERIT,
+    'button.secondaryHoverBackground': INHERIT,
     'checkbox.background': INHERIT, // inputBackgroundColor
     'checkbox.border': INHERIT, // baseBorderColor
     'checkbox.foreground': INHERIT, // textColor
@@ -110,10 +120,12 @@ function generateWorkbench(
     'list.filterMatchBorder': INHERIT, // TRANSPARENT
     'list.focusBackground': palette.backgroundColorInactive,
     'list.focusForeground': palette.textColorSelected,
+    'list.focusOutline': INHERIT,
     'list.highlightForeground': palette.accentColor,
     'list.hoverBackground': TRANSPARENT,
     'list.hoverForeground': INHERIT, // textColor
     'list.inactiveFocusBackground': palette.backgroundColorInactive,
+    'list.inactiveFocusOutline': INHERIT,
     'list.inactiveSelectionBackground': palette.backgroundColorInactive,
     'list.inactiveSelectionForeground': INHERIT, // textColorSelected
     'list.invalidItemForeground': palette.textColorError,
@@ -122,6 +134,7 @@ function generateWorkbench(
     'listFilterWidget.noMatchesOutline': palette.textColorError,
     'listFilterWidget.outline': palette.accentColor,
     'tree.indentGuidesStroke': palette.syntaxIndentGuideColor,
+    'tree.tableColumnsBorder': INHERIT,
 
     // Activity Bar
     'activityBar.activeBackground': INHERIT, // textColorHighlight
@@ -129,7 +142,6 @@ function generateWorkbench(
     'activityBar.activeFocusBorder': INHERIT, // TRANSPARENT
     'activityBar.background': palette.insetPanelBackgroundColor,
     'activityBar.border': palette.toolPanelBorderColor,
-    'activityBar.dropBackground': dropBackground,
     'activityBar.dropBorder': palette.accentColor,
     'activityBar.foreground': palette.textColorHighlight,
     'activityBar.inactiveForeground': palette.textColor,
@@ -187,6 +199,7 @@ function generateWorkbench(
     'tab.inactiveBackground': palette.tabBackgroundColor,
     'tab.inactiveForeground': palette.tabTextColor,
     'tab.inactiveModifiedBorder': palette.accentColor,
+    'tab.lastPinnedBorder': INHERIT,
     'tab.unfocusedActiveBackground': INHERIT, // tabBackgroundColorActive
     'tab.unfocusedActiveBorder': TRANSPARENT,
     'tab.unfocusedActiveBorderTop': INHERIT, // TRANSPARENT
@@ -212,8 +225,11 @@ function generateWorkbench(
     'editor.foreground': palette.syntaxTextColor,
     'editor.hoverHighlightBackground': TRANSPARENT,
     'editor.inactiveSelectionBackground': palette.syntaxSelectionColor,
+    'editor.inlineValuesBackground': undefined, // TODO:
+    'editor.inlineValuesForeground': undefined, // TODO:
     'editor.lineHighlightBackground': palette.syntaxCursorLine,
     'editor.lineHighlightBorder': TRANSPARENT,
+    'editor.linkedEditingBackground': INHERIT,
     'editor.rangeHighlightBackground': INHERIT, // TRANSPARENT
     'editor.rangeHighlightBorder': INHERIT, // TRANSPARENT
     'editor.selectionBackground': palette.syntaxSelectionColor,
@@ -231,6 +247,7 @@ function generateWorkbench(
     'editorCodeLens.foreground': palette.mono3,
     'editorCursor.background': INHERIT, // syntaxCursorColor
     'editorCursor.foreground': palette.syntaxCursorColor,
+    'editorError.background': INHERIT,
     'editorError.border': INHERIT, // TRANSPARENT
     'editorError.foreground': palette.textColorError,
     'editorGutter.addedBackground': palette.syntaxColorAdded,
@@ -243,6 +260,7 @@ function generateWorkbench(
     'editorHint.foreground': palette.textColorInfo,
     'editorIndentGuide.activeBackground': palette.syntaxGutterTextColor,
     'editorIndentGuide.background': palette.syntaxIndentGuideColor,
+    'editorInfo.background': INHERIT,
     'editorInfo.border': INHERIT, // TRANSPARENT
     'editorInfo.foreground': palette.textColorInfo,
     'editorLightBulb.foreground': INHERIT, // #ffcc00, #ddb100
@@ -269,6 +287,7 @@ function generateWorkbench(
     'editorRuler.foreground': palette.syntaxWrapGuideColor,
     'editorUnnecessaryCode.border': INHERIT, // TRANSPARENT
     'editorUnnecessaryCode.opacity': INHERIT, // #000a, #0007
+    'editorWarning.background': INHERIT,
     'editorWarning.border': INHERIT, // TRANSPARENT
     'editorWarning.foreground': palette.textColorWarning,
     'editorWhitespace.foreground': palette.syntaxInvisibleCharacterColor,
@@ -346,7 +365,6 @@ function generateWorkbench(
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/panels.less
     'panel.background': palette.toolPanelBackgroundColor,
     'panel.border': palette.toolPanelBorderColor,
-    'panel.dropBackground': dropBackground,
     'panel.dropBorder': INHERIT, // tabTextColorActive
     'panelInput.border': palette.inputBorderColor,
     'panelSection.border': INHERIT, // toolPanelBorderColor
@@ -373,6 +391,8 @@ function generateWorkbench(
     'statusBar.noFolderBorder': INHERIT, // toolPanelBorderColor
     'statusBar.noFolderForeground': INHERIT, // textColor
     'statusBarItem.activeBackground': palette.level3ColorActive,
+    'statusBarItem.errorBackground': INHERIT,
+    'statusBarItem.errorForeground': INHERIT,
     'statusBarItem.hoverBackground': palette.level3ColorHover,
     'statusBarItem.prominentBackground': palette.accentBgColor,
     'statusBarItem.prominentForeground': palette.accentBgTextColor,
@@ -420,13 +440,21 @@ function generateWorkbench(
     'extensionButton.prominentBackground': palette.accentBgColor,
     'extensionButton.prominentForeground': palette.accentBgTextColor,
     'extensionButton.prominentHoverBackground': palette.accentBgColor,
+    'extensionIcon.starForeground': INHERIT,
 
     // Quick Picker
     'pickerGroup.border': palette.overlayBorderColor,
     'pickerGroup.foreground': palette.textColor,
     'quickInput.background': palette.overlayBackgroundColor,
     'quickInput.foreground': INHERIT, // textColor
+    'quickInputList.focusBackground': INHERIT,
     'quickInputTitle.background': palette.overlayBackgroundColor,
+
+    // Keybinding Label
+    'keybindingLabel.background': undefined, // TODO:
+    'keybindingLabel.border': undefined,
+    'keybindingLabel.bottomBorder': undefined,
+    'keybindingLabel.foreground': undefined,
 
     // Integrated Terminal
     'terminal.ansiBlack': INHERIT,
@@ -470,10 +498,37 @@ function generateWorkbench(
       palette.backgroundColorWarning,
     'editor.stackFrameHighlightBackground': palette.backgroundColorWarning,
 
+    // Testing View
+    'testing.iconFailed': undefined,
+    'testing.iconErrored': undefined,
+    'testing.iconPassed': undefined,
+    'testing.runAction': undefined,
+    'testing.iconQueued': undefined,
+    'testing.iconUnset': undefined,
+    'testing.iconSkipped': undefined,
+    'testing.peekBorder': undefined,
+    'testing.message.error.decorationForeground': undefined,
+    'testing.message.error.lineBackground': undefined,
+    'testing.message.warning.decorationForeground': undefined,
+    'testing.message.warning.lineBackground': undefined,
+    'testing.message.info.decorationForeground': undefined,
+    'testing.message.info.lineBackground': undefined,
+    'testing.message.hint.decorationForeground': undefined,
+    'testing.message.hint.lineBackground': undefined,
+
     // Welcome Page
     'walkThrough.embeddedEditorBackground': palette.insetPanelBackgroundColor,
+    'welcomePage.background': INHERIT,
     'welcomePage.buttonBackground': palette.buttonBackgroundColor,
     'welcomePage.buttonHoverBackground': palette.buttonBackgroundColorHover,
+    'welcomePage.progress.background': INHERIT,
+    'welcomePage.progress.foreground': INHERIT,
+    'welcomePage.tileBackground': INHERIT,
+    'welcomePage.tileHoverBackground': INHERIT,
+    'welcomePage.tileShadow': INHERIT,
+
+    // Source Control
+    'scm.providerBorder': INHERIT,
 
     // Git
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/git.less
@@ -482,6 +537,9 @@ function generateWorkbench(
     'gitDecoration.deletedResourceForeground': palette.textColorRemoved,
     'gitDecoration.ignoredResourceForeground': palette.textColorIgnored,
     'gitDecoration.modifiedResourceForeground': palette.textColorModified,
+    'gitDecoration.renamedResourceForeground': palette.textColorRenamed,
+    'gitDecoration.stageDeletedResourceForeground': palette.textColorRemoved,
+    'gitDecoration.stageModifiedResourceForeground': palette.textColorModified,
     'gitDecoration.submoduleResourceForeground': INHERIT, // textColor
     'gitDecoration.untrackedResourceForeground': palette.textColorAdded,
 
@@ -494,6 +552,7 @@ function generateWorkbench(
     'settings.dropdownBorder': INHERIT, // baseBorderColor
     'settings.dropdownForeground': INHERIT, // textColor
     'settings.dropdownListBorder': INHERIT, // overlayBorderColor
+    'settings.focusedRowBackground': INHERIT,
     'settings.headerForeground': palette.textColorHighlight,
     'settings.modifiedItemIndicator': palette.textColorAdded,
     'settings.numberInputBackground': INHERIT, // inputBackgroundColor
@@ -570,7 +629,42 @@ function generateWorkbench(
     'debugIcon.stepIntoForeground': INHERIT,
     'debugIcon.stepOutForeground': INHERIT,
     'debugIcon.stepOverForeground': INHERIT,
-    'debugIcon.stopForeground': INHERIT
+    'debugIcon.stopForeground': INHERIT,
+
+    // Notebook
+    'notebook.cellBorderColor': INHERIT,
+    'notebook.cellHoverBackground': INHERIT,
+    'notebook.cellInsertionIndicator': INHERIT,
+    'notebook.cellStatusBarItemHoverBackground': INHERIT,
+    'notebook.cellToolbarSeparator': INHERIT,
+    'notebook.focusedCellBackground': INHERIT,
+    'notebook.focusedCellBorder': INHERIT,
+    'notebook.focusedCellShadow': INHERIT,
+    'notebook.focusedEditorBorder': INHERIT,
+    'notebook.focusedRowBorder': INHERIT,
+    'notebook.inactiveFocusedCellBorder': INHERIT,
+    'notebook.inactiveSelectedCellBorder': INHERIT,
+    'notebook.outputContainerBackgroundColor': INHERIT,
+    'notebook.rowHoverBackground': INHERIT,
+    'notebook.selectedCellBackground': INHERIT,
+    'notebook.selectedCellBorder': INHERIT,
+    'notebook.symbolHighlightBackground': INHERIT,
+    'notebookScrollbarSlider.activeBackground': INHERIT,
+    'notebookScrollbarSlider.background': INHERIT,
+    'notebookScrollbarSlider.hoverBackground': INHERIT,
+    'notebookStatusErrorIcon.foreground': INHERIT,
+    'notebookStatusRunningIcon.foreground': INHERIT,
+    'notebookStatusSuccessIcon.foreground': INHERIT,
+
+    // Chart
+    'charts.foreground': INHERIT,
+    'charts.lines': INHERIT,
+    'charts.red': INHERIT,
+    'charts.blue': INHERIT,
+    'charts.yellow': INHERIT,
+    'charts.orange': INHERIT,
+    'charts.green': INHERIT,
+    'charts.purple': INHERIT
   }
 }
 

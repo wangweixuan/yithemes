@@ -4,18 +4,13 @@ import * as tc from 'tinycolor2'
 import * as darkPalette from './dark'
 import * as lightPalette from './light'
 
-function getColor(
-  palette: typeof darkPalette | typeof lightPalette,
-  id: types.Value
-) {
+function getColor<T>(palette: T, id: types.Value) {
   if (!(id instanceof types.String)) throw new Error()
-  const realId = id.getValue()
+  const realId = id.getValue() as keyof T
 
-  const found = Object.entries(palette).find(([key, _value]) => key == realId)
-  if (!found) throw new Error()
-  if (!(found[1] instanceof tc)) throw new Error()
-
-  const color = found[1].toRgb()
+  const tcColor = palette[realId]
+  if (!(tcColor instanceof tc)) throw new Error()
+  const color = tcColor.toRgb()
 
   return new types.Color(color.r, color.g, color.b, color.a)
 }
