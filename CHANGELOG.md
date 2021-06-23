@@ -1,5 +1,10 @@
 # Version History
 
+## `0.16.0` June 23, 2021
+
+- Added support of various colors.
+- Updated background colors of selected items in Command Palette. ([#8](https://github.com/wangweixuan/yithemes/issues/8))
+
 ## `0.15.0` June 20, 2020
 
 - Added support of various colors introduced in Visual Studio Code 1.42 to 1.46.
