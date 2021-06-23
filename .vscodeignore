@@ -1,8 +1,9 @@
 *
-*/**
+!dist/
 !dist/dark.json
 !dist/light.json
 !dist/markdown.css
+!graphics/
 !graphics/logo.png
 !CHANGELOG.md
 !LICENSE.txt
