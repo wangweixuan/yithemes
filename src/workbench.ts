@@ -120,7 +120,7 @@ function generateWorkbench(
     'list.filterMatchBorder': INHERIT, // TRANSPARENT
     'list.focusBackground': palette.backgroundColorInactive,
     'list.focusForeground': palette.textColorSelected,
-    'list.focusOutline': INHERIT,
+    'list.focusOutline': TRANSPARENT,
     'list.highlightForeground': palette.accentColor,
     'list.hoverBackground': TRANSPARENT,
     'list.hoverForeground': INHERIT, // textColor
@@ -325,9 +325,12 @@ function generateWorkbench(
     'editorMarkerNavigationWarning.background': palette.backgroundColorWarning,
     'editorSuggestWidget.background': INHERIT, // overlayBackgroundColor
     'editorSuggestWidget.border': INHERIT, // overlayBorderColor
+    'editorSuggestWidget.focusHighlightForeground': palette.textColorSelected,
     'editorSuggestWidget.foreground': INHERIT, // textColor
     'editorSuggestWidget.highlightForeground': palette.textColorHighlight,
     'editorSuggestWidget.selectedBackground': INHERIT, // backgroundColorInactive
+    'editorSuggestWidget.selectedForeground': INHERIT, // textColorSelected
+
     'editorWidget.background': palette.overlayBackgroundColor,
     'editorWidget.border': palette.overlayBorderColor,
     'editorWidget.foreground': INHERIT, // textColor
@@ -447,7 +450,8 @@ function generateWorkbench(
     'pickerGroup.foreground': palette.textColor,
     'quickInput.background': palette.overlayBackgroundColor,
     'quickInput.foreground': INHERIT, // textColor
-    'quickInputList.focusBackground': INHERIT,
+    'quickInputList.focusBackground': palette.backgroundColorSelected,
+    'quickInputList.focusForeground': palette.textColorSelected,
     'quickInputTitle.background': palette.overlayBackgroundColor,
 
     // Keybinding Label
