@@ -1,5 +1,10 @@
 # Version History
 
+## `0.17.0` October 12, 2021
+
+- Added support of various colors introduced in Visual Studio Code 1.61.
+- Changed the color of buttons.
+
 ## `0.16.0` June 23, 2021
 
 - Added support of various colors.
