@@ -44,9 +44,9 @@ function generateWorkbench(
     'textSeparator.foreground': INHERIT,
 
     // Action Colors
-    'toolbar.activeBackground': INHERIT,
-    'toolbar.hoverBackground': INHERIT,
-    'toolbar.hoverOutline': INHERIT,
+    'toolbar.activeBackground': palette.buttonBackgroundColorSelected,
+    'toolbar.hoverBackground': palette.buttonBackgroundColorHover,
+    'toolbar.hoverOutline': INHERIT, // TRANSPARENT
 
     // Button Control
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/buttons.less
@@ -78,6 +78,7 @@ function generateWorkbench(
     'inputOption.activeBackground': palette.buttonBackgroundColorSelected,
     'inputOption.activeBorder': TRANSPARENT,
     'inputOption.activeForeground': palette.textColorSelected,
+    'inputOption.hoverBackground': palette.buttonBackgroundColorHover,
     'inputValidation.errorBackground': palette.backgroundColorError,
     'inputValidation.errorBorder': palette.textColorError,
     'inputValidation.errorForeground': palette.textColorHighlight,
@@ -137,6 +138,7 @@ function generateWorkbench(
     'listFilterWidget.outline': palette.accentColor,
     'tree.indentGuidesStroke': palette.syntaxIndentGuideColor,
     'tree.tableColumnsBorder': INHERIT,
+    'tree.tableOddRowsBackground': INHERIT,
 
     // Activity Bar
     'activityBar.activeBackground': INHERIT, // textColorHighlight
@@ -168,6 +170,7 @@ function generateWorkbench(
     'minimap.foregroundOpacity': INHERIT, // #000f
     'minimap.selectionHighlight': palette.syntaxResultMarkerColor,
     'minimap.selectionOccurrenceHighlight': palette.syntaxResultMarkerColor,
+    'minimap.unicodeHighlight': INHERIT,
     'minimap.warningHighlight': palette.textColorWarning,
     'minimapGutter.addedBackground': palette.textColorAdded,
     'minimapGutter.deletedBackground': palette.textColorRemoved,
@@ -191,7 +194,8 @@ function generateWorkbench(
     'editorGroupHeader.tabsBackground': palette.tabBarBackgroundColor,
     'editorGroupHeader.tabsBorder': TRANSPARENT,
     'editorPane.background': INHERIT, // syntaxBackgroundColor
-    'sideBySideEditor.border': INHERIT, // toolPanelBorderColor
+    'sideBySideEditor.horizontalBorder': INHERIT, // toolPanelBorderColor
+    'sideBySideEditor.verticalBorder': INHERIT, // toolPanelBorderColor
     'tab.activeBackground': palette.tabBackgroundColorActive,
     'tab.activeBorder': TRANSPARENT,
     'tab.activeBorderTop': INHERIT, // TRANSPARENT
@@ -261,6 +265,18 @@ function generateWorkbench(
     'editorBracketHighlight.foreground6': INHERIT, // TRANSPARENT
     'editorBracketHighlight.unexpectedBracket.foreground':
       palette.syntaxIllegalBg,
+    'editorBracketPairGuide.activeBackground1': INHERIT,
+    'editorBracketPairGuide.activeBackground2': INHERIT,
+    'editorBracketPairGuide.activeBackground3': INHERIT,
+    'editorBracketPairGuide.activeBackground4': INHERIT,
+    'editorBracketPairGuide.activeBackground5': INHERIT,
+    'editorBracketPairGuide.activeBackground6': INHERIT,
+    'editorBracketPairGuide.background1': INHERIT,
+    'editorBracketPairGuide.background2': INHERIT,
+    'editorBracketPairGuide.background3': INHERIT,
+    'editorBracketPairGuide.background4': INHERIT,
+    'editorBracketPairGuide.background5': INHERIT,
+    'editorBracketPairGuide.background6': INHERIT,
     'editorCodeLens.foreground': palette.mono3,
     'editorCursor.background': INHERIT, // syntaxCursorColor
     'editorCursor.foreground': palette.syntaxCursorColor,
@@ -307,11 +323,13 @@ function generateWorkbench(
     'editorOverviewRuler.rangeHighlightForeground': INHERIT, // TRANSPARENT
     'editorOverviewRuler.selectionHighlightForeground':
       palette.syntaxSelectionColor,
+    'editorOverviewRuler.unicodeForeground': INHERIT,
     'editorOverviewRuler.warningForeground': palette.textColorWarning,
     'editorOverviewRuler.wordHighlightForeground': palette.syntaxSelectionColor,
     'editorOverviewRuler.wordHighlightStrongForeground':
       palette.syntaxSelectionColor,
     'editorRuler.foreground': palette.syntaxWrapGuideColor,
+    'editorUnicodeHighlight.border': INHERIT,
     'editorUnnecessaryCode.border': INHERIT, // TRANSPARENT
     'editorUnnecessaryCode.opacity': INHERIT, // #000a, #0007
     'editorWarning.background': INHERIT,
@@ -342,9 +360,11 @@ function generateWorkbench(
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/modal.less
     'debugExceptionWidget.background': INHERIT, // overlayBackgroundColor
     'debugExceptionWidget.border': INHERIT, // overlayBorderColor
+    'editorGhostText.background': INHERIT, // TRANSPARENT
     'editorHoverWidget.background': INHERIT, // overlayBackgroundColor
     'editorHoverWidget.border': INHERIT, // overlayBorderColor
     'editorHoverWidget.foreground': INHERIT, // textColor
+    'editorHoverWidget.highlightForeground': INHERIT,
     'editorHoverWidget.statusBarBackground': palette.overlayBackgroundColor,
     'editorMarkerNavigation.background': palette.backgroundColorHighlight,
     'editorMarkerNavigationError.background': palette.backgroundColorError,
@@ -366,6 +386,7 @@ function generateWorkbench(
     'editorSuggestWidget.selectedBackground': INHERIT, // backgroundColorInactive
     'editorSuggestWidget.selectedForeground': INHERIT, // textColorSelected
     'editorSuggestWidget.selectedIconForeground': INHERIT,
+    'editorSuggestWidgetStatus.foreground': INHERIT,
     'editorWidget.background': palette.overlayBackgroundColor,
     'editorWidget.border': palette.overlayBorderColor,
     'editorWidget.foreground': INHERIT, // textColor
@@ -480,7 +501,9 @@ function generateWorkbench(
     'extensionButton.prominentBackground': palette.accentBgColor,
     'extensionButton.prominentForeground': palette.accentBgTextColor,
     'extensionButton.prominentHoverBackground': palette.accentBgColor,
+    'extensionIcon.preReleaseForeground': INHERIT,
     'extensionIcon.starForeground': INHERIT,
+    'extensionIcon.verifiedForeground': INHERIT,
 
     // Quick Picker
     'pickerGroup.border': palette.overlayBorderColor,
@@ -497,6 +520,10 @@ function generateWorkbench(
     'keybindingLabel.border': undefined,
     'keybindingLabel.bottomBorder': undefined,
     'keybindingLabel.foreground': undefined,
+
+    // Keyboard Shortcut Table
+    'keybindingTable.headerBackground': INHERIT,
+    'keybindingTable.rowsBackground': INHERIT,
 
     // Integrated Terminal
     'terminal.ansiBlack': INHERIT,
@@ -537,30 +564,27 @@ function generateWorkbench(
     'debugView.stateLabelBackground': palette.backgroundColorSuccess,
     'debugView.stateLabelForeground': INHERIT, // textColor
     'debugView.valueChangedHighlight': palette.backgroundColorInfo,
-    'editor.focusedStackFrameHighlightBackground':
-      palette.backgroundColorWarning,
-    'editor.stackFrameHighlightBackground': palette.backgroundColorWarning,
+    'editor.focusedStackFrameHighlightBackground': INHERIT,
+    'editor.stackFrameHighlightBackground': INHERIT,
 
     // Testing
-    'testing.iconFailed': undefined,
     'testing.iconErrored': undefined,
+    'testing.iconFailed': undefined,
     'testing.iconPassed': undefined,
-    'testing.runAction': undefined,
     'testing.iconQueued': undefined,
-    'testing.iconUnset': undefined,
     'testing.iconSkipped': undefined,
-    'testing.peekBorder': undefined,
-    'testing.peekHeaderBackground': undefined,
+    'testing.iconUnset': undefined,
     'testing.message.error.decorationForeground': undefined,
     'testing.message.error.lineBackground': undefined,
     'testing.message.info.decorationForeground': undefined,
     'testing.message.info.lineBackground': undefined,
+    'testing.peekBorder': undefined,
+    'testing.peekHeaderBackground': undefined,
+    'testing.runAction': undefined,
 
     // Welcome Page
     'walkThrough.embeddedEditorBackground': palette.insetPanelBackgroundColor,
     'welcomePage.background': INHERIT,
-    'welcomePage.buttonBackground': palette.buttonBackgroundColor,
-    'welcomePage.buttonHoverBackground': palette.buttonBackgroundColorHover,
     'welcomePage.progress.background': INHERIT,
     'welcomePage.progress.foreground': INHERIT,
     'welcomePage.tileBackground': INHERIT,
@@ -699,14 +723,14 @@ function generateWorkbench(
     'notebookStatusSuccessIcon.foreground': INHERIT,
 
     // Chart
-    'charts.foreground': INHERIT,
-    'charts.lines': INHERIT,
-    'charts.red': INHERIT,
     'charts.blue': INHERIT,
-    'charts.yellow': INHERIT,
-    'charts.orange': INHERIT,
+    'charts.foreground': INHERIT,
     'charts.green': INHERIT,
+    'charts.lines': INHERIT,
+    'charts.orange': INHERIT,
     'charts.purple': INHERIT,
+    'charts.red': INHERIT,
+    'charts.yellow': INHERIT,
 
     // Ports
     'ports.iconRunningProcessForeground': INHERIT
