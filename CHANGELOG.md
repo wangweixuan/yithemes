@@ -1,5 +1,9 @@
 # Version History
 
+## `0.17.1` January 22, 2022
+
+- Fixed the background color of stack frame highlight in the editor when debugging. ([#9](https://github.com/wangweixuan/yithemes/issues/9))
+
 ## `0.17.0` October 12, 2021
 
 - Added support of various colors introduced in Visual Studio Code 1.61.
