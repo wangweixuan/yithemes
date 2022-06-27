@@ -527,7 +527,7 @@ function generateWorkbench(
 
     // Integrated Terminal
     'terminal.ansiBlack': INHERIT,
-    'terminal.ansiBlue': INHERIT,
+    'terminal.ansiBlue': palette.hue2,
     'terminal.ansiBrightBlack': INHERIT,
     'terminal.ansiBrightBlue': INHERIT,
     'terminal.ansiBrightCyan': INHERIT,
@@ -536,16 +536,16 @@ function generateWorkbench(
     'terminal.ansiBrightRed': INHERIT,
     'terminal.ansiBrightWhite': INHERIT,
     'terminal.ansiBrightYellow': INHERIT,
-    'terminal.ansiCyan': INHERIT,
-    'terminal.ansiGreen': INHERIT,
-    'terminal.ansiMagenta': INHERIT,
-    'terminal.ansiRed': INHERIT,
-    'terminal.ansiWhite': INHERIT,
-    'terminal.ansiYellow': INHERIT,
+    'terminal.ansiCyan': palette.hue1,
+    'terminal.ansiGreen': palette.hue4,
+    'terminal.ansiMagenta': palette.hue3,
+    'terminal.ansiRed': palette.hue5,
+    'terminal.ansiWhite': palette.mono1,
+    'terminal.ansiYellow': palette.hue6,
     'terminal.background': INHERIT,
     'terminal.border': INHERIT, // toolPanelBorderColor
     'terminal.foreground': INHERIT,
-    'terminal.selectionBackground': INHERIT,
+    'terminal.selectionBackground': palette.syntaxSelectionColor,
     'terminal.tab.activeBorder': INHERIT, // TRANSPARENT
     'terminalCursor.background': INHERIT,
     'terminalCursor.foreground': INHERIT,
