@@ -1,5 +1,9 @@
 # Version History
 
+## `0.18.0` September 24, 2022
+
+- Fixed the color of fenced code blocks in Markdown. ([#10](https://github.com/wangweixuan/yithemes/issues/10))
+
 ## `0.17.1` January 22, 2022
 
 - Fixed the background color of stack frame highlight in the editor when debugging. ([#9](https://github.com/wangweixuan/yithemes/issues/9))
