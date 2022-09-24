@@ -141,6 +141,7 @@ function generateSyntax(
     'markup.inserted': { foreground: palette.hue4 },
     'markup.quoted': { foreground: palette.hue6 },
     'markup.inline.raw': { foreground: palette.hue4 },
+    'markup.fenced_code.block': { foreground: palette.hue4 },
 
     // https://github.com/atom/atom/blob/master/packages/one-dark-syntax/styles/syntax/c.less
     'source.c keyword.operator': { foreground: palette.hue3 },
