@@ -55,6 +55,7 @@ function generateSyntax(
     'constant.numberic': { foreground: palette.hue6 },
     'constant.other.color': { foreground: palette.hue1 },
     'constant.other.symbol': { foreground: palette.hue1 },
+    'constant.other.reference.link': { foreground: palette.hue1 },
 
     'variable': { foreground: palette.hue5 },
     'variable.interpolation': { foreground: palette.hue52 },
@@ -79,13 +80,15 @@ function generateSyntax(
     'punctuation.definition.heading': { foreground: palette.hue5 },
     'punctuation.definition.identity': { foreground: palette.hue2 },
     'punctuation.definition.bold': {
-      foreground: palette.hue62,
+      foreground: palette.mono1,
       fontStyle: 'bold'
     },
     'punctuation.definition.italic': {
-      foreground: palette.hue3,
+      foreground: palette.mono1,
       fontStyle: 'italic'
     },
+    'punctuation.definition.link': { foreground: palette.mono1 },
+    'punctuation.definition.metadata': { foreground: palette.mono1 },
     'punctuation.definition.template-expression': { foreground: palette.hue52 },
     'punctuation.section.embedded': { foreground: palette.hue52 },
     'punctuation.section.method': { foreground: palette.mono1 },
@@ -132,6 +135,7 @@ function generateSyntax(
     // Workaround for https://github.com/Microsoft/vscode/issues/3429
     'invalid.illegal': { foreground: palette.syntaxIllegalBg },
 
+    // https://github.com/wangweixuan/yithemes/issues/11
     'markup.bold': { foreground: palette.hue6, fontStyle: 'bold' },
     'markup.changed': { foreground: palette.hue3 },
     'markup.deleted': { foreground: palette.hue5 },
@@ -140,8 +144,16 @@ function generateSyntax(
     'markup.underline.link': { foreground: palette.hue1 },
     'markup.inserted': { foreground: palette.hue4 },
     'markup.quoted': { foreground: palette.hue6 },
+    'markup.strikethrough': { foreground: palette.hue5 },
     'markup.inline.raw': { foreground: palette.hue4 },
     'markup.fenced_code.block': { foreground: palette.hue4 },
+    'markup.meta.separator.markdown': {
+      foreground: palette.mono3,
+      fontStyle: 'italic'
+    },
+    'meta.link.reference.def.markdown constant.other.reference.link': {
+      foreground: palette.hue2
+    },
 
     // https://github.com/atom/atom/blob/master/packages/one-dark-syntax/styles/syntax/c.less
     'source.c keyword.operator': { foreground: palette.hue3 },
