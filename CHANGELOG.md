@@ -1,5 +1,10 @@
 # Version History
 
+## `0.19.0` September 27, 2022
+
+- Fixed various colors in Markdown. ([#11](https://github.com/wangweixuan/yithemes/issues/11))
+  Thanks to [@contextnerror](https://github.com/contextnerror)!
+
 ## `0.18.0` September 24, 2022
 
 - Fixed the color of fenced code blocks in Markdown. ([#10](https://github.com/wangweixuan/yithemes/issues/10))
