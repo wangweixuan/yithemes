@@ -91,7 +91,7 @@ function generateWorkbench(
 
     // Scrollbar Control
     // https://github.com/atom/atom/blob/master/packages/atom-dark-ui/styles/atom.less#L14
-    'scrollbar.shadow': TRANSPARENT,
+    'scrollbar.shadow': tc({ h: 0, l: 0, s: 0, a: 0.4 }),
     'scrollbarSlider.activeBackground': palette.scrollbarColor
       .clone()
       .setAlpha(0.8),
@@ -361,6 +361,9 @@ function generateWorkbench(
     'debugExceptionWidget.background': INHERIT, // overlayBackgroundColor
     'debugExceptionWidget.border': INHERIT, // overlayBorderColor
     'editorGhostText.background': INHERIT, // TRANSPARENT
+    'editorGhostText.foreground': INHERIT,
+    'editorStickyScroll.background': palette.insetPanelBackgroundColor,
+    'editorStickyScrollHover.background': palette.insetPanelBackgroundColor,
     'editorHoverWidget.background': INHERIT, // overlayBackgroundColor
     'editorHoverWidget.border': INHERIT, // overlayBorderColor
     'editorHoverWidget.foreground': INHERIT, // textColor
