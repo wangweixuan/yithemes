@@ -736,7 +736,18 @@ function generateWorkbench(
     'charts.yellow': INHERIT,
 
     // Ports
-    'ports.iconRunningProcessForeground': INHERIT
+    'ports.iconRunningProcessForeground': INHERIT,
+
+    // For extension https://marketplace.visualstudio.com/items?itemName=outofsync42.inline-css-color
+    // Workaround for https://github.com/textmate/html.tmbundle/issues/88
+    'inline.css.propertyName': palette.mono1,
+    'inline.css.punctuation': palette.mono1,
+    'inline.css.supportFunction': palette.hue1,
+    'inline.css.valueConstant': palette.hue6,
+    'inline.css.valueNumeric': palette.hue6,
+    'inline.css.valueNumericUnit': palette.hue6,
+    'inline.css.keywordImportant': palette.hue3,
+    'inline.css.string': palette.hue4
   }
 }
 
