@@ -1,5 +1,16 @@
 # Version History
 
+## `0.21.0` February 3, 2024
+
+- Fixed the color of the closing quotation marks in HTML `style` and `script` attributes. ([#13](https://github.com/wangweixuan/yithemes/issues/13))
+- Added support for inline CSS highlighting in HTML `style` attributes. To use it, [install](vscode:extension/outofsync42.inline-css-color) the [Inline CSS Color](https://marketplace.visualstudio.com/items?itemName=outofsync42.inline-css-color) extension by outofsync42. (You need not follow its setup steps; support is bundled in.)
+
+The update is a workaround for [textmate/html.tmbundle#65](https://github.com/textmate/html.tmbundle/issues/65) and [textmate/html.tmbundle#88](https://github.com/textmate/html.tmbundle/issues/88).
+
+## `0.20.0` June 29, 2022
+
+- Fixed background and shadow colors in sticky scroll widget. ([#12](https://github.com/wangweixuan/yithemes/issues/12))
+
 ## `0.19.0` September 27, 2022
 
 - Fixed various colors in Markdown. ([#11](https://github.com/wangweixuan/yithemes/issues/11))
