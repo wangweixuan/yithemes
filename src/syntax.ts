@@ -70,6 +70,8 @@ function generateSyntax(
     'string.regexp keyword.other': { foreground: palette.hue1 },
     'string.regexp punctuation.definition.string': { foreground: palette.hue4 },
     'string.other.link': { foreground: palette.hue2 },
+    // Workaround for https://github.com/textmate/html.tmbundle/issues/65
+    'punctuation.definition.string source': { foreground: palette.hue4 },
 
     'punctuation.definition.comment': { foreground: palette.mono3 },
     'punctuation.definition.typeparameters': { foreground: palette.mono1 },
