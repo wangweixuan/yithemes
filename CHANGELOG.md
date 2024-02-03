@@ -7,7 +7,7 @@
 
 The update is a workaround for [textmate/html.tmbundle#65](https://github.com/textmate/html.tmbundle/issues/65) and [textmate/html.tmbundle#88](https://github.com/textmate/html.tmbundle/issues/88).
 
-## `0.20.0` June 29, 2022
+## `0.20.0` June 29, 2023
 
 - Fixed background and shadow colors in sticky scroll widget. ([#12](https://github.com/wangweixuan/yithemes/issues/12))
 
