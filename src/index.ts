@@ -1,5 +1,5 @@
-import { writeFileSync } from 'fs'
-import { join } from 'path'
+import { writeFileSync } from 'node:fs'
+import { join as joinPath } from 'node:path'
 import * as tc from 'tinycolor2'
 import { MARKDOWN_CSS } from './markdown'
 import { SemanticRules, SEMANTIC_DARK, SEMANTIC_LIGHT } from './semantic'
@@ -8,12 +8,12 @@ import { WorkbenchRules, WORKBENCH_DARK, WORKBENCH_LIGHT } from './workbench'
 
 function writeAll() {
   writeFileSync(
-    join(__dirname, '../dark.json'),
+    joinPath(__dirname, '../dark.json'),
     assembleTheme('Yi Dark', 'dark', WORKBENCH_DARK, SYNTAX_DARK, SEMANTIC_DARK)
   )
 
   writeFileSync(
-    join(__dirname, '../light.json'),
+    joinPath(__dirname, '../light.json'),
     assembleTheme(
       'Yi Light',
       'light',
@@ -23,7 +23,7 @@ function writeAll() {
     )
   )
 
-  writeFileSync(join(__dirname, '../markdown.css'), MARKDOWN_CSS)
+  writeFileSync(joinPath(__dirname, '../markdown.css'), MARKDOWN_CSS)
 }
 
 function assembleTheme(

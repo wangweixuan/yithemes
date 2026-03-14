@@ -83,10 +83,10 @@ export const uiSaturation =
   uiSyntaxColor.toHsl().h <= 80
     ? Math.min(uiSyntaxColor.toHsl().s, 0.05)
     : uiSyntaxColor.toHsl().h < 160
-    ? Math.min(uiSyntaxColor.toHsl().s, 0.12)
-    : uiSyntaxColor.toHsl().l < uiInv
-    ? Math.min(uiSyntaxColor.toHsl().s, 0.48)
-    : uiSyntaxColor.toHsl().s
+      ? Math.min(uiSyntaxColor.toHsl().s, 0.12)
+      : uiSyntaxColor.toHsl().l < uiInv
+        ? Math.min(uiSyntaxColor.toHsl().s, 0.48)
+        : uiSyntaxColor.toHsl().s
 export const uiLightness =
   uiSyntaxColor.toHsl().l < uiInv
     ? uiSyntaxColor.toHsl().l + 0.08

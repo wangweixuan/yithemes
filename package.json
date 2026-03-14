@@ -19,12 +19,12 @@
     "test": "code --extensionDevelopmentPath=$PWD"
   },
   "devDependencies": {
-    "@types/node": "^20.3.2",
-    "@types/tinycolor2": "^1.4.3",
-    "prettier": "^2.7.1",
-    "sass": "^1.55.0",
+    "@types/node": "^25.5.0",
+    "@types/tinycolor2": "^1.4.6",
+    "prettier": "^3.8.1",
+    "sass": "^1.98.0",
     "tinycolor2": "^1.6.0",
-    "typescript": "^5.1.6"
+    "typescript": "^5.9.3"
   },
   "displayName": "Yi Dark & Yi Light Themes",
   "publisher": "wangweixuan",
@@ -55,5 +55,8 @@
   "galleryBanner": {
     "color": "#282C34",
     "theme": "dark"
-  }
+  },
+  "extensionKind": [
+    "ui"
+  ]
 }

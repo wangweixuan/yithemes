@@ -1,5 +1,5 @@
-import { join } from 'path'
-import { compile, SassColor, Value as SassValue } from 'sass'
+import { join as joinPath } from 'node:path'
+import { compile as sassCompile, SassColor, Value as SassValue } from 'sass'
 import * as tc from 'tinycolor2'
 import * as darkPalette from './dark'
 import * as lightPalette from './light'
@@ -19,8 +19,8 @@ function getColor<T>(palette: T, id: SassValue) {
   })
 }
 
-export const MARKDOWN_CSS = compile(
-  join(__dirname, '../../src/markdown.scss'),
+export const MARKDOWN_CSS = sassCompile(
+  joinPath(__dirname, '../../src/markdown.scss'),
   {
     functions: {
       'dark-palette($id)': ([id]) => getColor(darkPalette, id),
