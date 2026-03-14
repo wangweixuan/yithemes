@@ -72,6 +72,7 @@ function generateSyntax(
     'string.other.link': { foreground: palette.hue2 },
     // Workaround for https://github.com/textmate/html.tmbundle/issues/65
     'punctuation.definition.string source': { foreground: palette.hue4 },
+    'punctuation.section.embedded source': { foreground: palette.hue52 },
 
     'punctuation.definition.comment': { foreground: palette.mono3 },
     'punctuation.definition.typeparameters': { foreground: palette.mono1 },
