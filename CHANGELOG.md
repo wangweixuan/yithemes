@@ -1,5 +1,9 @@
 # Version History
 
+## `1.0.0` March 14, 2026
+
+- Added support for colors in VS Code 1.111.
+
 ## `0.21.0` February 3, 2024
 
 - Fixed the color of the closing quotation marks in HTML `style` and `script` attributes. ([#13](https://github.com/wangweixuan/yithemes/issues/13))
